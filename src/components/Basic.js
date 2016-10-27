@@ -6,6 +6,7 @@ BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
 
+// TODO take in events as props
 let Basic = React.createClass({
   render(){
     return (
@@ -26,6 +27,7 @@ let Basic = React.createClass({
             }
           ]}
           timeslots={8}
+          views={['month', 'week']}
           onSelectEvent={event => alert(event.title)}
           defaultDate={new Date(2015, 3, 1)}
         />
