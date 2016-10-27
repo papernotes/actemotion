@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ToolbarStyles from '../styles/ToolbarStyles';
-import {Nav, NavItem, Navbar, Glyphicon} from 'react-bootstrap';
+import {Nav, NavItem, Navbar, Glyphicon, Popover, OverlayTrigger} from 'react-bootstrap';
 import {browserHistory} from 'react-router';
 
 class Toolbar extends Component {
@@ -11,6 +11,13 @@ class Toolbar extends Component {
   }
 
   render() {
+
+    const popoverHoverFocus = (
+      <Popover id="popover-trigger-hover-focus" title="Notifications">
+        No notifications!
+      </Popover>
+    );
+
     return(
       <div>
           <Navbar>
@@ -31,8 +38,12 @@ class Toolbar extends Component {
             <Nav pullRight>
               <div style={ToolbarStyles.icon}>
                 <NavItem eventKey={4} onClick={this.goToPage.bind(this, '/editevent')}><Glyphicon glyph='plus'/></NavItem>
-                <NavItem eventKey={5}><Glyphicon glyph='bell'/></NavItem>
-                <NavItem eventKey={6}><Glyphicon glyph='user'/></NavItem>
+                <NavItem eventKey={5}>
+                  <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={popoverHoverFocus}>
+                    <Glyphicon glyph='bell'/>
+                  </OverlayTrigger>
+                </NavItem>
+                <NavItem eventKey={6} onClick={this.goToPage.bind(this, '/settings')}><Glyphicon glyph='user'/></NavItem>
               </div>
             </Nav>
             </Navbar.Collapse>
