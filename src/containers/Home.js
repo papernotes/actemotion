@@ -7,28 +7,27 @@ import Toolbar from '../components/Toolbar';
 
 class Home extends Component {
 
-    // render the home page and pass the 'settings' as a prop in Box
-    render() {
-        console.log(this.props)
-        return(
-            <div>
-                <Toolbar/>
-                <Basic/>
-            </div>
-        );
-    }
+  // render the home page and pass the 'settings' as a prop in Box
+  render() {
+    return(
+      <div>
+        <Toolbar/>
+        <Basic/>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    return {
-        home: state.default.home
-    }
+  return {
+    home: state.default.home
+  }
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(Actions, dispatch)
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  }
 }
 
 

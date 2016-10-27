@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
+import {browserHistory} from 'react-router';
 import Toolbar from './Toolbar';
 
 class EditEvent extends Component {
@@ -18,6 +19,10 @@ class EditEvent extends Component {
 
   preventDefault(e) {
     e.preventDefault();
+  }
+
+  goToPage(route) {
+    browserHistory.push(route);
   }
 
 
@@ -73,8 +78,8 @@ class EditEvent extends Component {
               </FormGroup>
             </form>
 
-            <Button>Cancel</Button>
-            <Button>Submit</Button>
+            <Button onClick={this.goToPage.bind(this, '/')}>Cancel</Button>
+            <Button onClick={this.goToPage.bind(this, '/')}>Submit</Button>
           </div>
 
 
