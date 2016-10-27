@@ -6,13 +6,12 @@ const ToolbarStyles = {
     top: '0',
   },
   text: {
-    position: 'absolute',
     left: '0',
-    display: 'inline'
+    display: 'inline-block',
+    fontSize: '30px',
+    width: 'auto'
   },
   icon: {
-    position: 'absolute',
-    right: '0'
   }
 }
 
