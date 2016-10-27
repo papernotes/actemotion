@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
 import * as Actions from '../actions';
+import Toolbar from '../components/Toolbar';
 
 class Analytics extends Component {
     render() {
         return(
             <div>
+                <Toolbar/>
                 <h2>Analytics Page</h2>
-                <li ><Link to={'/settings/'}>Settings</Link></li>
-                <li ><Link to={'/'}>Home</Link></li>
             </div>
         );
     }

@@ -13,6 +13,7 @@ import Home from './containers/Home';
 import Settings from './containers/Settings';
 import Analytics from './containers/Analytics';
 import NotFound from './components/NotFound';
+import EditEvent from './components/EditEvent';
 
 import * as reducers from './reducers';
 
@@ -36,6 +37,7 @@ render(
                 <IndexRoute component={Home}/>
                 <Route path="settings" component={Settings}/>
                 <Route path="analytics" component={Analytics}/>
+                <Route path="editevent" component={EditEvent}/>
                 <Route path="*" component={NotFound}/>
             </Route>
         </Router>

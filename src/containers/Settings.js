@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
 import * as Actions from '../actions';
+import Toolbar from '../components/Toolbar';
 
 class Settings extends Component {
     render() {
         return(
             <div>
+                <Toolbar/>
                 <h2>Settings Page</h2>
-                <li ><Link to={'/analytics/'}>Analytics</Link></li>
-                <li ><Link to={'/'}>Home</Link></li>
             </div>
         );
     }

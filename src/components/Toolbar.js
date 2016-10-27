@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router';
 
 class Toolbar extends Component {
 
+  // TODO disable NavItem or make active on click
   goToPage(route) {
     browserHistory.push(route);
   }
@@ -20,6 +21,7 @@ class Toolbar extends Component {
               <Navbar.Toggle />
             </Navbar.Header>
 
+            <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/')}>Home</NavItem>
               <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Analytics</NavItem>
@@ -28,11 +30,12 @@ class Toolbar extends Component {
 
             <Nav pullRight>
               <div style={ToolbarStyles.icon}>
-                <NavItem eventKey={4}><Glyphicon glyph='plus'/></NavItem>
+                <NavItem eventKey={4} onClick={this.goToPage.bind(this, '/editevent')}><Glyphicon glyph='plus'/></NavItem>
                 <NavItem eventKey={5}><Glyphicon glyph='bell'/></NavItem>
                 <NavItem eventKey={6}><Glyphicon glyph='user'/></NavItem>
               </div>
             </Nav>
+            </Navbar.Collapse>
           </Navbar>
 
 
