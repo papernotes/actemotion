@@ -1,10 +1,9 @@
 const ToolbarStyles = {
   toolbar: {
     backgroundColor: 'gray',
-    width: '100vw',
+    width: '100%',
     height: '10vh',
-    position: 'absolute',
-    top: '0'
+    top: '0',
   },
   text: {
     position: 'absolute',

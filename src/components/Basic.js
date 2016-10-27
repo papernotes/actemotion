@@ -10,7 +10,7 @@ BigCalendar.setLocalizer(
 let Basic = React.createClass({
   render(){
     return (
-      <div style={{height: '100vh'}}>
+      <div style={{height: '80vh', width: '90vw', margin:'0 auto', marginTop: '20px'}}>
         <BigCalendar
           {...this.props}
           events={[

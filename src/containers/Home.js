@@ -13,7 +13,6 @@ class Home extends Component {
         return(
             <div>
                 <Toolbar/>
-                <h2>Home Page</h2>
                 <Basic/>
             </div>
         );
