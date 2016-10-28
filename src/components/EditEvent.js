@@ -55,6 +55,18 @@ class EditEvent extends Component {
               </FormControl>
 
               <FormControl
+                type="text"
+                placeholder="Event Date"
+                onChange={this.handleChange.bind(this)}
+              />
+
+              <FormControl
+                type="text"
+                placeholder="Event Time"
+                onChange={this.handleChange.bind(this)}
+              />
+
+              <FormControl
                 componentClass="select"
                 placeholder="Emotion"
                 onChange={this.handleChange.bind(this)}
