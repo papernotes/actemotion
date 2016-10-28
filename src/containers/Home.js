@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
-import Basic from '../components/Basic';
+import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
 
 class Home extends Component {
@@ -12,7 +12,7 @@ class Home extends Component {
     return(
       <div>
         <Toolbar/>
-        <Basic/>
+        <Calendar/>
       </div>
     );
   }

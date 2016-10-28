@@ -7,7 +7,7 @@ BigCalendar.setLocalizer(
 );
 
 // TODO take in events as props
-let Basic = React.createClass({
+let Calendar = React.createClass({
   render(){
     return (
       <div style={{height: '80vh', width: '90vw', margin:'0 auto', marginTop: '20px'}}>
@@ -36,4 +36,4 @@ let Basic = React.createClass({
   }
 })
 
-export default Basic;
+export default Calendar;
