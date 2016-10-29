@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
+import DatePicker from 'react-bootstrap-date-picker';
 
 class EditEvent extends Component {
 
   // TODO
   handleChange(e) {
-
+    console.log(e);
   }
 
   preventDefault(e) {
@@ -41,11 +42,7 @@ class EditEvent extends Component {
               <option value="work">work</option>
             </FormControl>
 
-            <FormControl
-              type="text"
-              placeholder="Event Date"
-              onChange={this.handleChange.bind(this)}
-            />
+            <DatePicker onChange={this.handleChange.bind(this)}/>
 
             <FormControl
               type="text"
@@ -69,6 +66,7 @@ class EditEvent extends Component {
             />
 
             <FormControl
+              style={{resize: 'none'}}
               componentClass="textarea"
               placeholder="Add Description"
               onChange={this.handleChange.bind(this)}
