@@ -1,16 +1,7 @@
 import React, {Component} from 'react';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
-import {browserHistory} from 'react-router';
-import Toolbar from './Toolbar';
 
 class EditEvent extends Component {
-
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-  }
 
   // TODO
   handleChange(e) {
@@ -21,80 +12,74 @@ class EditEvent extends Component {
     e.preventDefault();
   }
 
-  goToPage(route) {
-    browserHistory.push(route);
+  setModalOpen(bool) {
+    this.props.actions.setModalOpen(bool);
   }
 
 
-  // TODO take in props
   render() {
     return(
       <div>
-        <Toolbar/>
-        <h1> Edit/Add Event Page </h1>
-          <div style={{height: '80vh', width: '50vw', margin:'0 auto', marginTop: '20px'}}>
-            <form onSubmit={this.preventDefault.bind(this)}>
-              <FormGroup
-                controlId="formBasicText"
-                validationState={this.getValidationState.bind(this)}
-              >
+        <div style={{height: '50vh', width: '300px', margin:'0 auto', marginTop: '20px'}}>
+          <form onSubmit={this.preventDefault.bind(this)}>
+            <FormGroup
+              controlId="formBasicText"
+            >
 
-              <FormControl
-                type="text"
-                placeholder="Event Name"
-                onChange={this.handleChange.bind(this)}
-              />
+            <FormControl
+              type="text"
+              placeholder="Event Name"
+              onChange={this.handleChange.bind(this)}
+            />
 
-              <FormControl
-                componentClass="select"
-                placeholder="Event Type"
-                onChange={this.handleChange.bind(this)}
-              >
-                <option value="school">school</option>
-                <option value="work">work</option>
-              </FormControl>
+            <FormControl
+              componentClass="select"
+              placeholder="Event Type"
+              onChange={this.handleChange.bind(this)}
+            >
+              <option value="school">school</option>
+              <option value="work">work</option>
+            </FormControl>
 
-              <FormControl
-                type="text"
-                placeholder="Event Date"
-                onChange={this.handleChange.bind(this)}
-              />
+            <FormControl
+              type="text"
+              placeholder="Event Date"
+              onChange={this.handleChange.bind(this)}
+            />
 
-              <FormControl
-                type="text"
-                placeholder="Event Time"
-                onChange={this.handleChange.bind(this)}
-              />
+            <FormControl
+              type="text"
+              placeholder="Event Time"
+              onChange={this.handleChange.bind(this)}
+            />
 
-              <FormControl
-                componentClass="select"
-                placeholder="Emotion"
-                onChange={this.handleChange.bind(this)}
-              >
-                <option value="happy">happy</option>
-                <option value="sad">sad</option>
-              </FormControl>
+            <FormControl
+              componentClass="select"
+              placeholder="Emotion"
+              onChange={this.handleChange.bind(this)}
+            >
+              <option value="happy">happy</option>
+              <option value="sad">sad</option>
+            </FormControl>
 
-              <FormControl
-                type="text"
-                placeholder="Energy Level (1-10)"
-                onChange={this.handleChange.bind(this)}
-              />
+            <FormControl
+              type="text"
+              placeholder="Energy Level (1-10)"
+              onChange={this.handleChange.bind(this)}
+            />
 
-              <FormControl
-                componentClass="textarea"
-                placeholder="Add Description"
-                onChange={this.handleChange.bind(this)}
-              />
+            <FormControl
+              componentClass="textarea"
+              placeholder="Add Description"
+              onChange={this.handleChange.bind(this)}
+            />
 
-              </FormGroup>
-            </form>
+            </FormGroup>
+          </form>
 
-            <Button onClick={this.goToPage.bind(this, '/')}>Cancel</Button>
-            <Button onClick={this.goToPage.bind(this, '/')}>Submit</Button>
-          </div>
-
-
+          <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
+          <Button onClick={this.setModalOpen.bind(this, false)}>Submit</Button>
+        </div>
       </div>
     );
   }

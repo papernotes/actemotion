@@ -8,7 +8,7 @@ class Settings extends Component {
     render() {
         return(
             <div>
-                <Toolbar/>
+                <Toolbar {...this.props}/>
                 <h2>Settings Page</h2>
             </div>
         );
@@ -16,15 +16,16 @@ class Settings extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        Settings: state.default.Settings
-    }
+  return {
+    home: state.default.home,
+    event: state.default.event
+  }
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(Actions, dispatch)
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  }
 }
 
 

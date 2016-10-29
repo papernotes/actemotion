@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return(
       <div>
-        <Toolbar/>
+        <Toolbar {...this.props}/>
         <Calendar/>
       </div>
     );
@@ -20,7 +20,8 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    home: state.default.home
+    home: state.default.home,
+    event: state.default.event
   }
 }
 

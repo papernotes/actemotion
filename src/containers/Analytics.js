@@ -8,7 +8,7 @@ class Analytics extends Component {
     render() {
         return(
             <div>
-                <Toolbar/>
+                <Toolbar {...this.props}/>
                 <h2>Analytics Page</h2>
             </div>
         );
@@ -16,15 +16,16 @@ class Analytics extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        Analytics: state.default.Analytics
-    }
+  return {
+    home: state.default.home,
+    event: state.default.event
+  }
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(Actions, dispatch)
-    }
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  }
 }
 
 
