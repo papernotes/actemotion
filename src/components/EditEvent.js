@@ -20,7 +20,9 @@ class EditEvent extends Component {
       if (key === 'eventDate') {
         data.push(this.refs[key].getValue());
       }
-      data.push(ReactDOM.findDOMNode(this.refs[key]).value);
+      else {
+        data.push(ReactDOM.findDOMNode(this.refs[key]).value);
+      }
     }
     console.log(data);
   }
