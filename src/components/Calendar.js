@@ -26,7 +26,7 @@ let Calendar = React.createClass({
               'end': new Date(2015, 3, 10)
             }
           ]}
-          timeslots={8}
+          timeslots={2}
           views={['month', 'week']}
           onSelectEvent={event => alert(event.title)}
           defaultDate={new Date(2015, 3, 1)}
