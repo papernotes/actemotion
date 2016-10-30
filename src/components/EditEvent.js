@@ -5,24 +5,6 @@ import DatePicker from 'react-bootstrap-date-picker';
 
 class EditEvent extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      eventName: '',
-      eventType: '',
-      eventDate: null,
-      eventTime: null,
-      eventEmotion: '',
-      eventEnergy: 0,
-      eventText: ''
-    }
-  }
-
-  // TODO
-  handleChange(e) {
-    console.log(e.target.value);
-  }
-
   preventDefault(e) {
     e.preventDefault();
   }
@@ -33,77 +15,72 @@ class EditEvent extends Component {
 
   getFormData() {
     var data = [];
-    console.log(this.refs);
     for (var key in this.refs) {
+      // fix for the date picker
+      if (key === 'eventDate') {
+        data.push(this.refs[key].getValue());
+      }
       data.push(ReactDOM.findDOMNode(this.refs[key]).value);
     }
     console.log(data);
   }
 
-  // TODO fix the time value for date picker
   render() {
     return(
       <div>
         <div style={{height: '50vh', width: '400px', margin:'0 auto', marginTop: '20px'}}>
           <form onSubmit={this.preventDefault.bind(this)}>
             <FormGroup
-              controlId="formBasicText"
+              controlId='formBasicText'
             >
 
             <FormControl
-              type="text"
-              placeholder="Event Name"
-              onChange={this.handleChange.bind(this)}
-              ref="eventName"
+              type='text'
+              placeholder='Event Name'
+              ref='eventName'
             />
 
             <FormControl
-              componentClass="select"
-              placeholder="Event Type"
-              onChange={this.handleChange.bind(this, 'eventType')}
-              ref="eventType"
+              componentClass='select'
+              placeholder='Event Type'
+              ref='eventType'
             >
-              <option value="school">school</option>
-              <option value="work">work</option>
+              <option value='school'>school</option>
+              <option value='work'>work</option>
             </FormControl>
 
             <DatePicker
-              onChange={this.handleChange.bind(this, 'eventDate')}
               showClearButton={false}
               value={new Date().toISOString()}
-              ref="eventDate"
+              ref='eventDate'
             />
 
             <FormControl
-              type="text"
-              placeholder="Event Time"
-              onChange={this.handleChange.bind(this, 'eventTime')}
-              ref="eventTime"
+              type='text'
+              placeholder='Event Time'
+              ref='eventTime'
             />
 
             <FormControl
-              componentClass="select"
-              placeholder="Emotion"
-              onChange={this.handleChange.bind(this, 'eventEmotion')}
-              ref="eventEmotion"
+              componentClass='select'
+              placeholder='Emotion'
+              ref='eventEmotion'
             >
-              <option value="happy">happy</option>
-              <option value="sad">sad</option>
+              <option value='happy'>happy</option>
+              <option value='sad'>sad</option>
             </FormControl>
 
             <FormControl
-              type="text"
-              placeholder="Energy Level (1-10)"
-              onChange={this.handleChange.bind(this, 'eventEnergy')}
-              ref="eventEnergy"
+              type='text'
+              placeholder='Energy Level (1-10)'
+              ref='eventEnergy'
             />
 
             <FormControl
               style={{resize: 'none'}}
-              componentClass="textarea"
-              placeholder="Add Description"
-              onChange={this.handleChange.bind(this, 'eventText')}
-              ref="eventText"
+              componentClass='textarea'
+              placeholder='Add Description'
+              ref='eventText'
             />
 
             </FormGroup>
