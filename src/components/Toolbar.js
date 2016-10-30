@@ -18,7 +18,7 @@ class Toolbar extends Component {
   render() {
 
     const popoverHoverFocus = (
-      <Popover id="popover-trigger-hover-focus" title="Notifications">
+      <Popover id='popover-trigger-hover-focus' title='Notifications'>
         No notifications!
       </Popover>
     );
@@ -55,7 +55,7 @@ class Toolbar extends Component {
             <div style={ToolbarStyles.icon}>
               <NavItem eventKey={4} onClick={this.setModalOpen.bind(this, true)}><Glyphicon glyph='plus'/></NavItem>
               <NavItem eventKey={5}>
-                <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={popoverHoverFocus}>
+                <OverlayTrigger trigger={['hover', 'focus']} placement='left' overlay={popoverHoverFocus}>
                   <Glyphicon glyph='bell'/>
                 </OverlayTrigger>
               </NavItem>

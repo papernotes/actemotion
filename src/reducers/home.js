@@ -9,7 +9,7 @@ export default function home(state=initialState, action) {
 
     case CHANGE_TITLE:
       return Object.assign({}, state, {
-        text: "Title has been changed!"
+        text: 'Title has been changed!'
       });
 
     default:

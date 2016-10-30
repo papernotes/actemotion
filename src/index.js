@@ -33,12 +33,12 @@ const history = syncHistoryWithStore(browserHistory, store);
 render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={App}>
+            <Route path='/' component={App}>
                 <IndexRoute component={Home}/>
-                <Route path="settings" component={Settings}/>
-                <Route path="analytics" component={Analytics}/>
-                <Route path="editevent" component={EditEvent}/>
-                <Route path="*" component={NotFound}/>
+                <Route path='settings' component={Settings}/>
+                <Route path='analytics' component={Analytics}/>
+                <Route path='editevent' component={EditEvent}/>
+                <Route path='*' component={NotFound}/>
             </Route>
         </Router>
     </Provider>,
