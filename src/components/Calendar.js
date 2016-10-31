@@ -10,26 +10,12 @@ BigCalendar.setLocalizer(
 // TODO take in events as props
 let Calendar = React.createClass({
   render(){
+    console.log(this.props);
     return (
       <div style={{height: '80vh', width: '90vw', margin:'0 auto', marginTop: '20px'}}>
         <BigCalendar
-          {...this.props}
-          events={[
-            {
-              'title': 'All Day Event',
-              'allDay': true,
-              'start': new Date(),
-              'end': new Date(),
-              'text': 'testesfasdfas'
-            },
-            {
-              'title': 'Long Event',
-              'start': new Date(),
-              'end': new Date()
-            }
-          ]}
+          events={this.props.events}
           timeslots={2}
-          views={['month', 'week']}
           onSelectEvent={event => alert(event.title)}
           defaultDate={new Date()}
         />

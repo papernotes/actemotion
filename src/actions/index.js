@@ -6,9 +6,9 @@ export function changeTitle() {
   }
 }
 
-export function addEvent() {
+export function addEvent(newEvent) {
   return {
-    type: types.ADD_EVENT
+    type: types.ADD_EVENT, newEvent
   }
 }
 

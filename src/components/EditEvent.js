@@ -13,6 +13,20 @@ class EditEvent extends Component {
     this.props.actions.setModalOpen(bool);
   }
 
+  formatEvent(data) {
+    return {
+      'title': data[0],
+      'allDay':  true,
+      'start': data[2],
+      'end': data[2],
+      'type': data[1],
+      'time': data[3],
+      'emotion': data[4],
+      'energy': data[5],
+      'text': data[6]
+    }
+  }
+
   getFormData() {
     var data = [];
     for (var key in this.refs) {
@@ -25,6 +39,8 @@ class EditEvent extends Component {
       }
     }
     console.log(data);
+    var newEvent = data;
+    this.props.actions.addEvent(this.formatEvent(newEvent));
   }
 
   render() {
