@@ -48,7 +48,7 @@ class Toolbar extends Component {
               <NavItem eventKey={5} onClick={this.setModalOpen.bind(this, true)}>
                 Notifications
               </NavItem>
-              <NavDropdown eventKey={6} title='User'>
+              <NavDropdown eventKey={6} title='User' id='userDropdown'>
                 <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/settings')}>Settings</MenuItem>
                 <MenuItem eventKey={6.2} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
               </NavDropdown>

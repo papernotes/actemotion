@@ -4,6 +4,7 @@ import {Button, FormGroup, FormControl} from 'react-bootstrap';
 import DateTime from 'react-datetime';
 require('react-datetime/css/react-datetime.css')
 
+// TODO add form validation
 class EditEvent extends Component {
 
   preventDefault(e) {
@@ -40,6 +41,7 @@ class EditEvent extends Component {
     }
     var newEvent = data;
     this.props.actions.addEvent(this.formatEvent(newEvent));
+    this.setModalOpen(false);
   }
 
   render() {
@@ -102,8 +104,7 @@ class EditEvent extends Component {
           </form>
 
           <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
-          <Button onClick={this.setModalOpen.bind(this, false)}>Submit</Button>
-          <Button onClick={this.getFormData.bind(this)}>Test Data</Button>
+          <Button onClick={this.getFormData.bind(this)}>Submit</Button>
         </div>
       </div>
     );
