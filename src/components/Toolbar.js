@@ -40,7 +40,6 @@ class Toolbar extends Component {
             <Nav>
               <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
               <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Analytics</NavItem>
-              <NavItem eventKey={3} onClick={this.goToPage.bind(this, '/settings')}>Settings</NavItem>
             </Nav>
 
             <Nav pullRight>
