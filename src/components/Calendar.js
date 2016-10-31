@@ -2,6 +2,7 @@ import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css'
+
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
@@ -17,19 +18,20 @@ let Calendar = React.createClass({
             {
               'title': 'All Day Event',
               'allDay': true,
-              'start': new Date(2015, 3, 0),
-              'end': new Date(2015, 3, 0)
+              'start': new Date(),
+              'end': new Date(),
+              'text': 'testesfasdfas'
             },
             {
               'title': 'Long Event',
-              'start': new Date(2015, 3, 7),
-              'end': new Date(2015, 3, 10)
+              'start': new Date(),
+              'end': new Date()
             }
           ]}
           timeslots={2}
           views={['month', 'week']}
           onSelectEvent={event => alert(event.title)}
-          defaultDate={new Date(2015, 3, 1)}
+          defaultDate={new Date()}
         />
       </div>
     )

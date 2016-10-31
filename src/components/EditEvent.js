@@ -52,7 +52,6 @@ class EditEvent extends Component {
             </FormControl>
 
             <DatePicker
-              showClearButton={false}
               value={new Date().toISOString()}
               ref='eventDate'
             />
