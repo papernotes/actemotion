@@ -16,6 +16,7 @@ let Calendar = React.createClass({
         <BigCalendar
           events={this.props.events}
           timeslots={2}
+          views={['month', 'day', 'week']}
           onSelectEvent={event => alert(event.title)}
           defaultDate={new Date()}
         />
