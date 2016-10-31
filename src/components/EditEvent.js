@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Button, FormGroup, FormControl} from 'react-bootstrap';
+import {Button, ControlLabel, FormGroup, FormControl} from 'react-bootstrap';
+import DivStyles from '../styles/DivStyles';
 import DateTime from 'react-datetime';
 require('react-datetime/css/react-datetime.css')
 
@@ -47,64 +48,77 @@ class EditEvent extends Component {
   render() {
     return(
       <div>
-        <div style={{height: '50vh', width: '400px', margin:'0 auto', marginTop: '20px'}}>
+        <div style={DivStyles.editEventContent}>
           <form onSubmit={this.preventDefault.bind(this)}>
             <FormGroup
               controlId='formBasicText'
             >
+              <div style={DivStyles.twoColumn}>
+                <ControlLabel>Event Name</ControlLabel>
+                <FormControl
+                  type='text'
+                  placeholder='Event Name'
+                  ref='eventName'
+                />
 
-            <FormControl
-              type='text'
-              placeholder='Event Name'
-              ref='eventName'
-            />
+                <ControlLabel>Event Type</ControlLabel>
+                <FormControl
+                  componentClass='select'
+                  placeholder='Event Type'
+                  ref='eventType'
+                >
+                  <option value='school'>school</option>
+                  <option value='work'>work</option>
+                </FormControl>
 
-            <FormControl
-              componentClass='select'
-              placeholder='Event Type'
-              ref='eventType'
-            >
-              <option value='school'>school</option>
-              <option value='work'>work</option>
-            </FormControl>
+                <ControlLabel>Start Time</ControlLabel>
+                <DateTime
+                  defaultValue={new Date()}
+                  ref='eventStart'
+                />
 
-            <DateTime
-              defaultValue={new Date()}
-              ref='eventStart'
-            />
+                <ControlLabel>End Time</ControlLabel>
+                <DateTime
+                  defaultValue={new Date()}
+                  ref='eventEnd'
+                />
 
-            <DateTime
-              defaultValue={new Date()}
-              ref='eventEnd'
-            />
+                <ControlLabel>Emotion</ControlLabel>
+                <FormControl
+                  componentClass='select'
+                  placeholder='Emotion'
+                  ref='eventEmotion'
+                >
+                  <option value='happy'>happy</option>
+                  <option value='sad'>sad</option>
+                </FormControl>
 
-            <FormControl
-              componentClass='select'
-              placeholder='Emotion'
-              ref='eventEmotion'
-            >
-              <option value='happy'>happy</option>
-              <option value='sad'>sad</option>
-            </FormControl>
+                <ControlLabel>Energy Level</ControlLabel>
+                <FormControl
+                  type='text'
+                  placeholder='Energy Level (1-10)'
+                  ref='eventEnergy'
+                />
+              </div>
 
-            <FormControl
-              type='text'
-              placeholder='Energy Level (1-10)'
-              ref='eventEnergy'
-            />
-
-            <FormControl
-              style={{resize: 'none'}}
-              componentClass='textarea'
-              placeholder='Add Description'
-              ref='eventText'
-            />
+              <div style={DivStyles.twoColumn}>
+                <ControlLabel>Description</ControlLabel>
+                <FormControl
+                  style={{resize: 'none', height: '275px'}}
+                  componentClass='textarea'
+                  placeholder='Add Description'
+                  ref='eventText'
+                />
+                <div style={DivStyles.eventButtons}>
+                  <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
+                  <Button bsStyle='primary' onClick={this.getFormData.bind(this)}>Submit</Button>
+                </div>
+              </div>
 
             </FormGroup>
           </form>
 
-          <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
-          <Button onClick={this.getFormData.bind(this)}>Submit</Button>
+
         </div>
       </div>
     );
