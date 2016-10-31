@@ -3,13 +3,21 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
+import FeelingsPieChart from '../components/FeelingsPieChart';
+import AnalyticsStyles from '../styles/AnalyticsStyles';
+import EnergyPieChart from '../components/EnergyPieChart';
 
 class Analytics extends Component {
     render() {
         return(
             <div>
                 <Toolbar {...this.props}/>
-                <h2>Analytics Page</h2>
+                <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
+                <p></p><p></p>
+                <div style={AnalyticsStyles.pieChart}>
+                  <FeelingsPieChart></FeelingsPieChart>
+                  <EnergyPieChart></EnergyPieChart>
+                </div>
             </div>
         );
     }
