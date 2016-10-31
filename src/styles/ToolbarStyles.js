@@ -12,7 +12,11 @@ const ToolbarStyles = {
     width: 'auto'
   },
   icon: {
-    verticalAlign:'middle'
+    width: '100%',
+    top: '0',
+    textAlign: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   }
 }
 
