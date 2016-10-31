@@ -13,6 +13,7 @@ import Home from './containers/Home';
 import Settings from './containers/Settings';
 import Analytics from './containers/Analytics';
 import NotFound from './components/NotFound';
+import Login from './components/Login';
 import EditEvent from './components/EditEvent';
 
 import * as reducers from './reducers';
@@ -34,7 +35,8 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Route path='/' component={App}>
-                <IndexRoute component={Home}/>
+                <IndexRoute component={Login}/>
+                <Route path="home" component={Home}/>
                 <Route path='settings' component={Settings}/>
                 <Route path='analytics' component={Analytics}/>
                 <Route path='editevent' component={EditEvent}/>
