@@ -10,7 +10,6 @@ BigCalendar.setLocalizer(
 // TODO take in events as props
 let Calendar = React.createClass({
   render(){
-    console.log(this.props);
     return (
       <div style={{height: '80vh', width: '90vw', margin:'0 auto', marginTop: '20px'}}>
         <BigCalendar

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
-import DatePicker from 'react-bootstrap-date-picker';
+import DateTime from 'react-datetime';
+require('react-datetime/css/react-datetime.css')
 
 class EditEvent extends Component {
 
@@ -16,11 +17,10 @@ class EditEvent extends Component {
   formatEvent(data) {
     return {
       'title': data[0],
-      'allDay':  true,
-      'start': data[2],
-      'end': data[2],
+      'allDay':  false,
+      'start': new Date(data[2]),
+      'end': new Date(data[3]),
       'type': data[1],
-      'time': data[3],
       'emotion': data[4],
       'energy': data[5],
       'text': data[6]
@@ -31,14 +31,13 @@ class EditEvent extends Component {
     var data = [];
     for (var key in this.refs) {
       // fix for the date picker
-      if (key === 'eventDate') {
-        data.push(this.refs[key].getValue());
+      if (key === 'eventStart' || key === 'eventEnd') {
+        data.push(this.refs[key].state.inputValue);
       }
       else {
-        data.push(ReactDOM.findDOMNode(this.refs[key]).value);
+        data.push(ReactDOM.findDOMNode(this.refs[key]).value);        
       }
     }
-    console.log(data);
     var newEvent = data;
     this.props.actions.addEvent(this.formatEvent(newEvent));
   }
@@ -67,15 +66,14 @@ class EditEvent extends Component {
               <option value='work'>work</option>
             </FormControl>
 
-            <DatePicker
-              value={new Date().toISOString()}
-              ref='eventDate'
+            <DateTime
+              defaultValue={new Date()}
+              ref='eventStart'
             />
 
-            <FormControl
-              type='text'
-              placeholder='Event Time'
-              ref='eventTime'
+            <DateTime
+              defaultValue={new Date()}
+              ref='eventEnd'
             />
 
             <FormControl
