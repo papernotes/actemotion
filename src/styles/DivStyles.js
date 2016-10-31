@@ -6,7 +6,7 @@ const DivStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
-    width: '50vw'
+    width: '30vw'
   }
 }
 

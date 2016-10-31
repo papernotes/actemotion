@@ -9,6 +9,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 
 import App from './containers/App';
+import CreateAccount from './components/CreateAccount';
 import Home from './containers/Home';
 import Settings from './containers/Settings';
 import Analytics from './containers/Analytics';
@@ -36,7 +37,8 @@ render(
         <Router history={history}>
             <Route path='/' component={App}>
                 <IndexRoute component={Login}/>
-                <Route path="home" component={Home}/>
+                <Route path='home' component={Home}/>
+                <Route path='create' component={CreateAccount}/>
                 <Route path='settings' component={Settings}/>
                 <Route path='analytics' component={Analytics}/>
                 <Route path='editevent' component={EditEvent}/>

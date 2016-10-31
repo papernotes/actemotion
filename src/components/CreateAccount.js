@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
 import DivStyles from '../styles/DivStyles';
 
-class Login extends Component {
+class CreateAccount extends Component {
 
   preventDefault(e) {
     e.preventDefault();
@@ -16,7 +16,7 @@ class Login extends Component {
   render() {
     return(
       <div style={DivStyles.centerPage}>
-        <h1>actemotion</h1>
+        <h1>Create an Account</h1>
         <form onSubmit={this.preventDefault.bind(this)}>
           <FormGroup
             controlId='formBasicText'
@@ -29,14 +29,18 @@ class Login extends Component {
             type='text'
             placeholder='Password'
           />
+          <FormControl
+            type='text'
+            placeholder='Email'
+          />
 
           </FormGroup>
         </form>
-        <Button onClick={this.goToPage.bind(this, '/create')}>Create Account</Button>
-        <Button bsStyle='primary' onClick={this.goToPage.bind(this, '/home')}>Login</Button>  
+        <Button onClick={this.goToPage.bind(this, '/')}>Cancel</Button>
+        <Button bsStyle='primary' onClick={this.goToPage.bind(this, '/home')}>Sign Up</Button>  
       </div>
     );
   }
 }
 
-export default Login;
+export default CreateAccount;
