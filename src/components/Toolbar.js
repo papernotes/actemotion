@@ -31,7 +31,7 @@ class Toolbar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <p>Actemotion</p>
+              <a href='#'>Actemotion</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
