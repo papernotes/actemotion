@@ -117,8 +117,6 @@ class EditEvent extends Component {
 
             </FormGroup>
           </form>
-
-
         </div>
       </div>
     );

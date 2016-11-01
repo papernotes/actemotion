@@ -17,3 +17,10 @@ export function setModalOpen(bool) {
     type: types.SET_MODAL_OPEN, bool
   }
 }
+
+
+export function showEventInfo(bool) {
+  return {
+    type: types.SHOW_EVENT_INFO, bool
+  }
+}
