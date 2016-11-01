@@ -6,21 +6,25 @@ class EventInfo extends Component {
   formatInfo(eventData) {
     return(
       <div>
-        <h3>{eventData.title}</h3>
         <p>Type: <b>{eventData.type}</b></p>        
         <p>Emotion: <b>{eventData.emotion}</b></p>
         <p>Energy Level: <b>{eventData.energy}</b></p>
+        <p>Description: <b>{eventData.text}</b></p>
       </div>
     );
   }
 
+  hideEventInfo() {
+    this.props.setEventModal(false);
+  }
+
   render() {
-    this.formatInfo(this.props.activeEvent);
     return(
       <div>
         {this.formatInfo(this.props.activeEvent)}
+        <Button onClick={this.hideEventInfo.bind(this)} bsStyle='danger'>Delete</Button>
         <Button>Edit</Button>
-        <Button bsStyle='primary'>Close</Button>
+        <Button onClick={this.hideEventInfo.bind(this)} bsStyle='primary'>Close</Button>
       </div>
     );
   }

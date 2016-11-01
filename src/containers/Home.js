@@ -15,7 +15,7 @@ class Home extends Component {
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
           events={this.props.event.events}
-          showEventInfo={this.props.actions.showEventInfo}
+          setEventModal={this.props.actions.setEventModal}
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
         />

@@ -1,4 +1,4 @@
-import {ADD_EVENT, SET_MODAL_OPEN, SHOW_EVENT_INFO, SET_ACTIVE_EVENT} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT} from '../constants/ActionTypes';
 
 const initialState = {
   isEditOpen: false,
@@ -10,7 +10,7 @@ const initialState = {
               'start': new Date(),
               'end': new Date(),
               'energy': 2,
-              'text': 'test',
+              'text': 'test paragraph text',
               'type': 'school'
             }]
 }
@@ -23,7 +23,7 @@ export default function event(state=initialState, action) {
         isEditOpen: action.bool
       });
 
-    case SHOW_EVENT_INFO:
+    case SET_EVENT_MODAL:
       return Object.assign({}, state, {
         isInfoOpen: action.bool
       });

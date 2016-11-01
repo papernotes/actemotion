@@ -13,19 +13,27 @@ BigCalendar.setLocalizer(
 class Calendar extends Component{
 
   showEventInfo(event, bool) {
-    this.props.showEventInfo(bool);
+    console.log(event);
     this.props.setActiveEvent(event);
+    this.props.setEventModal(bool);
+  }
+
+  hideEventInfo() {
+    this.props.setEventModal(false);
   }
 
   render(){
     return (
       <div>
-        <Modal show={this.props.isInfoOpen} onHide={this.showEventInfo.bind(this, false)}>
+        <Modal show={this.props.isInfoOpen} onHide={this.hideEventInfo.bind(this)}>
           <Modal.Header>
-            <Modal.Title>Event Info</Modal.Title>
+            <Modal.Title>{this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <EventInfo activeEvent={this.props.activeEvent}/>
+            <EventInfo
+              setEventModal={this.props.setEventModal}
+              activeEvent={this.props.activeEvent}
+            />
           </Modal.Body>
         </Modal>
 

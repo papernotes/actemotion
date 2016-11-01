@@ -18,9 +18,9 @@ export function setModalOpen(bool) {
   }
 }
 
-export function showEventInfo(bool) {
+export function setEventModal(bool) {
   return {
-    type: types.SHOW_EVENT_INFO, bool
+    type: types.SET_EVENT_MODAL, bool
   }
 }
 
