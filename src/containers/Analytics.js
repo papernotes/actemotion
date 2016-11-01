@@ -6,6 +6,8 @@ import Toolbar from '../components/Toolbar';
 import FeelingsPieChart from '../components/FeelingsPieChart';
 import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/EnergyPieChart';
+import EmotionBarChart from '../components/EmotionBarChart';
+
 
 class Analytics extends Component {
     render() {
@@ -17,6 +19,7 @@ class Analytics extends Component {
                 <div style={AnalyticsStyles.pieChart}>
                   <FeelingsPieChart></FeelingsPieChart>
                   <EnergyPieChart></EnergyPieChart>
+                  <EmotionBarChart></EmotionBarChart>
                 </div>
             </div>
         );
