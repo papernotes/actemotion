@@ -12,7 +12,11 @@ class Home extends Component {
     return(
       <div>
         <Toolbar {...this.props}/>
-        <Calendar events={this.props.event.events}/>
+        <Calendar
+          isInfoOpen={this.props.event.isInfoOpen}
+          events={this.props.event.events}
+          showEventInfo={this.props.actions.showEventInfo}
+        />
       </div>
     );
   }

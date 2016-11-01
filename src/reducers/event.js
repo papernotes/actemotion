@@ -1,7 +1,8 @@
-import {ADD_EVENT, SET_MODAL_OPEN} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SHOW_EVENT_INFO} from '../constants/ActionTypes';
 
 const initialState = {
-  isModalOpen: false,
+  isEditOpen: false,
+  isInfoOpen: false,
   events: [{
               'title': 'All Day Event',
               'allDay': true,
@@ -15,7 +16,12 @@ export default function event(state=initialState, action) {
 
     case SET_MODAL_OPEN:
       return Object.assign({}, state, {
-        isModalOpen: action.bool
+        isEditOpen: action.bool
+      });
+
+    case SHOW_EVENT_INFO:
+      return Object.assign({}, state, {
+        isInfoOpen: action.bool
       });
 
     case ADD_EVENT:
