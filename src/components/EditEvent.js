@@ -95,10 +95,16 @@ class EditEvent extends Component {
 
                 <ControlLabel>Energy Level</ControlLabel>
                 <FormControl
-                  type='text'
-                  placeholder='Energy Level (1-10)'
+                  componentClass='select'
+                  placeholder='Event Type'
                   ref='eventEnergy'
-                />
+                >
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </FormControl>
               </div>
 
               <div style={DivStyles.twoColumn}>

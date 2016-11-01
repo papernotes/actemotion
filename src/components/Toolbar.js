@@ -18,7 +18,11 @@ class Toolbar extends Component {
 
     return(
       <div>
-        <Modal show={this.props.event.isEditOpen} onHide={this.setModalOpen.bind(this, false)}>
+        <Modal
+          show={this.props.event.isEditOpen}
+          onHide={this.setModalOpen.bind(this, false)}
+          backdrop='static'
+        >
           <Modal.Header>
             <Modal.Title>Add Event</Modal.Title>
           </Modal.Header>
