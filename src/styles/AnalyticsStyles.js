@@ -1,7 +1,7 @@
 const AnalyticsStyles = {
   pieChart: {
   	alignment: 'center',
-    backgroundColor: 'lightgray'
+    //backgroundColor: 'lightgray'
   }
 }
 

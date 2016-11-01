@@ -33,8 +33,8 @@ class EnergyPieChart extends React.Component {
 			data={this.state.data}
 			options={this.state.options}
 			graph_id="EnergyPieChart"
-			width="45%"
-			height="400px"
+			width={window.innerWidth}
+			height={window.innerWidth}
 			legend_toggle
 			/>
 		);

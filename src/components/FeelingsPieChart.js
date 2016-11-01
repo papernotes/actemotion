@@ -25,8 +25,8 @@ class FeelingsPieChart extends React.Component {
 			data={this.state.data}
 			options={this.state.options}
 			graph_id="FeelingsPieChart"
-			width="45%"
-			height="300px"
+			width={window.innerWidth}
+			height={window.innerWidth}
 			legend_toggle
 			/>
 		);
