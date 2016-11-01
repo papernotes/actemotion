@@ -1,13 +1,17 @@
-import {ADD_EVENT, SET_MODAL_OPEN, SHOW_EVENT_INFO} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SHOW_EVENT_INFO, SET_ACTIVE_EVENT} from '../constants/ActionTypes';
 
 const initialState = {
   isEditOpen: false,
   isInfoOpen: false,
+  activeEvent: {},
   events: [{
-              'title': 'All Day Event',
-              'allDay': true,
+              'title': 'Test Event',
+              'allDay': false,
               'start': new Date(),
-              'end': new Date()
+              'end': new Date(),
+              'energy': 2,
+              'text': 'test',
+              'type': 'school'
             }]
 }
 
@@ -29,6 +33,14 @@ export default function event(state=initialState, action) {
       newEvents.push(action.newEvent);
       return Object.assign({}, state, {
         events: newEvents
+      })
+
+    case SET_ACTIVE_EVENT:
+      if (typeof(action.activeEvent) === 'boolean') {
+        return state
+      }
+      return Object.assign({}, state, {
+        activeEvent: action.activeEvent
       })
 
     default:

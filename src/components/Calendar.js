@@ -13,12 +13,11 @@ BigCalendar.setLocalizer(
 class Calendar extends Component{
 
   showEventInfo(event, bool) {
-    console.log(event);
     this.props.showEventInfo(bool);
+    this.props.setActiveEvent(event);
   }
 
   render(){
-
     return (
       <div>
         <Modal show={this.props.isInfoOpen} onHide={this.showEventInfo.bind(this, false)}>
@@ -26,7 +25,7 @@ class Calendar extends Component{
             <Modal.Title>Event Info</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <EventInfo/>
+            <EventInfo activeEvent={this.props.activeEvent}/>
           </Modal.Body>
         </Modal>
 

@@ -18,9 +18,14 @@ export function setModalOpen(bool) {
   }
 }
 
-
 export function showEventInfo(bool) {
   return {
     type: types.SHOW_EVENT_INFO, bool
+  }
+}
+
+export function setActiveEvent(activeEvent) {
+  return {
+    type: types.SET_ACTIVE_EVENT, activeEvent
   }
 }

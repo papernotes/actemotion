@@ -16,6 +16,8 @@ class Home extends Component {
           isInfoOpen={this.props.event.isInfoOpen}
           events={this.props.event.events}
           showEventInfo={this.props.actions.showEventInfo}
+          activeEvent={this.props.event.activeEvent}
+          setActiveEvent={this.props.actions.setActiveEvent}
         />
       </div>
     );
