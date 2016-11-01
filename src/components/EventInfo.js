@@ -22,9 +22,15 @@ class EventInfo extends Component {
     return(
       <div>
         {this.formatInfo(this.props.activeEvent)}
-        <Button onClick={this.hideEventInfo.bind(this)} bsStyle='danger'>Delete</Button>
+        <Button
+          onClick={this.hideEventInfo.bind(this)}
+          bsStyle='danger'>Delete
+        </Button>
         <Button>Edit</Button>
-        <Button onClick={this.hideEventInfo.bind(this)} bsStyle='primary'>Close</Button>
+        <Button
+          onClick={this.hideEventInfo.bind(this)}
+          bsStyle='primary'>Close
+        </Button>
       </div>
     );
   }

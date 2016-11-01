@@ -1,4 +1,10 @@
 const DivStyles = {
+  calendar: {
+    height: '80vh',
+    width: '90vw',
+    margin:'0 auto',
+    marginTop: '20px'
+  },
   centerPage: {
     position: 'absolute',
     top: '50%',
