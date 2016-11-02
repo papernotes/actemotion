@@ -19,7 +19,8 @@ class EventInfo extends Component {
   }
 
   deleteEvent(event) {
-
+    this.props.deleteEvent(event);
+    this.props.setEventModal(false);
   }
 
   render() {
@@ -27,7 +28,7 @@ class EventInfo extends Component {
       <div>
         {this.formatInfo(this.props.activeEvent)}
         <Button
-          onClick={this.hideEventInfo.bind(this)}
+          onClick={this.deleteEvent.bind(this, this.props.activeEvent)}
           bsStyle='danger'
         >
           Delete

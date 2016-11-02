@@ -44,7 +44,16 @@ export default function event(state=initialState, action) {
       })
 
     case DELETE_EVENT:
-      return state
+      var currentEvents = state.events;
+      for (var i in currentEvents) {
+        if (JSON.stringify(currentEvents[i]) === JSON.stringify(action.event)) {
+          currentEvents.splice(i, 1);
+          break;
+        }
+      }
+      return Object.assign({}, state, {
+        events: currentEvents
+      })
 
     default:
       return state
