@@ -1,18 +1,12 @@
 import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, DELETE_EVENT} from '../constants/ActionTypes';
+import TempEvents from '../constants/TempEvents';
 
+// TODO remove TempEvents
 const initialState = {
   isEditOpen: false,
   isInfoOpen: false,
   activeEvent: {},
-  events: [{
-              'title': 'Test Event',
-              'allDay': false,
-              'start': new Date(),
-              'end': new Date(),
-              'energy': 2,
-              'text': 'test paragraph text',
-              'type': 'school'
-            }]
+  events: TempEvents
 }
 
 export default function event(state=initialState, action) {
@@ -31,6 +25,7 @@ export default function event(state=initialState, action) {
     case ADD_EVENT:
       var newEvents = state.events;
       newEvents.push(action.newEvent);
+      console.log(action.newEvent)
       return Object.assign({}, state, {
         events: newEvents
       })
