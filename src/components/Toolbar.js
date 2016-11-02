@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {MenuItem, Nav, NavItem, Navbar, NavDropdown, Modal} from 'react-bootstrap';
 import AddEvent from './AddEvent';
+import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
 
 class Toolbar extends Component {
@@ -12,6 +13,10 @@ class Toolbar extends Component {
 
   setModalOpen(bool) {
     this.props.setModalOpen(bool);
+  }
+
+  setNotificationsModal(bool) {
+    this.props.setNotifications(bool);
   }
 
   render() {
@@ -33,6 +38,17 @@ class Toolbar extends Component {
           </Modal.Body>
         </Modal>
 
+        <Modal
+          show={this.props.notificationsOn}
+          onHide={this.setNotificationsModal.bind(this, false)}
+        >
+          <Modal.Header>
+            <Modal.Title>Notifications</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Notifications/>
+          </Modal.Body>
+        </Modal>
 
         <Navbar>
           <Navbar.Header>
@@ -50,7 +66,7 @@ class Toolbar extends Component {
 
             <Nav pullRight>
               <NavItem eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
-              <NavItem eventKey={5} onClick={this.setModalOpen.bind(this, true)}>
+              <NavItem eventKey={5} onClick={this.setNotificationsModal.bind(this, true)}>
                 Notifications
               </NavItem>
               <NavDropdown eventKey={6} title='User' id='userDropdown'>
@@ -70,7 +86,9 @@ class Toolbar extends Component {
 Toolbar.propTypes = {
   isEditOpen: PropTypes.bool.isRequired,
   addEvent: PropTypes.func.isRequired,
-  setModalOpen: PropTypes.func.isRequired
+  setModalOpen: PropTypes.func.isRequired,
+  setNotifications: PropTypes.func.isRequired,
+  notificationsOn: PropTypes.bool.isRequired
 }
 
 export default Toolbar;

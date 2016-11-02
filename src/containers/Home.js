@@ -15,6 +15,8 @@ class Home extends Component {
           setModalOpen={this.props.actions.setModalOpen}
           isEditOpen={this.props.event.isEditOpen}
           addEvent={this.props.actions.addEvent}
+          notificationsOn={this.props.home.notificationsOn}
+          setNotifications={this.props.actions.setNotifications}
         />
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
@@ -50,7 +52,11 @@ Home.propTypes = {
     setEventModal: PropTypes.func.isRequired,
     setActiveEvent: PropTypes.func.isRequired,
     deleteEvent: PropTypes.func.isRequired,
-    editEvent: PropTypes.func.isRequired
+    editEvent: PropTypes.func.isRequired,
+    setNotifications: PropTypes.func.isRequired
+  }),
+  home: PropTypes.shape({
+    notificationsOn: PropTypes.bool.isRequired
   }),
   event: PropTypes.shape({
     isInfoOpen: PropTypes.bool.isRequired,

@@ -1,15 +1,15 @@
-import {CHANGE_TITLE} from '../constants/ActionTypes';
+import {SET_NOTIFICATIONS} from '../constants/ActionTypes';
 
 const initialState = {
-  text: 'Change this title!'
+  notificationsOn: false
 }
 
 export default function home(state=initialState, action) {
   switch(action.type) {
 
-    case CHANGE_TITLE:
+    case SET_NOTIFICATIONS:
       return Object.assign({}, state, {
-        text: 'Title has been changed!'
+        notificationsOn: action.bool
       });
 
     default:

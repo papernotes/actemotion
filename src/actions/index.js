@@ -1,8 +1,8 @@
 import * as types from '../constants/ActionTypes';
 
-export function changeTitle() {
+export function setNotifications(bool) {
   return {
-    type: types.CHANGE_TITLE
+    type: types.SET_NOTIFICATIONS, bool
   }
 }
 
