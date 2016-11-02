@@ -1,4 +1,4 @@
-import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, DELETE_EVENT} from '../constants/ActionTypes';
 
 const initialState = {
   isEditOpen: false,
@@ -42,6 +42,9 @@ export default function event(state=initialState, action) {
       return Object.assign({}, state, {
         activeEvent: action.activeEvent
       })
+
+    case DELETE_EVENT:
+      return state
 
     default:
       return state

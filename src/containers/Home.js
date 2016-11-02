@@ -22,6 +22,7 @@ class Home extends Component {
           setEventModal={this.props.actions.setEventModal}
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
+          deleteEvent={this.props.actions.deleteEvent}
         />
       </div>
     );

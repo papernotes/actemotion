@@ -23,11 +23,13 @@ class Calendar extends Component{
   }
 
   render(){
+    console.log(this.props)
     return (
       <div>
         <Modal
           show={this.props.isInfoOpen}
           onHide={this.hideEventInfo.bind(this)}
+          backdrop='static'
         >
           <Modal.Header>
             <Modal.Title>{this.props.activeEvent.title}</Modal.Title>
@@ -36,6 +38,7 @@ class Calendar extends Component{
             <EventInfo
               setEventModal={this.props.setEventModal}
               activeEvent={this.props.activeEvent}
+              deleteEvent={this.props.deleteEvent}
             />
           </Modal.Body>
         </Modal>

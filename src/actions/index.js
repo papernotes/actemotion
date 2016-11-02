@@ -29,3 +29,9 @@ export function setActiveEvent(activeEvent) {
     type: types.SET_ACTIVE_EVENT, activeEvent
   }
 }
+
+export function deleteEvent(event) {
+  return {
+    type: types.DELETE_EVENT, event
+  }
+}
