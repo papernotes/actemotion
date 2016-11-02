@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {MenuItem, Nav, NavItem, Navbar, NavDropdown, Modal} from 'react-bootstrap';
-import EditEvent from './EditEvent';
+import AddEvent from './AddEvent';
 import {browserHistory} from 'react-router';
 
 class Toolbar extends Component {
@@ -26,7 +26,7 @@ class Toolbar extends Component {
             <Modal.Title>Add Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <EditEvent 
+            <AddEvent 
               setModalOpen={this.props.setModalOpen}
               addEvent={this.props.addEvent}
             />

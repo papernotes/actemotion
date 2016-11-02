@@ -6,7 +6,7 @@ import DateTime from 'react-datetime';
 require('react-datetime/css/react-datetime.css')
 
 // TODO add form validation
-class EditEvent extends Component {
+class AddEvent extends Component {
 
   preventDefault(e) {
     e.preventDefault();
@@ -48,7 +48,7 @@ class EditEvent extends Component {
   render() {
     return(
       <div>
-        <div style={DivStyles.editEventContent}>
+        <div style={DivStyles.addEventContent}>
           <form onSubmit={this.preventDefault.bind(this)}>
             <FormGroup
               controlId='formBasicText'
@@ -129,9 +129,9 @@ class EditEvent extends Component {
   }
 }
 
-EditEvent.propTypes = {
+AddEvent.propTypes = {
   setModalOpen: PropTypes.func.isRequired,
   addEvent: PropTypes.func.isRequired
 }
 
-export default EditEvent;
+export default AddEvent;

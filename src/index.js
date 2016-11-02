@@ -15,7 +15,7 @@ import Settings from './containers/Settings';
 import Analytics from './containers/Analytics';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
-import EditEvent from './components/EditEvent';
+import AddEvent from './components/AddEvent';
 
 import * as reducers from './reducers';
 
@@ -41,7 +41,7 @@ render(
                 <Route path='create' component={CreateAccount}/>
                 <Route path='settings' component={Settings}/>
                 <Route path='analytics' component={Analytics}/>
-                <Route path='editevent' component={EditEvent}/>
+                <Route path='editevent' component={AddEvent}/>
                 <Route path='*' component={NotFound}/>
             </Route>
         </Router>
