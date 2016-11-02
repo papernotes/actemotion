@@ -11,7 +11,7 @@ class Toolbar extends Component {
   }
 
   setModalOpen(bool) {
-    this.props.actions.setModalOpen(bool);
+    this.props.setModalOpen(bool);
   }
 
   render() {
@@ -19,7 +19,7 @@ class Toolbar extends Component {
     return(
       <div>
         <Modal
-          show={this.props.event.isEditOpen}
+          show={this.props.isEditOpen}
           onHide={this.setModalOpen.bind(this, false)}
           backdrop='static'
         >
@@ -27,7 +27,10 @@ class Toolbar extends Component {
             <Modal.Title>Add Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <EditEvent {...this.props}/>
+            <EditEvent 
+              setModalOpen={this.props.setModalOpen}
+              addEvent={this.props.addEvent}
+            />
           </Modal.Body>
         </Modal>
 

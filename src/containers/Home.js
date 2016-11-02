@@ -11,7 +11,11 @@ class Home extends Component {
   render() {
     return(
       <div>
-        <Toolbar {...this.props}/>
+        <Toolbar
+          setModalOpen={this.props.actions.setModalOpen}
+          isEditOpen={this.props.event.isEditOpen}
+          addEvent={this.props.actions.addEvent}
+        />
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
           events={this.props.event.events}

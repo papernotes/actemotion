@@ -13,7 +13,7 @@ class EditEvent extends Component {
   }
 
   setModalOpen(bool) {
-    this.props.actions.setModalOpen(bool);
+    this.props.setModalOpen(bool);
   }
 
   formatEvent(data) {
@@ -41,7 +41,7 @@ class EditEvent extends Component {
       }
     }
     var newEvent = data;
-    this.props.actions.addEvent(this.formatEvent(newEvent));
+    this.props.addEvent(this.formatEvent(newEvent));
     this.setModalOpen(false);
   }
 
