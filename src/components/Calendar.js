@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Modal} from 'react-bootstrap';
 import EventInfo from './EventInfo';
 import DivStyles from '../styles/DivStyles';
@@ -23,7 +23,6 @@ class Calendar extends Component{
   }
 
   render(){
-    console.log(this.props)
     return (
       <div>
         <Modal
@@ -55,7 +54,14 @@ class Calendar extends Component{
       </div>
     );
   }
+}
 
+Calendar.propTypes = {
+  setActiveEvent: PropTypes.func.isRequired,
+  setEventModal: PropTypes.func.isRequired,
+  isInfoOpen: PropTypes.bool.isRequired,
+  activeEvent: PropTypes.object.isRequired,
+  deleteEvent: PropTypes.func.isRequired
 }
 
 export default Calendar;

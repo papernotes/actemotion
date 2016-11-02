@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Button} from 'react-bootstrap';
 
 class EventInfo extends Component {
@@ -19,7 +19,7 @@ class EventInfo extends Component {
   }
 
   deleteEvent(event) {
-    
+
   }
 
   render() {
@@ -42,6 +42,12 @@ class EventInfo extends Component {
       </div>
     );
   }
+}
+
+EventInfo.propTypes = {
+  setEventModal: PropTypes.func.isRequired,
+  activeEvent: PropTypes.object.isRequired,
+  deleteEvent: PropTypes.func.isRequired
 }
 
 export default EventInfo;

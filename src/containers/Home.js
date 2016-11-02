@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
@@ -42,5 +42,20 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
+Home.propTypes = {
+  actions: PropTypes.shape({
+    setModalOpen: PropTypes.func.isRequired,
+    addEvent: PropTypes.func.isRequired,
+    setEventModal: PropTypes.func.isRequired,
+    setActiveEvent: PropTypes.func.isRequired,
+    deleteEvent: PropTypes.func.isRequired,
+  }),
+  event: PropTypes.shape({
+    isInfoOpen: PropTypes.bool.isRequired,
+    isEditOpen: PropTypes.bool.isRequired,
+    events: PropTypes.array.isRequired,
+    activeEvent: PropTypes.object.isRequired
+  })
+}
 
 export default connect(mapStateToProps,mapDispatchToProps)(Home);

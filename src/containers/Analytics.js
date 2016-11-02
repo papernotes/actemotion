@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
@@ -13,7 +13,11 @@ class Analytics extends Component {
     render() {
         return(
             <div>
-                <Toolbar {...this.props}/>
+                <Toolbar
+                  setModalOpen={this.props.actions.setModalOpen}
+                  isEditOpen={this.props.event.isEditOpen}
+                  addEvent={this.props.actions.addEvent}
+                />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
                 <p></p><p></p>
                 <div style={AnalyticsStyles.pieChart}>
@@ -39,5 +43,14 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
+Analytics.propTypes = {
+  actions: PropTypes.shape({
+    setModalOpen: PropTypes.func.isRequired,
+    addEvent: PropTypes.func.isRequired
+  }),
+  event: PropTypes.shape({
+    isEditOpen: PropTypes.bool.isRequired
+  })
+}
 
 export default connect(mapStateToProps,mapDispatchToProps)(Analytics);

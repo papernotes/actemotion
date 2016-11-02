@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
@@ -14,7 +14,11 @@ class Settings extends Component {
     render() {
         return(
             <div>
-                <Toolbar {...this.props}/>
+                <Toolbar
+                  setModalOpen={this.props.actions.setModalOpen}
+                  isEditOpen={this.props.event.isEditOpen}
+                  addEvent={this.props.actions.addEvent}
+                />
                 <h2 style={{textAlign: 'center'}}>Settings</h2>
                 <p></p>
                 <div style={{paddingLeft: '15px', paddingRight: '15px'}}> 
@@ -57,6 +61,16 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(Actions, dispatch)
   }
+}
+
+Settings.propTypes = {
+  actions: PropTypes.shape({
+    setModalOpen: PropTypes.func.isRequired,
+    addEvent: PropTypes.func.isRequired
+  }),
+  event: PropTypes.shape({
+    isEditOpen: PropTypes.bool.isRequired
+  })
 }
 
 

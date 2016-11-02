@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import {Button, ControlLabel, FormGroup, FormControl} from 'react-bootstrap';
 import DivStyles from '../styles/DivStyles';
@@ -127,6 +127,11 @@ class EditEvent extends Component {
       </div>
     );
   }
+}
+
+EditEvent.propTypes = {
+  setModalOpen: PropTypes.func.isRequired,
+  addEvent: PropTypes.func.isRequired
 }
 
 export default EditEvent;

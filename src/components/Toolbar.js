@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {MenuItem, Nav, NavItem, Navbar, NavDropdown, Modal} from 'react-bootstrap';
 import EditEvent from './EditEvent';
 import {browserHistory} from 'react-router';
@@ -15,7 +15,6 @@ class Toolbar extends Component {
   }
 
   render() {
-
     return(
       <div>
         <Modal
@@ -66,6 +65,12 @@ class Toolbar extends Component {
       </div>
     );
   }
+}
+
+Toolbar.propTypes = {
+  isEditOpen: PropTypes.bool.isRequired,
+  addEvent: PropTypes.func.isRequired,
+  setModalOpen: PropTypes.func.isRequired
 }
 
 export default Toolbar;
