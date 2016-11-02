@@ -35,3 +35,9 @@ export function deleteEvent(event) {
     type: types.DELETE_EVENT, event
   }
 }
+
+export function editEvent(event) {
+  return {
+    type: types.EDIT_EVENT, event
+  }
+}

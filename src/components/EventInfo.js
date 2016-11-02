@@ -18,9 +18,14 @@ class EventInfo extends Component {
     this.props.setEventModal(false);
   }
 
+  // TODO make some secondary verification before deleting
   deleteEvent(event) {
     this.props.deleteEvent(event);
     this.props.setEventModal(false);
+  }
+
+  editEvent() {
+    // this.props.setEventModal(false);
   }
 
   render() {
@@ -33,13 +38,19 @@ class EventInfo extends Component {
         >
           Delete
         </Button>
+
         <div style={{float: 'right'}}>
-          <Button>Edit</Button>
+          <Button onClick={this.editEvent.bind(this)}>
+            Edit
+          </Button>
           <Button
             onClick={this.hideEventInfo.bind(this)}
-            bsStyle='primary'>Close
+            bsStyle='primary'
+          >
+            Close
           </Button>
         </div>
+
       </div>
     );
   }

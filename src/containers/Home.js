@@ -23,6 +23,7 @@ class Home extends Component {
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
           deleteEvent={this.props.actions.deleteEvent}
+          editEvent={this.props.actions.editEvent}
         />
       </div>
     );
@@ -49,6 +50,7 @@ Home.propTypes = {
     setEventModal: PropTypes.func.isRequired,
     setActiveEvent: PropTypes.func.isRequired,
     deleteEvent: PropTypes.func.isRequired,
+    editEvent: PropTypes.func.isRequired
   }),
   event: PropTypes.shape({
     isInfoOpen: PropTypes.bool.isRequired,

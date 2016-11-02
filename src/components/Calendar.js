@@ -38,6 +38,7 @@ class Calendar extends Component{
               setEventModal={this.props.setEventModal}
               activeEvent={this.props.activeEvent}
               deleteEvent={this.props.deleteEvent}
+              editEvent={this.props.editEvent}
             />
           </Modal.Body>
         </Modal>
@@ -61,7 +62,8 @@ Calendar.propTypes = {
   setEventModal: PropTypes.func.isRequired,
   isInfoOpen: PropTypes.bool.isRequired,
   activeEvent: PropTypes.object.isRequired,
-  deleteEvent: PropTypes.func.isRequired
+  deleteEvent: PropTypes.func.isRequired,
+  editEvent: PropTypes.func.isRequired
 }
 
 export default Calendar;
