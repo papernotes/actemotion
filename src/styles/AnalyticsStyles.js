@@ -1,8 +1,8 @@
 const AnalyticsStyles = {
   pieChart: {
-  	alignment: 'center',
+  	alignment: 'center'
     //backgroundColor: 'lightgray'
   }
-}
+};
 
 export default AnalyticsStyles;

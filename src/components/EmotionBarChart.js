@@ -6,13 +6,12 @@ class EmotionBarChart extends React.Component {
 		super(props);
 		this.state={
 			options:{
-				title: 'Happy',
 				hAxis: {title: 'Event'},
 				vAxis: {title: '% Time Happy'},
 				legend: 'none',
 			},
 			data:[
-				['Element','Happiness'],
+				['Activity','Happiness Level'],
 				['School',75],
 				['Work',50],
 				['Club',100],
@@ -27,8 +26,8 @@ class EmotionBarChart extends React.Component {
 			data={this.state.data}
 			options={this.state.options}
 			graph_id="EmotionBarChart"
-			width={window.innerWidth/2}
-			height={window.innerWidth/2}
+			width={2*window.innerWidth/3}
+			height={2*window.innerWidth/3}
 			/>
 		);
 	}

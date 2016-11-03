@@ -6,10 +6,11 @@ class EnergyPieChart extends React.Component {
 		super(props);
 		this.state={
 			options:{
-				title: 'Energy Levels from the previous week',
+				//title: 'Energy Levels from the previous week',
 				hAxis: {title: 'Energy'},
 				vAxis: {title: 'Level'},
-				legend: 'true'
+				'legend': {'position': 'bottom'},
+				chartArea:{left:10,top:20,width:"60%",height:"60%"}
 			},
 			data:[
 				['Energy', 'Level'],
@@ -18,11 +19,6 @@ class EnergyPieChart extends React.Component {
 				['3', 2],
 				['4', 3],
 				['5', 3],
-				['6', 4],
-				['7', 7],
-				['8', 6],
-				['9', 8],
-				['10', 2],
 			]
 		};
 	}
@@ -33,8 +29,8 @@ class EnergyPieChart extends React.Component {
 			data={this.state.data}
 			options={this.state.options}
 			graph_id="EnergyPieChart"
-			width={window.innerWidth}
-			height={window.innerWidth}
+			width={2*window.innerWidth/3}
+			height={2*window.innerWidth/3}
 			legend_toggle
 			/>
 		);

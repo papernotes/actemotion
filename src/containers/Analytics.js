@@ -19,10 +19,18 @@ class Analytics extends Component {
                   addEvent={this.props.actions.addEvent}
                 />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
+                <br></br>
                 <p></p><p></p>
                 <div style={AnalyticsStyles.pieChart}>
+                  <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
                   <FeelingsPieChart></FeelingsPieChart>
+                  <hr />
+                  <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
                   <EnergyPieChart></EnergyPieChart>
+                </div>
+                <hr />
+                <h4 style={{textAlign: 'center', fontSize: '20px'}}>Time Feeling Happy During Activities Week 10/30</h4>
+                <div style={AnalyticsStyles.barChart}>
                   <EmotionBarChart></EmotionBarChart>
                 </div>
             </div>
