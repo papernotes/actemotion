@@ -25,7 +25,8 @@ class EventInfo extends Component {
   }
 
   editEvent() {
-    // this.props.setEventModal(false);
+    this.props.setEventModal(false);
+    this.props.setEditModal(true);
   }
 
   render() {

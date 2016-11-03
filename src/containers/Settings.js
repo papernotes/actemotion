@@ -17,7 +17,7 @@ class Settings extends Component {
       <div>
         <Toolbar
           setModalOpen={this.props.actions.setModalOpen}
-          isEditOpen={this.props.event.isEditOpen}
+          isAddOpen={this.props.event.isAddOpen}
           addEvent={this.props.actions.addEvent}
         />
         <h2 style={{textAlign: 'center'}}>Settings</h2>
@@ -82,7 +82,7 @@ Settings.propTypes = {
     addEvent: PropTypes.func.isRequired
   }),
   event: PropTypes.shape({
-    isEditOpen: PropTypes.bool.isRequired
+    isAddOpen: PropTypes.bool.isRequired
   })
 }
 

@@ -24,7 +24,7 @@ class Toolbar extends Component {
     return(
       <div>
         <Modal
-          show={this.props.isEditOpen}
+          show={this.props.isAddOpen}
           onHide={this.setModalOpen.bind(this, false)}
           backdrop='static'
         >
@@ -82,7 +82,7 @@ class Toolbar extends Component {
 }
 
 Toolbar.propTypes = {
-  isEditOpen: PropTypes.bool.isRequired,
+  isAddOpen: PropTypes.bool.isRequired,
   addEvent: PropTypes.func.isRequired,
   setModalOpen: PropTypes.func.isRequired,
   setNotifications: PropTypes.func.isRequired,
