@@ -1,10 +1,11 @@
-import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, DELETE_EVENT} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, DELETE_EVENT, SET_EDIT_MODAL} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
 
 // TODO remove TempEvents
 const initialState = {
-  isEditOpen: false,
+  isAddOpen: false,
   isInfoOpen: false,
+  isEditOpen: false,
   activeEvent: {},
   events: TempEvents
 }
@@ -14,7 +15,7 @@ export default function event(state=initialState, action) {
 
     case SET_MODAL_OPEN:
       return Object.assign({}, state, {
-        isEditOpen: action.bool
+        isAddOpen: action.bool
       });
 
     case SET_EVENT_MODAL:
@@ -28,15 +29,15 @@ export default function event(state=initialState, action) {
       console.log(action.newEvent)
       return Object.assign({}, state, {
         events: newEvents
-      })
+      });
 
     case SET_ACTIVE_EVENT:
       if (typeof(action.activeEvent) === 'boolean') {
-        return state
+        return state;
       }
       return Object.assign({}, state, {
         activeEvent: action.activeEvent
-      })
+      });
 
     case DELETE_EVENT:
       var currentEvents = state.events;
@@ -48,6 +49,11 @@ export default function event(state=initialState, action) {
       }
       return Object.assign({}, state, {
         events: currentEvents
+      });
+
+    case SET_EDIT_MODAL:
+      return Object.assign({}, state, {
+        isEditOpen: action.bool
       })
 
     default:

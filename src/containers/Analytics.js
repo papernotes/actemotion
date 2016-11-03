@@ -15,7 +15,7 @@ class Analytics extends Component {
             <div>
                 <Toolbar
                   setModalOpen={this.props.actions.setModalOpen}
-                  isEditOpen={this.props.event.isEditOpen}
+                  isAddOpen={this.props.event.isAddOpen}
                   addEvent={this.props.actions.addEvent}
                 />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
@@ -49,7 +49,7 @@ Analytics.propTypes = {
     addEvent: PropTypes.func.isRequired
   }),
   event: PropTypes.shape({
-    isEditOpen: PropTypes.bool.isRequired
+    isAddOpen: PropTypes.bool.isRequired
   })
 }
 

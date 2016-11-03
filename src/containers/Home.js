@@ -13,7 +13,7 @@ class Home extends Component {
       <div>
         <Toolbar
           setModalOpen={this.props.actions.setModalOpen}
-          isEditOpen={this.props.event.isEditOpen}
+          isAddOpen={this.props.event.isAddOpen}
           addEvent={this.props.actions.addEvent}
           notificationsOn={this.props.home.notificationsOn}
           setNotifications={this.props.actions.setNotifications}
@@ -25,7 +25,8 @@ class Home extends Component {
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
           deleteEvent={this.props.actions.deleteEvent}
-          editEvent={this.props.actions.editEvent}
+          setEditModal={this.props.actions.setEditModal}
+          isEditOpen={this.props.event.isEditOpen}
         />
       </div>
     );
@@ -52,7 +53,7 @@ Home.propTypes = {
     setEventModal: PropTypes.func.isRequired,
     setActiveEvent: PropTypes.func.isRequired,
     deleteEvent: PropTypes.func.isRequired,
-    editEvent: PropTypes.func.isRequired,
+    setEditModal: PropTypes.func.isRequired,
     setNotifications: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
@@ -60,9 +61,10 @@ Home.propTypes = {
   }),
   event: PropTypes.shape({
     isInfoOpen: PropTypes.bool.isRequired,
-    isEditOpen: PropTypes.bool.isRequired,
+    isAddOpen: PropTypes.bool.isRequired,
     events: PropTypes.array.isRequired,
-    activeEvent: PropTypes.object.isRequired
+    activeEvent: PropTypes.object.isRequired,
+    isEditOpen: PropTypes.bool.isRequired
   })
 }
 

@@ -36,8 +36,8 @@ export function deleteEvent(event) {
   }
 }
 
-export function editEvent(event) {
+export function setEditModal(bool) {
   return {
-    type: types.EDIT_EVENT, event
+    type: types.SET_EDIT_MODAL, bool
   }
 }
