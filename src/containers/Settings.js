@@ -22,6 +22,11 @@ class Settings extends Component {
                 <h2 style={{textAlign: 'center'}}>Settings</h2>
                 <p></p>
                 <div style={{paddingLeft: '15px', paddingRight: '15px'}}> 
+                <br></br> <div style={{textTransform: 'italic'}}>
+                This application allows users to track their emotions in respect to each event that they attend. 
+                Add Events on the toolbar, look at events on the Calendar, update events with their corresponding emotions,
+                and view theresults on the Analytics page.
+                </div><br></br>
                 <label>Your Username: </label> <p></p>
                 <label>Your Password: </label> <p></p>
 

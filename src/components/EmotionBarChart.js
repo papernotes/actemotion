@@ -6,7 +6,7 @@ class EmotionBarChart extends React.Component {
 		super(props);
 		this.state={
 			options:{
-				title: 'Happy',
+				title: 'Percent Frequency of Happiness During Various Events',
 				hAxis: {title: 'Event'},
 				vAxis: {title: '% Time Happy'},
 				legend: 'none',

@@ -6,23 +6,18 @@ class EnergyPieChart extends React.Component {
 		super(props);
 		this.state={
 			options:{
-				title: 'Energy Levels from the previous week',
+				title: 'Frequency of Energy Levels from the Previous Week',
 				hAxis: {title: 'Energy'},
 				vAxis: {title: 'Level'},
 				legend: 'true'
 			},
 			data:[
 				['Energy', 'Level'],
-				['1', 5],
-				['2', 4],
-				['3', 2],
-				['4', 3],
-				['5', 3],
-				['6', 4],
-				['7', 7],
-				['8', 6],
-				['9', 8],
-				['10', 2],
+				['Energy Level 1', 5],
+				['Energy Level 2', 4],
+				['Energy Level 3', 2],
+				['Energy Level 4', 3],
+				['Energy Level 5', 3],
 			]
 		};
 	}
