@@ -53,7 +53,7 @@ class AddEvent extends Component {
             <FormGroup
               controlId='formBasicText'
             >
-              <div style={DivStyles.twoColumn}>
+              <div style={DivStyles.twoColumnAdd}>
                 <ControlLabel>Event Name</ControlLabel>
                 <FormControl
                   type='text'
@@ -107,7 +107,7 @@ class AddEvent extends Component {
                 </FormControl>
               </div>
 
-              <div style={DivStyles.twoColumn}>
+              <div style={DivStyles.twoColumnAdd}>
                 <ControlLabel>Description</ControlLabel>
                 <FormControl
                   style={{resize: 'none', height: '275px'}}
