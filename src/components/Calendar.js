@@ -22,6 +22,10 @@ class Calendar extends Component{
     this.props.setEventModal(false);
   }
 
+  hideEditModal() {
+    this.props.setEditModal(false);
+  }
+
   render(){
     return (
       <div>
@@ -38,10 +42,22 @@ class Calendar extends Component{
               setEventModal={this.props.setEventModal}
               activeEvent={this.props.activeEvent}
               deleteEvent={this.props.deleteEvent}
-              editEvent={this.props.editEvent}
+              setEditModal={this.props.setEditModal}
             />
           </Modal.Body>
         </Modal>
+
+        <Modal
+          show={this.props.isEditOpen}
+          onHide={this.hideEditModal.bind(this)}
+        >
+          <Modal.Header>
+            <Modal.Title>EDITTING: {this.props.activeEvent.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            EDITTING
+          </Modal.Body>
+        </Modal>     
 
         <div style={DivStyles.calendar}>
           <BigCalendar
@@ -63,7 +79,7 @@ Calendar.propTypes = {
   isInfoOpen: PropTypes.bool.isRequired,
   activeEvent: PropTypes.object.isRequired,
   deleteEvent: PropTypes.func.isRequired,
-  editEvent: PropTypes.func.isRequired
+  setEditModal: PropTypes.func.isRequired
 }
 
 export default Calendar;

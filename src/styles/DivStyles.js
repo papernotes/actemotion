@@ -19,11 +19,17 @@ const DivStyles = {
     width: '100%',
     margin: '0 auto'
   },
-  twoColumn: {
+  twoColumnAdd: {
     height: '100%',
     width: '40%',
     float: 'left',
     marginLeft: '30px'
+  },
+  twoColumnSettings: {
+    height: '100%',
+    width: '40%',
+    float: 'left',
+    marginLeft: '50px'
   },
   eventButtons: {
     float: 'right',

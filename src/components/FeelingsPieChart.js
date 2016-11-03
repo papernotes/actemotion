@@ -6,16 +6,15 @@ class FeelingsPieChart extends React.Component {
 		super(props);
 		this.state={
 			options:{
-				//title: 'Feelings from the previous week',
 				hAxis: {title: 'Feeling'},
 				vAxis: {title: 'Intensity'},
-				'legend': {'position': 'bottom'},
-				chartArea:{left:10,top:20,width:"60%",height:"60%"}
+				'legend': {'position': 'right'},
+				chartArea:{left:10,top:20,width:"95%",height:"95%"}
 			},
 			data:[
 				['Feeling', 'Intensity'],
-				['happy', 5],
-				['sad', 4],
+				['Happy', 5],
+				['Sad', 4],
 			]
 		};
 	}
