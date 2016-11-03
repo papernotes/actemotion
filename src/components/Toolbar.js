@@ -19,6 +19,7 @@ class Toolbar extends Component {
     this.props.setNotifications(bool);
   }
 
+  // TODO add Notifications later
   render() {
     return(
       <div>
@@ -66,9 +67,6 @@ class Toolbar extends Component {
 
             <Nav pullRight>
               <NavItem eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
-              <NavItem eventKey={5} onClick={this.setNotificationsModal.bind(this, true)}>
-                Notifications
-              </NavItem>
               <NavDropdown eventKey={6} title='User' id='userDropdown'>
                 <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/settings')}>Settings</MenuItem>
                 <MenuItem eventKey={6.2} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
