@@ -65,7 +65,7 @@ export default function event(state=initialState, action) {
     case SAVE_EDIT:
       var cEvents = state.events;
       for (var j in cEvents) {
-        if (JSON.stringify(cEvents[i]) === JSON.stringify(action.oldEvent)) {
+        if (JSON.stringify(cEvents[j]) === JSON.stringify(action.oldEvent)) {
           cEvents.splice(j, 1);
           break;
         }
