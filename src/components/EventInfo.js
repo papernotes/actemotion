@@ -10,6 +10,8 @@ class EventInfo extends Component {
         <p>Emotion: <b>{eventData.emotion}</b></p>
         <p>Energy Level: <b>{eventData.energy}</b></p>
         <p>Description: <b>{eventData.text}</b></p>
+        <p>Start Time: <b>{eventData.start.toLocaleString()}</b></p>
+        <p>End Time: <b>{eventData.end.toLocaleString()}</b></p>
       </div>
     );
   }
@@ -18,9 +20,7 @@ class EventInfo extends Component {
     this.props.setEventModal(false);
   }
 
-  // TODO make some secondary verification before deleting
   deleteEvent(event) {
-    // this.props.deleteEvent(event);
     this.props.setEventModal(false);
     this.props.setConfirmModal(true);
   }

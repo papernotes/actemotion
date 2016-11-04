@@ -5,29 +5,21 @@ import DivStyles from '../styles/DivStyles';
 import DateTime from 'react-datetime';
 require('react-datetime/css/react-datetime.css');
 
-// TODO add form validation
-class AddEvent extends Component {
+class EditEvent extends Component {
+
+  cancelEdit() {
+    this.props.setEditModal(false);
+    this.props.setEventModal(true);
+  }
+
+  saveEdit() {
+    this.getFormData();
+  }
 
   preventDefault(e) {
     e.preventDefault();
   }
 
-  setModalOpen(bool) {
-    this.props.setModalOpen(bool);
-  }
-
-  formatEvent(data) {
-    return {
-      'title': data[0],
-      'allDay':  false,
-      'start': new Date(data[2]),
-      'end': new Date(data[3]),
-      'type': data[1],
-      'emotion': data[4],
-      'energy': data[5],
-      'text': data[6]
-    }
-  }
 
   getFormData() {
     var data = [];
@@ -41,11 +33,13 @@ class AddEvent extends Component {
       }
     }
     var newEvent = data;
-    this.props.addEvent(this.formatEvent(newEvent));
-    this.setModalOpen(false);
+    console.log(newEvent);
+    // this.props.addEvent(this.formatEvent(newEvent));
+    // this.setModalOpen(false);
   }
 
   render() {
+    var event = this.props.activeEvent;
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -57,14 +51,14 @@ class AddEvent extends Component {
                 <ControlLabel>Event Name</ControlLabel>
                 <FormControl
                   type='text'
-                  placeholder='Event Name'
+                  placeholder={event.title}
                   ref='eventName'
                 />
 
-                <ControlLabel>Event Type</ControlLabel>
+                <ControlLabel>Reassign Event Type</ControlLabel>
                 <FormControl
                   componentClass='select'
-                  placeholder='Event Type'
+                  placeholder={event.type}
                   ref='eventType'
                 >
                   <option value='school'>school</option>
@@ -73,30 +67,30 @@ class AddEvent extends Component {
 
                 <ControlLabel>Start Time</ControlLabel>
                 <DateTime
-                  defaultValue={new Date()}
+                  defaultValue={event.start}
                   ref='eventStart'
                 />
 
                 <ControlLabel>End Time</ControlLabel>
                 <DateTime
-                  defaultValue={new Date()}
+                  defaultValue={event.end}
                   ref='eventEnd'
                 />
 
-                <ControlLabel>Emotion</ControlLabel>
+                <ControlLabel>Reassign Emotion</ControlLabel>
                 <FormControl
                   componentClass='select'
-                  placeholder='Emotion'
+                  placeholder={event.emotion}
                   ref='eventEmotion'
                 >
                   <option value='happy'>happy</option>
                   <option value='sad'>sad</option>
                 </FormControl>
 
-                <ControlLabel>Energy Level</ControlLabel>
+                <ControlLabel>Reassign Energy Level</ControlLabel>
                 <FormControl
                   componentClass='select'
-                  placeholder='Event Type'
+                  placeholder={event.energy}
                   ref='eventEnergy'
                 >
                   <option value='1'>1</option>
@@ -112,15 +106,14 @@ class AddEvent extends Component {
                 <FormControl
                   style={{resize: 'none', height: '275px'}}
                   componentClass='textarea'
-                  placeholder='Add Description'
+                  placeholder={event.text}
                   ref='eventText'
                 />
                 <div style={DivStyles.eventButtons}>
-                  <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
-                  <Button bsStyle='primary' onClick={this.getFormData.bind(this)}>Submit</Button>
+                  <Button onClick={this.cancelEdit.bind(this)}>Cancel</Button>
+                  <Button bsStyle='success' onClick={this.saveEdit.bind(this)}>Save</Button>
                 </div>
               </div>
-
             </FormGroup>
           </form>
         </div>
@@ -129,9 +122,11 @@ class AddEvent extends Component {
   }
 }
 
-AddEvent.propTypes = {
-  setModalOpen: PropTypes.func.isRequired,
-  addEvent: PropTypes.func.isRequired
+EditEvent.propTypes = {
+  setEventModal: PropTypes.func.isRequired,
+  setEditModal: PropTypes.func.isRequired,
+  activeEvent: PropTypes.object.isRequired,
+  deleteEvent: PropTypes.func.isRequired
 }
 
-export default AddEvent;
+export default EditEvent;

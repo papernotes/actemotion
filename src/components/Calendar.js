@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {Modal} from 'react-bootstrap';
 import EventInfo from './EventInfo';
 import DeleteEvent from './DeleteEvent';
+import EditEvent from './EditEvent';
 import DivStyles from '../styles/DivStyles';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
@@ -58,16 +59,23 @@ class Calendar extends Component{
           onHide={this.hideEditModal.bind(this)}
         >
           <Modal.Header>
-            <Modal.Title>EDITTING: {this.props.activeEvent.title}</Modal.Title>
+            <Modal.Title>Editting: {this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            EDITTING
+            <EditEvent
+              setEventModal={this.props.setEventModal}
+              activeEvent={this.props.activeEvent}
+              deleteEvent={this.props.deleteEvent}
+              setEditModal={this.props.setEditModal}
+              setConfirmModal={this.props.setConfirmModal}
+            />
           </Modal.Body>
         </Modal>
 
         <Modal
           show={this.props.isConfirmOpen}
           onHide={this.hideConfirmModal.bind(this)}
+          backdrop='static'
         >
           <Modal.Header>
             <Modal.Title>DELETING: {this.props.activeEvent.title}</Modal.Title>
