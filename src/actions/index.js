@@ -41,3 +41,9 @@ export function setEditModal(bool) {
     type: types.SET_EDIT_MODAL, bool
   }
 }
+
+export function setConfirmModal(bool) {
+  return {
+    type: types.SET_CONFIRM_MODAL, bool
+  }
+}

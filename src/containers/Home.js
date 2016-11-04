@@ -27,6 +27,8 @@ class Home extends Component {
           deleteEvent={this.props.actions.deleteEvent}
           setEditModal={this.props.actions.setEditModal}
           isEditOpen={this.props.event.isEditOpen}
+          setConfirmModal={this.props.actions.setConfirmModal}
+          isConfirmOpen={this.props.event.isConfirmOpen}
         />
       </div>
     );
@@ -54,7 +56,8 @@ Home.propTypes = {
     setActiveEvent: PropTypes.func.isRequired,
     deleteEvent: PropTypes.func.isRequired,
     setEditModal: PropTypes.func.isRequired,
-    setNotifications: PropTypes.func.isRequired
+    setNotifications: PropTypes.func.isRequired,
+    setConfirmModal: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool.isRequired
@@ -64,7 +67,8 @@ Home.propTypes = {
     isAddOpen: PropTypes.bool.isRequired,
     events: PropTypes.array.isRequired,
     activeEvent: PropTypes.object.isRequired,
-    isEditOpen: PropTypes.bool.isRequired
+    isEditOpen: PropTypes.bool.isRequired,
+    isConfirmOpen: PropTypes.bool.isRequired
   })
 }
 

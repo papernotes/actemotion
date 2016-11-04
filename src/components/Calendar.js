@@ -26,6 +26,10 @@ class Calendar extends Component{
     this.props.setEditModal(false);
   }
 
+  hideConfirmModal() {
+    this.props.setConfirmModal(false);
+  }
+
   render(){
     return (
       <div>
@@ -43,6 +47,7 @@ class Calendar extends Component{
               activeEvent={this.props.activeEvent}
               deleteEvent={this.props.deleteEvent}
               setEditModal={this.props.setEditModal}
+              setConfirmModal={this.props.setConfirmModal}
             />
           </Modal.Body>
         </Modal>
@@ -57,7 +62,19 @@ class Calendar extends Component{
           <Modal.Body>
             EDITTING
           </Modal.Body>
-        </Modal>     
+        </Modal>
+
+        <Modal
+          show={this.props.isConfirmOpen}
+          onHide={this.hideConfirmModal.bind(this)}
+        >
+          <Modal.Header>
+            <Modal.Title>DELETING: {this.props.activeEvent.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            CONFIRM DELETE
+          </Modal.Body>
+        </Modal>   
 
         <div style={DivStyles.calendar}>
           <BigCalendar

@@ -22,6 +22,7 @@ class EventInfo extends Component {
   deleteEvent(event) {
     this.props.deleteEvent(event);
     this.props.setEventModal(false);
+    this.props.setConfirmModal(true);
   }
 
   editEvent() {
