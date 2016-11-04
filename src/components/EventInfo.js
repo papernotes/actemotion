@@ -20,7 +20,7 @@ class EventInfo extends Component {
 
   // TODO make some secondary verification before deleting
   deleteEvent(event) {
-    this.props.deleteEvent(event);
+    // this.props.deleteEvent(event);
     this.props.setEventModal(false);
     this.props.setConfirmModal(true);
   }

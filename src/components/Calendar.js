@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Modal} from 'react-bootstrap';
 import EventInfo from './EventInfo';
+import DeleteEvent from './DeleteEvent';
 import DivStyles from '../styles/DivStyles';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
@@ -72,7 +73,12 @@ class Calendar extends Component{
             <Modal.Title>DELETING: {this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            CONFIRM DELETE
+            <DeleteEvent
+              deleteEvent={this.props.deleteEvent}
+              setConfirmModal={this.props.setConfirmModal}
+              setEventModal={this.props.setEventModal}
+              activeEvent={this.props.activeEvent}
+            />
           </Modal.Body>
         </Modal>   
 
