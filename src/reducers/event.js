@@ -1,4 +1,5 @@
-import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL} from '../constants/ActionTypes';
+import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, 
+        DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
 
 // TODO remove TempEvents
@@ -60,6 +61,19 @@ export default function event(state=initialState, action) {
     case SET_CONFIRM_MODAL:
       return Object.assign({}, state, {
         isConfirmOpen: action.bool
+      })
+
+    case SAVE_EDIT:
+      var currentEvents = state.events;
+      for (var i in currentEvents) {
+        if (JSON.stringify(currentEvents[i]) === JSON.stringify(action.oldEvent)) {
+          currentEvents.splice(i, 1);
+          break;
+        }
+      }
+      currentEvents.push(action.newEvent);
+      return Object.assign({}, state, {
+        events: currentEvents
       })
 
     default:

@@ -67,7 +67,7 @@ class Calendar extends Component{
               activeEvent={this.props.activeEvent}
               deleteEvent={this.props.deleteEvent}
               setEditModal={this.props.setEditModal}
-              setConfirmModal={this.props.setConfirmModal}
+              saveEdit={this.props.saveEdit}
             />
           </Modal.Body>
         </Modal>
@@ -110,7 +110,8 @@ Calendar.propTypes = {
   isInfoOpen: PropTypes.bool.isRequired,
   activeEvent: PropTypes.object.isRequired,
   deleteEvent: PropTypes.func.isRequired,
-  setEditModal: PropTypes.func.isRequired
+  setEditModal: PropTypes.func.isRequired,
+  saveEdit: PropTypes.func.isRequired
 }
 
 export default Calendar;

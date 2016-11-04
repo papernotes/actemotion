@@ -47,3 +47,9 @@ export function setConfirmModal(bool) {
     type: types.SET_CONFIRM_MODAL, bool
   }
 }
+
+export function saveEdit(oldEvent, newEvent) {
+  return {
+    type: types.SAVE_EDIT, oldEvent, newEvent
+  }
+}

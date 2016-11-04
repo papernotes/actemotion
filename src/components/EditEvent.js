@@ -13,13 +13,27 @@ class EditEvent extends Component {
   }
 
   saveEdit() {
-    this.getFormData();
+    var edits = this.formatEvent(this.getFormData());
+    this.props.saveEdit(this.props.activeEvent, edits);
+    this.props.setEditModal(false);
   }
 
   preventDefault(e) {
     e.preventDefault();
   }
 
+  formatEvent(data) {
+    return {
+      'title': data[0],
+      'allDay':  false,
+      'start': new Date(data[2]),
+      'end': new Date(data[3]),
+      'type': data[1],
+      'emotion': data[4],
+      'energy': data[5],
+      'text': data[6]
+    }
+  }
 
   getFormData() {
     var data = [];
@@ -32,10 +46,7 @@ class EditEvent extends Component {
         data.push(ReactDOM.findDOMNode(this.refs[key]).value);        
       }
     }
-    var newEvent = data;
-    console.log(newEvent);
-    // this.props.addEvent(this.formatEvent(newEvent));
-    // this.setModalOpen(false);
+    return data;
   }
 
   render() {
@@ -126,7 +137,8 @@ EditEvent.propTypes = {
   setEventModal: PropTypes.func.isRequired,
   setEditModal: PropTypes.func.isRequired,
   activeEvent: PropTypes.object.isRequired,
-  deleteEvent: PropTypes.func.isRequired
+  deleteEvent: PropTypes.func.isRequired,
+  saveEdit: PropTypes.func.isRequired
 }
 
 export default EditEvent;
