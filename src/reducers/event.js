@@ -28,7 +28,6 @@ export default function event(state=initialState, action) {
     case ADD_EVENT:
       var newEvents = state.events;
       newEvents.push(action.newEvent);
-      console.log(action.newEvent)
       return Object.assign({}, state, {
         events: newEvents
       });
@@ -64,16 +63,16 @@ export default function event(state=initialState, action) {
       })
 
     case SAVE_EDIT:
-      var currentEvents = state.events;
-      for (var i in currentEvents) {
-        if (JSON.stringify(currentEvents[i]) === JSON.stringify(action.oldEvent)) {
-          currentEvents.splice(i, 1);
+      var cEvents = state.events;
+      for (var j in cEvents) {
+        if (JSON.stringify(cEvents[i]) === JSON.stringify(action.oldEvent)) {
+          cEvents.splice(j, 1);
           break;
         }
       }
-      currentEvents.push(action.newEvent);
+      cEvents.push(action.newEvent);
       return Object.assign({}, state, {
-        events: currentEvents
+        events: cEvents
       })
 
     default:

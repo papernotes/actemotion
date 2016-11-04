@@ -57,6 +57,7 @@ class Calendar extends Component{
         <Modal
           show={this.props.isEditOpen}
           onHide={this.hideEditModal.bind(this)}
+          backdrop='static'
         >
           <Modal.Header>
             <Modal.Title>Editting: {this.props.activeEvent.title}</Modal.Title>
