@@ -153,7 +153,7 @@ class EditEvent extends Component {
                 <FormControl
                   style={{resize: 'none', height: '275px'}}
                   componentClass='textarea'
-                  placeholder={event.text}
+                  placeholder='Add a new description!'
                   ref='eventText'
                 />
                 <p style={warningStyles}>Please input an event name</p>
