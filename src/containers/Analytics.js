@@ -3,10 +3,10 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
-import FeelingsPieChart from '../components/FeelingsPieChart';
+import FeelingsPieChart from '../components/charts/FeelingsPieChart';
 import AnalyticsStyles from '../styles/AnalyticsStyles';
-import EnergyPieChart from '../components/EnergyPieChart';
-import EmotionBarChart from '../components/EmotionBarChart';
+import EnergyPieChart from '../components/charts/EnergyPieChart';
+import EmotionBarChart from '../components/charts/EmotionBarChart';
 
 
 class Analytics extends Component {
@@ -17,6 +17,8 @@ class Analytics extends Component {
                   setModalOpen={this.props.actions.setModalOpen}
                   isAddOpen={this.props.event.isAddOpen}
                   addEvent={this.props.actions.addEvent}
+                  notificationsOn={this.props.home.notificationsOn}
+                  setNotifications={this.props.actions.setNotifications}
                 />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
                 <br></br>
