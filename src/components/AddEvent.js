@@ -8,6 +8,13 @@ require('react-datetime/css/react-datetime.css');
 // TODO add form validation
 class AddEvent extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      eventName: ''
+    }
+  }
+
   preventDefault(e) {
     e.preventDefault();
   }
@@ -41,11 +48,36 @@ class AddEvent extends Component {
       }
     }
     var newEvent = data;
-    this.props.addEvent(this.formatEvent(newEvent));
-    this.setModalOpen(false);
+    if (this.state.eventName.length > 1) {
+      this.props.addEvent(this.formatEvent(newEvent));
+      this.setModalOpen(false);
+    }
+  }
+
+  getValidationState() {
+    const length = this.state.eventName.length;
+    if (length > 1) return 'success';
+    else return 'error';
+  }
+
+  handleChange(e) {
+    this.setState({eventName: e.target.value});
   }
 
   render() {
+    var warningStyles = {};
+    if (this.state.eventName.length >= 1) {
+      warningStyles = {
+        color: 'white'
+      }
+    }
+    else {
+      warningStyles = {
+        color: 'rgb(169, 68, 66)',
+        textAlign: 'center'
+      }
+    }
+
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -54,12 +86,19 @@ class AddEvent extends Component {
               controlId='formBasicText'
             >
               <div style={DivStyles.twoColumnAdd}>
-                <ControlLabel>Event Name</ControlLabel>
-                <FormControl
-                  type='text'
-                  placeholder='Event Name'
-                  ref='eventName'
-                />
+
+                <FormGroup
+                  controlId='eventFormGroup'
+                  validationState={this.getValidationState()}
+                >
+                  <ControlLabel>Event Name</ControlLabel>
+                  <FormControl
+                    type='text'
+                    placeholder='Event Name'
+                    ref='eventName'
+                    onChange={this.handleChange.bind(this)}
+                  />
+                </FormGroup>
 
                 <ControlLabel>Event Type</ControlLabel>
                 <FormControl
@@ -115,6 +154,7 @@ class AddEvent extends Component {
                   placeholder='Add Description'
                   ref='eventText'
                 />
+                <p style={warningStyles}>Please input an event name</p>
                 <div style={DivStyles.eventButtons}>
                   <Button onClick={this.setModalOpen.bind(this, false)}>Cancel</Button>
                   <Button bsStyle='primary' onClick={this.getFormData.bind(this)}>Submit</Button>

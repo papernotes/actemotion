@@ -33,7 +33,7 @@ const DivStyles = {
   },
   eventButtons: {
     float: 'right',
-    marginTop: '20px'
+    marginTop: '5px'
   }
 }
 
