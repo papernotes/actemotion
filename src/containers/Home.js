@@ -73,6 +73,8 @@ class Home extends Component {
           saveEdit={this.props.actions.saveEdit}
           showingNormalEvents={this.props.event.showingNormalEvents}
           setConfirmAddition={this.props.actions.setConfirmAddition}
+          setConfirmEdit={this.props.actions.setConfirmEdit}
+          confirmedEdit={this.props.event.confirmedEdit}
         />
       </div>
     );
@@ -103,7 +105,8 @@ Home.propTypes = {
     setNotifications: PropTypes.func.isRequired,
     setConfirmModal: PropTypes.func.isRequired,
     saveEdit: PropTypes.func.isRequired,
-    setConfirmAddition: PropTypes.func.isRequired
+    setConfirmAddition: PropTypes.func.isRequired,
+    setConfirmEdit: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
@@ -118,6 +121,7 @@ Home.propTypes = {
     isConfirmOpen: PropTypes.bool.isRequired,
     showingNormalEvents: PropTypes.bool.isRequired,
     confirmedAddition: PropTypes.bool.isRequired,
+    confirmedEdit: PropTypes.bool.isRequired
   })
 }
 

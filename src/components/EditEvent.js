@@ -24,6 +24,7 @@ class EditEvent extends Component {
     if (this.state.eventName.length >= 1) {
       this.props.saveEdit(this.props.activeEvent, edits);
       this.props.setEditModal(false);
+      this.props.setConfirmEdit(true);
     }
   }
 
@@ -177,7 +178,8 @@ EditEvent.propTypes = {
   setEditModal: PropTypes.func.isRequired,
   activeEvent: PropTypes.object.isRequired,
   deleteEvent: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired
+  saveEdit: PropTypes.func.isRequired,
+  setConfirmEdit: PropTypes.func.isRequired
 }
 
 export default EditEvent;

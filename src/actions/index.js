@@ -65,3 +65,9 @@ export function setConfirmAddition(bool) {
     type: types.SET_CONFIRM_ADDITION, bool
   }
 }
+
+export function setConfirmEdit(bool) {
+  return {
+    type: types.SET_CONFIRM_EDIT, bool
+  }
+}

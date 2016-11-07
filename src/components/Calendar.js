@@ -3,6 +3,7 @@ import {Modal} from 'react-bootstrap';
 import EventInfo from './EventInfo';
 import DeleteEvent from './DeleteEvent';
 import EditEvent from './EditEvent';
+import ConfirmEdit from './ConfirmEdit';
 import DivStyles from '../styles/DivStyles';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
@@ -32,6 +33,10 @@ class Calendar extends Component{
 
   hideConfirmModal() {
     this.props.setConfirmModal(false);
+  }
+
+  hideConfirmEdit() {
+    this.props.setConfirmEdit(false);
   }
 
   render(){
@@ -71,6 +76,23 @@ class Calendar extends Component{
               deleteEvent={this.props.deleteEvent}
               setEditModal={this.props.setEditModal}
               saveEdit={this.props.saveEdit}
+              setConfirmEdit={this.props.setConfirmEdit}
+            />
+          </Modal.Body>
+        </Modal>
+
+        <Modal
+          show={this.props.confirmedEdit}
+          onHide={this.hideConfirmEdit.bind(this)}
+          backdrop='static'
+        >
+          <Modal.Header closeButton={true}>
+            <Modal.Title>Confirmed the edit!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ConfirmEdit
+              setConfirmEdit={this.props.setConfirmEdit}
+              activeEvent={this.props.activeEvent}
             />
           </Modal.Body>
         </Modal>
@@ -115,7 +137,9 @@ Calendar.propTypes = {
   deleteEvent: PropTypes.func.isRequired,
   setEditModal: PropTypes.func.isRequired,
   saveEdit: PropTypes.func.isRequired,
-  showingNormalEvents: PropTypes.bool.isRequired
+  showingNormalEvents: PropTypes.bool.isRequired,
+  confirmedEdit: PropTypes.bool.isRequired,
+  setConfirmEdit: PropTypes.func.isRequired
 }
 
 export default Calendar;

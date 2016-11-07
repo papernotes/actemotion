@@ -1,6 +1,6 @@
 import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, 
         DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT, SET_NORMAL_EVENTS,
-        SET_CONFIRM_ADDITION} from '../constants/ActionTypes';
+        SET_CONFIRM_ADDITION, SET_CONFIRM_EDIT} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
 import DataFormatter from '../utils/DataFormatter';
 
@@ -11,6 +11,7 @@ const initialState = {
   isEditOpen: false,
   isConfirmOpen: false,
   confirmedAddition: false,
+  confirmedEdit: false,
   activeEvent: {},
   events: TempEvents,
   renderEvents: TempEvents,
@@ -100,6 +101,12 @@ export default function event(state=initialState, action) {
     case SET_CONFIRM_ADDITION:
       return Object.assign({}, state, {
         confirmedAddition: action.bool
+      })
+
+    case SET_CONFIRM_EDIT:
+      console.log("G")
+      return Object.assign({}, state, {
+        confirmedEdit: action.bool
       })
 
     default:
