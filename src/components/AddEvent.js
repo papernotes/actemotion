@@ -5,7 +5,6 @@ import DivStyles from '../styles/DivStyles';
 import DateTime from 'react-datetime';
 require('react-datetime/css/react-datetime.css');
 
-// TODO add form validation
 class AddEvent extends Component {
 
   constructor() {

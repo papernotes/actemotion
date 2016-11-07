@@ -7,6 +7,13 @@ require('react-datetime/css/react-datetime.css');
 
 class EditEvent extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      eventName: ''
+    }
+  }
+
   cancelEdit() {
     this.props.setEditModal(false);
     this.props.setEventModal(true);
@@ -49,8 +56,31 @@ class EditEvent extends Component {
     return data;
   }
 
+  getValidationState() {
+    const length = this.state.eventName.length;
+    if (length > 1) return 'success';
+    else return 'error';
+  }
+
+  handleChange(e) {
+    this.setState({eventName: e.target.value});
+  }
+
   render() {
     var event = this.props.activeEvent;
+    var warningStyles = {};
+    if (this.state.eventName.length >= 1) {
+      warningStyles = {
+        color: 'white'
+      }
+    }
+    else {
+      warningStyles = {
+        color: 'rgb(169, 68, 66)',
+        textAlign: 'center'
+      }
+    }
+
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -59,12 +89,18 @@ class EditEvent extends Component {
               controlId='formBasicText'
             >
               <div style={DivStyles.twoColumnAdd}>
-                <ControlLabel>Event Name</ControlLabel>
-                <FormControl
-                  type='text'
-                  placeholder={event.title}
-                  ref='eventName'
-                />
+                <FormGroup
+                  controlId='eventFormGroup'
+                  validationState={this.getValidationState()}
+                >
+                  <ControlLabel>Event Name</ControlLabel>
+                  <FormControl
+                    type='text'
+                    placeholder={event.title}
+                    ref='eventName'
+                    onChange={this.handleChange.bind(this)}
+                  />
+                </FormGroup>
 
                 <ControlLabel>Reassign Event Type</ControlLabel>
                 <FormControl
@@ -120,6 +156,7 @@ class EditEvent extends Component {
                   placeholder={event.text}
                   ref='eventText'
                 />
+                <p style={warningStyles}>Please input an event name</p>
                 <div style={DivStyles.eventButtons}>
                   <Button onClick={this.cancelEdit.bind(this)}>Cancel</Button>
                   <Button bsStyle='success' onClick={this.saveEdit.bind(this)}>Save</Button>
