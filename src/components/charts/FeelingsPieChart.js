@@ -20,15 +20,14 @@ class FeelingsPieChart extends Component {
 		};
 	}
 
-	generateFeelingsGraph(events) {
+	generateGraph(events) {
 		var formatter = new DataFormatter();
 		var result = formatter.generateFeelingsGraph(events);
 		return result;
 	}
 
-
 	render() {
-		var data = this.generateFeelingsGraph(this.props.events);
+		var data = this.generateGraph(this.props.events);
 
 		return (
 			<Chart

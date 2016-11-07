@@ -23,4 +23,25 @@ export default class DataFormatter {
     }
     return data;
   }
+
+  generateEnergyGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Energy', 'Level']);
+
+    for (var i in events) {
+      if (counts[events[i].energy] == null) {
+        counts[events[i].energy] = 1;
+      }
+      else {
+        ++counts[events[i].energy];
+      }
+    }
+
+    for (var key in counts) {
+      data.push(['Energy Level ' + key, counts[key]])
+    }
+    return data;
+  }
+
 }

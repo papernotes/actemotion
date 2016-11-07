@@ -1,7 +1,8 @@
 import {Chart} from 'react-google-charts';
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
+import DataFormatter from '../../utils/DataFormatter';
 
-class EnergyPieChart extends React.Component {
+class EnergyPieChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
@@ -21,11 +22,20 @@ class EnergyPieChart extends React.Component {
 			]
 		};
 	}
+
+	generateGraph(events) {
+		var formatter = new DataFormatter();
+		var result = formatter.generateEnergyGraph(events);
+		return result;
+	}
+
 	render() {
+		var data = this.generateGraph(this.props.events);
+
 		return (
 			<Chart
 			chartType="PieChart"
-			data={this.state.data}
+			data={data}
 			options={this.state.options}
 			graph_id="EnergyPieChart"
 			width={2*window.innerWidth/3}
@@ -35,5 +45,9 @@ class EnergyPieChart extends React.Component {
 		);
 	}
 };
+
+EnergyPieChart.propTypes = {
+	events: PropTypes.array.isRequired
+}
 
 export default EnergyPieChart;

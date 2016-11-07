@@ -28,7 +28,7 @@ class Analytics extends Component {
                   <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
                   <hr />
                   <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
-                  <EnergyPieChart></EnergyPieChart>
+                  <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
                 </div>
                 <hr />
                 <h4 style={{textAlign: 'center', fontSize: '20px'}}>Time Feeling Happy During Activities Week 10/30</h4>
