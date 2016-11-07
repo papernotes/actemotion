@@ -25,7 +25,7 @@ class Analytics extends Component {
                 <p></p><p></p>
                 <div style={AnalyticsStyles.pieChart}>
                   <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
-                  <FeelingsPieChart></FeelingsPieChart>
+                  <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
                   <hr />
                   <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
                   <EnergyPieChart></EnergyPieChart>

@@ -1,7 +1,8 @@
 import {Chart} from 'react-google-charts';
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
+import DataFormatter from '../../utils/DataFormatter';
 
-class FeelingsPieChart extends React.Component {
+class FeelingsPieChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
@@ -18,11 +19,21 @@ class FeelingsPieChart extends React.Component {
 			]
 		};
 	}
+
+	generateFeelingsGraph(events) {
+		var formatter = new DataFormatter();
+		var result = formatter.generateFeelingsGraph(events);
+		return result;
+	}
+
+
 	render() {
+		var data = this.generateFeelingsGraph(this.props.events);
+
 		return (
 			<Chart
 			chartType="PieChart"
-			data={this.state.data}
+			data={data}
 			options={this.state.options}
 			graph_id="FeelingsPieChart"
 			width={2*window.innerWidth/3}
@@ -32,5 +43,9 @@ class FeelingsPieChart extends React.Component {
 		);
 	}
 };
+
+FeelingsPieChart.propTypes = {
+	events: PropTypes.array.isRequired
+}
 
 export default FeelingsPieChart;
