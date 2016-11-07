@@ -52,6 +52,7 @@ class Home extends Component {
           setConfirmAddition={this.props.actions.setConfirmAddition}
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
+          showMessage={this.state.showMessage}
         />
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Events in emotion view can't be editted or added</p>

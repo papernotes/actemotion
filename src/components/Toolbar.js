@@ -86,7 +86,7 @@ class Toolbar extends Component {
             </Nav>
 
             <Nav pullRight>
-              <NavItem eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
+              <NavItem disabled={this.props.showMessage} eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
               <NavDropdown eventKey={6} title='User' id='userDropdown'>
                 <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/settings')}>Settings</MenuItem>
                 <MenuItem eventKey={6.2} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
@@ -108,7 +108,8 @@ Toolbar.propTypes = {
   setNotifications: PropTypes.func.isRequired,
   notificationsOn: PropTypes.bool.isRequired,
   setConfirmAddition: PropTypes.func.isRequired,
-  activeEvent: PropTypes.object.isRequired
+  activeEvent: PropTypes.object.isRequired,
+  showMessage: PropTypes.bool.isRequired
 }
 
 export default Toolbar;
