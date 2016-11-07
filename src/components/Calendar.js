@@ -16,8 +16,10 @@ BigCalendar.setLocalizer(
 class Calendar extends Component{
 
   showEventInfo(event, bool) {
-    this.props.setActiveEvent(event);
-    this.props.setEventModal(bool);
+    if (this.props.showingNormalEvents) {
+      this.props.setActiveEvent(event);
+      this.props.setEventModal(bool);
+    }
   }
 
   hideEventInfo() {
@@ -112,7 +114,8 @@ Calendar.propTypes = {
   activeEvent: PropTypes.object.isRequired,
   deleteEvent: PropTypes.func.isRequired,
   setEditModal: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired
+  saveEdit: PropTypes.func.isRequired,
+  showingNormalEvents: PropTypes.bool.isRequired
 }
 
 export default Calendar;

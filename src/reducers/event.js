@@ -11,7 +11,8 @@ const initialState = {
   isConfirmOpen: false,
   activeEvent: {},
   events: TempEvents,
-  renderEvents: TempEvents
+  renderEvents: TempEvents,
+  showingNormalEvents: true
 }
 
 export default function event(state=initialState, action) {
@@ -79,16 +80,18 @@ export default function event(state=initialState, action) {
 
     case SET_NORMAL_EVENTS:
       var formatter = new DataFormatter();
-      var newEvents = formatter.generateEmotionEvents(state.events);
+      var emotionEvents = formatter.generateEmotionEvents(state.events);
 
       if (action.bool) {
         return Object.assign({}, state, {
-          renderEvents: state.events
+          renderEvents: state.events,
+          showingNormalEvents: true
         })
       }
       else {
         return Object.assign({}, state, {
-          renderEvents: newEvents
+          renderEvents: emotionEvents,
+          showingNormalEvents: false
         })
       }
 
