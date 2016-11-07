@@ -26,7 +26,7 @@ class Login extends Component {
             placeholder='Username'
           />
           <FormControl
-            type='text'
+            type='password'
             placeholder='Password'
           />
 
