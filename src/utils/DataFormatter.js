@@ -67,4 +67,12 @@ export default class DataFormatter {
     return data;
   }
 
+  generateEmotionEvents(events) {
+    var newEvents = JSON.parse(JSON.stringify(events));
+    for (var i in newEvents) {
+      newEvents[i].title = newEvents[i].emotion;
+    }
+    return newEvents;
+  }
+
 }

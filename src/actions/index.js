@@ -53,3 +53,9 @@ export function saveEdit(oldEvent, newEvent) {
     type: types.SAVE_EDIT, oldEvent, newEvent
   }
 }
+
+export function setNormalEvents(bool) {
+  return {
+    type: types.SET_NORMAL_EVENTS, bool
+  }
+}

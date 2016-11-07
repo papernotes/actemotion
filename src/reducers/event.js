@@ -1,6 +1,7 @@
 import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, 
-        DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT} from '../constants/ActionTypes';
+        DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT, SET_NORMAL_EVENTS} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
+import DataFormatter from '../utils/DataFormatter';
 
 // TODO remove TempEvents
 const initialState = {
@@ -9,7 +10,8 @@ const initialState = {
   isEditOpen: false,
   isConfirmOpen: false,
   activeEvent: {},
-  events: TempEvents
+  events: TempEvents,
+  renderEvents: TempEvents
 }
 
 export default function event(state=initialState, action) {
@@ -74,6 +76,21 @@ export default function event(state=initialState, action) {
       return Object.assign({}, state, {
         events: cEvents
       })
+
+    case SET_NORMAL_EVENTS:
+      var formatter = new DataFormatter();
+      var newEvents = formatter.generateEmotionEvents(state.events);
+
+      if (action.bool) {
+        return Object.assign({}, state, {
+          renderEvents: state.events
+        })
+      }
+      else {
+        return Object.assign({}, state, {
+          renderEvents: newEvents
+        })
+      }
 
     default:
       return state

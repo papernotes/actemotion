@@ -1,6 +1,7 @@
 // Home Actions
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const SET_NOTIFICATIONS = 'SET_NOTIFICATIONS'
+export const SET_NORMAL_EVENTS = 'SET_NORMAL_EVENTS'
 
 // Event Actions
 export const ADD_EVENT = 'ADD_EVENT'

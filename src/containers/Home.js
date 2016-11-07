@@ -2,12 +2,20 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
+import {Button} from 'react-bootstrap';
 import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
 
 class Home extends Component {
 
-  // render the home page and pass the 'settings' as a prop in Box
+  showNormalEvents() {
+    this.props.actions.setNormalEvents(true);
+  }
+
+  showEmotionEvents() {
+    this.props.actions.setNormalEvents(false);
+  }
+
   render() {
     return(
       <div>
@@ -18,9 +26,13 @@ class Home extends Component {
           notificationsOn={this.props.home.notificationsOn}
           setNotifications={this.props.actions.setNotifications}
         />
+        <div style={{textAlign: 'center'}}>
+          <Button onClick={this.showNormalEvents.bind(this)}>Event View</Button>
+          <Button onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
+        </div>
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
-          events={this.props.event.events}
+          events={this.props.event.renderEvents}
           setEventModal={this.props.actions.setEventModal}
           activeEvent={this.props.event.activeEvent}
           setActiveEvent={this.props.actions.setActiveEvent}
