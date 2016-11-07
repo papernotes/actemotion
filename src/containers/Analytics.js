@@ -20,7 +20,7 @@ class Analytics extends Component {
                   notificationsOn={this.props.home.notificationsOn}
                   setNotifications={this.props.actions.setNotifications}
                 />
-                <h2 style={{textAlign: 'center', fontSize: '30px'}}>Analytics</h2>
+                <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
                 <br></br>
                 <p></p><p></p>
                 <div style={AnalyticsStyles.pieChart}>

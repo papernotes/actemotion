@@ -7,16 +7,36 @@ import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showMessage: false
+    }
+  }
 
   showNormalEvents() {
     this.props.actions.setNormalEvents(true);
+    this.setState({showMessage: false});
   }
 
   showEmotionEvents() {
     this.props.actions.setNormalEvents(false);
+    this.setState({showMessage: true});
   }
 
   render() {
+    var messageStyles = {};
+    if (this.state.showMessage) {
+      messageStyles = {
+        color: 'rgb(169, 68, 66)'
+      }
+    }
+    else {
+      messageStyles = {
+        color: 'white'
+      }
+    }
+
     return(
       <div>
         <Toolbar
@@ -27,6 +47,7 @@ class Home extends Component {
           setNotifications={this.props.actions.setNotifications}
         />
         <div style={{textAlign: 'center'}}>
+          <p style={messageStyles}>Events in emotion view can't be editted</p>
           <Button onClick={this.showNormalEvents.bind(this)}>Event View</Button>
           <Button onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>
