@@ -33,7 +33,7 @@ class Analytics extends Component {
                 <hr />
                 <h4 style={{textAlign: 'center', fontSize: '20px'}}>Time Feeling Happy During Activities Week 10/30</h4>
                 <div style={AnalyticsStyles.barChart}>
-                  <EmotionBarChart></EmotionBarChart>
+                  <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
                 </div>
             </div>
         );

@@ -1,7 +1,8 @@
 import {Chart} from 'react-google-charts';
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
+import DataFormatter from '../../utils/DataFormatter';
 
-class EmotionBarChart extends React.Component {
+class EmotionBarChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
@@ -18,12 +19,20 @@ class EmotionBarChart extends React.Component {
 			]
 		};
 	}
+
+	generateGraph(events) {
+		var formatter = new DataFormatter();
+		var result = formatter.generateEmotionGraph(events);
+		return result;
+	}
+
 	render() {
+		var data = this.generateGraph(this.props.events);
+
 		return (
 			<Chart
 			chartType="ColumnChart"
-			//eventName="onmouseover"
-			data={this.state.data}
+			data={data}
 			options={this.state.options}
 			graph_id="EmotionBarChart"
 			width={2*window.innerWidth/3}
@@ -32,5 +41,9 @@ class EmotionBarChart extends React.Component {
 		);
 	}
 };
+
+EmotionBarChart.propTypes = {
+	events: PropTypes.array.isRequired
+}
 
 export default EmotionBarChart;
