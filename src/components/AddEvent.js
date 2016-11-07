@@ -47,7 +47,7 @@ class AddEvent extends Component {
       }
     }
     var newEvent = data;
-    if (this.state.eventName.length > 1) {
+    if (this.state.eventName.length >= 1) {
       this.props.addEvent(this.formatEvent(newEvent));
       this.setModalOpen(false);
     }

@@ -21,8 +21,10 @@ class EditEvent extends Component {
 
   saveEdit() {
     var edits = this.formatEvent(this.getFormData());
-    this.props.saveEdit(this.props.activeEvent, edits);
-    this.props.setEditModal(false);
+    if (this.state.eventName.length >= 1) {
+      this.props.saveEdit(this.props.activeEvent, edits);
+      this.props.setEditModal(false);
+    }
   }
 
   preventDefault(e) {
@@ -96,7 +98,7 @@ class EditEvent extends Component {
                   <ControlLabel>Event Name</ControlLabel>
                   <FormControl
                     type='text'
-                    placeholder={event.title}
+                    placeholder='Change the title!'
                     ref='eventName'
                     onChange={this.handleChange.bind(this)}
                   />
