@@ -28,7 +28,7 @@ class Toolbar extends Component {
           onHide={this.setModalOpen.bind(this, false)}
           backdrop='static'
         >
-          <Modal.Header>
+          <Modal.Header closeButton={true}>
             <Modal.Title>Add Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -43,7 +43,7 @@ class Toolbar extends Component {
           show={this.props.notificationsOn}
           onHide={this.setNotificationsModal.bind(this, false)}
         >
-          <Modal.Header>
+          <Modal.Header closeButton={true}>
             <Modal.Title>Notifications</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -62,7 +62,7 @@ class Toolbar extends Component {
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
-              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Analytics</NavItem>
+              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Your Emotions</NavItem>
             </Nav>
 
             <Nav pullRight>

@@ -40,7 +40,7 @@ class Calendar extends Component{
           onHide={this.hideEventInfo.bind(this)}
           backdrop='static'
         >
-          <Modal.Header>
+          <Modal.Header closeButton={true}>
             <Modal.Title>{this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -59,7 +59,7 @@ class Calendar extends Component{
           onHide={this.hideEditModal.bind(this)}
           backdrop='static'
         >
-          <Modal.Header>
+          <Modal.Header closeButton={true}>
             <Modal.Title>Editting: {this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -78,7 +78,7 @@ class Calendar extends Component{
           onHide={this.hideConfirmModal.bind(this)}
           backdrop='static'
         >
-          <Modal.Header>
+          <Modal.Header closeButton={true}>
             <Modal.Title>DELETING: {this.props.activeEvent.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
