@@ -26,6 +26,9 @@ class Home extends Component {
 
   render() {
     var messageStyles = {};
+    var normalActive = !this.state.showMessage;
+    var emotionActive = this.state.showMessage;
+
     if (this.state.showMessage) {
       messageStyles = {
         color: 'rgb(169, 68, 66)'
@@ -45,11 +48,13 @@ class Home extends Component {
           addEvent={this.props.actions.addEvent}
           notificationsOn={this.props.home.notificationsOn}
           setNotifications={this.props.actions.setNotifications}
+          confirmedAddition={this.props.event.confirmedAddition}
+          setConfirmAddition={this.props.actions.setConfirmAddition}
         />
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Events in emotion view can't be editted</p>
-          <Button onClick={this.showNormalEvents.bind(this)}>Event View</Button>
-          <Button onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
+          <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
+          <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
@@ -64,6 +69,7 @@ class Home extends Component {
           isConfirmOpen={this.props.event.isConfirmOpen}
           saveEdit={this.props.actions.saveEdit}
           showingNormalEvents={this.props.event.showingNormalEvents}
+          setConfirmAddition={this.props.actions.setConfirmAddition}
         />
       </div>
     );
@@ -93,10 +99,11 @@ Home.propTypes = {
     setEditModal: PropTypes.func.isRequired,
     setNotifications: PropTypes.func.isRequired,
     setConfirmModal: PropTypes.func.isRequired,
-    saveEdit: PropTypes.func.isRequired
+    saveEdit: PropTypes.func.isRequired,
+    setConfirmAddition: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
-    notificationsOn: PropTypes.bool.isRequired
+    notificationsOn: PropTypes.bool
   }),
   event: PropTypes.shape({
     isInfoOpen: PropTypes.bool.isRequired,
@@ -106,7 +113,8 @@ Home.propTypes = {
     activeEvent: PropTypes.object.isRequired,
     isEditOpen: PropTypes.bool.isRequired,
     isConfirmOpen: PropTypes.bool.isRequired,
-    showingNormalEvents: PropTypes.bool.isRequired
+    showingNormalEvents: PropTypes.bool.isRequired,
+    confirmedAddition: PropTypes.bool.isRequired,
   })
 }
 

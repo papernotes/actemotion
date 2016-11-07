@@ -49,6 +49,7 @@ class AddEvent extends Component {
     var newEvent = data;
     if (this.state.eventName.length >= 1) {
       this.props.addEvent(this.formatEvent(newEvent));
+      this.props.setConfirmAddition(true);
       this.setModalOpen(false);
     }
   }
@@ -170,7 +171,8 @@ class AddEvent extends Component {
 
 AddEvent.propTypes = {
   setModalOpen: PropTypes.func.isRequired,
-  addEvent: PropTypes.func.isRequired
+  addEvent: PropTypes.func.isRequired,
+  setConfirmAddition: PropTypes.func.isRequired
 }
 
 export default AddEvent;

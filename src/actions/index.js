@@ -59,3 +59,9 @@ export function setNormalEvents(bool) {
     type: types.SET_NORMAL_EVENTS, bool
   }
 }
+
+export function setConfirmAddition(bool) {
+  return {
+    type: types.SET_CONFIRM_ADDITION, bool
+  }
+}

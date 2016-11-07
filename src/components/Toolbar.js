@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {MenuItem, Nav, NavItem, Navbar, NavDropdown, Modal} from 'react-bootstrap';
 import AddEvent from './AddEvent';
+import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
 
@@ -35,9 +36,26 @@ class Toolbar extends Component {
             <AddEvent 
               setModalOpen={this.props.setModalOpen}
               addEvent={this.props.addEvent}
+              setConfirmAddition={this.props.setConfirmAddition}
             />
           </Modal.Body>
         </Modal>
+
+        <Modal
+          show={this.props.confirmedAddition}
+          onHide={this.setModalOpen.bind(this, false)}
+          backdrop='static'
+        >
+          <Modal.Header closeButton={true}>
+            <Modal.Title>Event Added!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ConfirmAddition
+              setConfirmAddition={this.props.setConfirmAddition}
+            />
+          </Modal.Body>
+        </Modal>
+
 
         <Modal
           show={this.props.notificationsOn}
@@ -86,7 +104,8 @@ Toolbar.propTypes = {
   addEvent: PropTypes.func.isRequired,
   setModalOpen: PropTypes.func.isRequired,
   setNotifications: PropTypes.func.isRequired,
-  notificationsOn: PropTypes.bool.isRequired
+  notificationsOn: PropTypes.bool.isRequired,
+  setConfirmAddition: PropTypes.func.isRequired
 }
 
 export default Toolbar;

@@ -91,7 +91,7 @@ class Calendar extends Component{
               activeEvent={this.props.activeEvent}
             />
           </Modal.Body>
-        </Modal>   
+        </Modal>
 
         <div style={DivStyles.calendar}>
           <BigCalendar
