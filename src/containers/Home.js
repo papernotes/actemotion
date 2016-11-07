@@ -50,9 +50,11 @@ class Home extends Component {
           setNotifications={this.props.actions.setNotifications}
           confirmedAddition={this.props.event.confirmedAddition}
           setConfirmAddition={this.props.actions.setConfirmAddition}
+          activeEvent={this.props.event.activeEvent}
+          setActiveEvent={this.props.actions.setActiveEvent}
         />
         <div style={{textAlign: 'center'}}>
-          <p style={messageStyles}>Events in emotion view can't be editted</p>
+          <p style={messageStyles}>Events in emotion view can't be editted or added</p>
           <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
           <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>

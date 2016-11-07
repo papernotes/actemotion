@@ -37,6 +37,7 @@ class Toolbar extends Component {
               setModalOpen={this.props.setModalOpen}
               addEvent={this.props.addEvent}
               setConfirmAddition={this.props.setConfirmAddition}
+              setActiveEvent={this.props.setActiveEvent}
             />
           </Modal.Body>
         </Modal>
@@ -52,6 +53,7 @@ class Toolbar extends Component {
           <Modal.Body>
             <ConfirmAddition
               setConfirmAddition={this.props.setConfirmAddition}
+              activeEvent={this.props.activeEvent}
             />
           </Modal.Body>
         </Modal>
@@ -105,7 +107,8 @@ Toolbar.propTypes = {
   setModalOpen: PropTypes.func.isRequired,
   setNotifications: PropTypes.func.isRequired,
   notificationsOn: PropTypes.bool.isRequired,
-  setConfirmAddition: PropTypes.func.isRequired
+  setConfirmAddition: PropTypes.func.isRequired,
+  activeEvent: PropTypes.object.isRequired
 }
 
 export default Toolbar;

@@ -11,7 +11,10 @@ class ConfirmAddition extends Component {
     return(
       <div>
         <h3>You've successfully added an event!</h3>
-        <br/>
+        <p> It starts on <b>{this.props.activeEvent.start.toLocaleString()}</b> and ends on
+          <b>{this.props.activeEvent.start.toLocaleString()}</b>
+        </p>
+        <p> You were feeling <b>{this.props.activeEvent.emotion}</b> for this event</p>
         <Button
           bsStyle='primary'
           style={{float:'right'}}
@@ -26,7 +29,8 @@ class ConfirmAddition extends Component {
 }
 
 ConfirmAddition.propTypes = {
-  setConfirmAddition: PropTypes.func.isRequired
+  setConfirmAddition: PropTypes.func.isRequired,
+  activeEvent: PropTypes.object.isRequired
 }
 
 export default ConfirmAddition;
