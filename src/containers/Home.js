@@ -55,7 +55,7 @@ class Home extends Component {
           showMessage={this.state.showMessage}
         />
         <div style={{textAlign: 'center'}}>
-          <p style={messageStyles}>Events in emotion view can't be editted or added</p>
+          <p style={messageStyles}>Events in emotion view can't be edited or added</p>
           <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
           <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>
