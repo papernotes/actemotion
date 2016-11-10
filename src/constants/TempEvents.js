@@ -21,16 +21,6 @@ const TempEvents = [
   },
   {
     'allDay': false,
-    'emotion': 'happy',
-    'end': new Date(2016, 11, 11),
-    'energy': 3,
-    'start': new Date(2016, 11, 11),
-    'text': 'No school on this day',
-    'title': 'No school',
-    'type': 'school',
-  },
-  {
-    'allDay': false,
     'emotion': 'sad',
     'end': new Date(2016, 10, 15),
     'energy': 2,
