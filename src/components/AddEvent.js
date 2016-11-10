@@ -109,6 +109,7 @@ class AddEvent extends Component {
                 >
                   <option value='school'>school</option>
                   <option value='work'>work</option>
+                  <option value='leisure'>leisure</option>
                 </FormControl>
 
                 <ControlLabel>Start Time</ControlLabel>
@@ -130,7 +131,16 @@ class AddEvent extends Component {
                   ref='eventEmotion'
                 >
                   <option value='happy'>happy</option>
+                  <option value='excited'>excited</option>
                   <option value='sad'>sad</option>
+                  <option value='joy'>joy</option>
+                  <option value='hope'>hope</option>
+                  <option value='surprise'>surprise</option>
+                  <option value='anxious'>anxious</option>
+                  <option value='angry'>angry</option>
+                  <option value='fear'>fear</option>
+                  <option value='disgust'>disgust</option>
+                  <option value='envy'>envy</option>
                 </FormControl>
 
                 <ControlLabel>Energy Level</ControlLabel>

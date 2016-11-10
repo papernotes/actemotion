@@ -7,7 +7,7 @@ import FeelingsPieChart from '../components/charts/FeelingsPieChart';
 import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
-
+import EnergyLineChart from '../components/charts/EnergyLineChart';
 
 class Analytics extends Component {
     render() {
@@ -29,6 +29,9 @@ class Analytics extends Component {
                   <hr />
                   <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
                   <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
+                  <hr />
+                  <h4 style={{textAlign: 'center', fontSize: '20px'}}>This Needs work</h4>
+                  <EnergyLineChart events={this.props.event.events}></EnergyLineChart>
                 </div>
                 <hr />
                 <h4 style={{textAlign: 'center', fontSize: '20px'}}>Time Feeling Happy During Activities Week 10/30</h4>
