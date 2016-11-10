@@ -1,12 +1,21 @@
 import React, {Component, PropTypes} from 'react';
 import {Button} from 'react-bootstrap';
+import {browserHistory} from 'react-router';
 
 class EventInfo extends Component {
+
+  goToPage(route) {
+    browserHistory.push(route);
+  }
 
   formatInfo(eventData) {
     return(
       <div>
-        <p>Type: <b>{eventData.type}</b></p>        
+        <Button style={{float: 'right'}} 
+                onClick={this.goToPage.bind(this, '/analytics')}>
+          Go To Emotion Data 
+        </Button>
+        <p>Type: <b>{eventData.type}</b></p>  
         <p>Emotion: <b>{eventData.emotion}</b></p>
         <p>Energy Level: <b>{eventData.energy}</b></p>
         <p>Description: <b>{eventData.text}</b></p>
@@ -40,7 +49,6 @@ class EventInfo extends Component {
         >
           Delete
         </Button>
-
         <div style={{float: 'right'}}>
           <Button onClick={this.editEvent.bind(this)}>
             Edit
