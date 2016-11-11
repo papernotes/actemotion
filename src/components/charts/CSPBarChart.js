@@ -2,13 +2,13 @@ import {Chart} from 'react-google-charts';
 import React, {Component, PropTypes} from 'react';
 import DataFormatter from '../../utils/DataFormatter';
 
-class EnergyLineChart extends Component {
+class CSPBarChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
 			options:{
-				hAxis: {title: 'Last Week of Events'},
-				vAxis: {title: 'Energy Levels'},
+				hAxis: {title: 'Feelings About Events'},
+				vAxis: {title: '# Occurrences'},
 				legend: 'none',
 			}
 		};
@@ -16,7 +16,7 @@ class EnergyLineChart extends Component {
 
 	generateGraph(events) {
 		var formatter = new DataFormatter();
-		var result = formatter.generateEnergyGraph(events);
+		var result = formatter.generateCSPGraph(events);
 		return result;
 	}
 
@@ -25,10 +25,10 @@ class EnergyLineChart extends Component {
 
 		return (
 			<Chart
-			chartType="LineChart"
+			chartType="ColumnChart"
 			data={data}
 			options={this.state.options}
-			graph_id="EnergyLineChart"
+			graph_id="CSPBarChart"
 			width={2*window.innerWidth/3}
 			height={2*window.innerWidth/3}
 			/>
@@ -36,8 +36,8 @@ class EnergyLineChart extends Component {
 	}
 };
 
-EnergyLineChart.propTypes = {
+CSPBarChart.propTypes = {
 	events: PropTypes.array.isRequired
 }
 
-export default EnergyLineChart;
+export default CSPBarChart;

@@ -24,6 +24,7 @@ export default class DataFormatter {
     return data;
   }
 
+
   generateEnergyGraph(events) {
     var counts = {};
     var data = [];
@@ -90,6 +91,40 @@ export default class DataFormatter {
 
     return data;
   }
+
+    generateCSPGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Emotion', 'Intensity']);
+
+    for (var i in events) {
+      if (events[i].confidence == null) {
+        counts[events[i].confidence] = 1;
+      }
+      else {
+        ++counts[events[i].confidence];
+      }
+      /*
+      if (cevents[i].satisfaction === null) {
+        counts[events[i].satisfaction] = 1;
+      }
+      else {
+        ++counts[events[i].satisfaction];
+      }
+      if (events[i].productivity === null) {
+        counts[events[i].productivity] = 1;
+      }
+      else {
+        ++counts[events[i].confidence];
+      } */
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+    return data;
+  }
+
 
 
   generateEmotionEvents(events) {
