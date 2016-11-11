@@ -15,7 +15,7 @@ const DivStyles = {
     width: '30vw'
   },
   addEventContent: {
-    height: '400px',
+    height: '480px',
     width: '100%',
     margin: '0 auto'
   },
