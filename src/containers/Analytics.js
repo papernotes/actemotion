@@ -21,6 +21,10 @@ class Analytics extends Component {
                   addEvent={this.props.actions.addEvent}
                   notificationsOn={this.props.home.notificationsOn}
                   setNotifications={this.props.actions.setNotifications}
+                  confirmedAddition={this.props.event.confirmedAddition}
+                  setConfirmAddition={this.props.actions.setConfirmAddition}
+                  activeEvent={this.props.event.activeEvent}
+                  setActiveEvent={this.props.actions.setActiveEvent}
                 />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
                 <br></br>
@@ -61,10 +65,31 @@ function mapDispatchToProps(dispatch) {
 Analytics.propTypes = {
   actions: PropTypes.shape({
     setModalOpen: PropTypes.func.isRequired,
-    addEvent: PropTypes.func.isRequired
+    addEvent: PropTypes.func.isRequired,
+    setEventModal: PropTypes.func.isRequired,
+    setActiveEvent: PropTypes.func.isRequired,
+    deleteEvent: PropTypes.func.isRequired,
+    setEditModal: PropTypes.func.isRequired,
+    setNotifications: PropTypes.func.isRequired,
+    setConfirmModal: PropTypes.func.isRequired,
+    saveEdit: PropTypes.func.isRequired,
+    setConfirmAddition: PropTypes.func.isRequired,
+    setConfirmEdit: PropTypes.func.isRequired
+  }),
+  home: PropTypes.shape({
+    notificationsOn: PropTypes.bool
   }),
   event: PropTypes.shape({
-    isAddOpen: PropTypes.bool.isRequired
+    isInfoOpen: PropTypes.bool.isRequired,
+    isAddOpen: PropTypes.bool.isRequired,
+    events: PropTypes.array.isRequired,
+    renderEvents: PropTypes.array.isRequired,
+    activeEvent: PropTypes.object.isRequired,
+    isEditOpen: PropTypes.bool.isRequired,
+    isConfirmOpen: PropTypes.bool.isRequired,
+    showingNormalEvents: PropTypes.bool.isRequired,
+    confirmedAddition: PropTypes.bool.isRequired,
+    confirmedEdit: PropTypes.bool.isRequired
   })
 }
 
