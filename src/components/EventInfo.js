@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, Grid, Row, Col} from 'react-bootstrap';
 import {browserHistory} from 'react-router';
 
 class EventInfo extends Component {
@@ -11,17 +11,31 @@ class EventInfo extends Component {
   formatInfo(eventData) {
     return(
       <div>
-        <Button style={{float: 'right'}} 
-                onClick={this.goToPage.bind(this, '/analytics')}>
-          Go To Emotion Data 
-        </Button>
-        <p>Type: <b>{eventData.type}</b></p>  
-        <p>Emotion: <b>{eventData.emotion}</b></p>
-        <p>Energy Level: <b>{eventData.energy}</b></p>
-        <p>Description: <b>{eventData.text}</b></p>
-        <p>Start Time: <b>{eventData.start.toLocaleString()}</b></p>
-        <p>End Time: <b>{eventData.end.toLocaleString()}</b></p>
+      <Grid>
+        <Row>
+        <Col sm={6} md={3}>
+          <p>Type: <b>{eventData.type}</b></p>  
+          <p>Emotion: <b>{eventData.emotion}</b></p>
+          <p>Energy Level: <b>{eventData.energy}</b></p>
+
+          <p>Confidence Level: <b>{eventData.confidence}</b></p>
+          <p>Satisfaction Level: <b>{eventData.satisfaction}</b></p>
+          <p>Productivity Level: <b>{eventData.productivity}</b></p>
+        </Col>
+          
+        <Col sm={6} md={3}>
+          <p>Description: <b>{eventData.text}</b></p>
+          <p>Start Time: <b>{eventData.start.toLocaleString()}</b></p>
+          <p>End Time: <b>{eventData.end.toLocaleString()}</b></p>
+          <Button onClick={this.goToPage.bind(this, '/analytics')}>
+            Go To Emotion Data 
+          </Button>
+         </Col>
+        </Row>
+      </Grid>
       </div>
+
+
     );
   }
 
@@ -42,7 +56,7 @@ class EventInfo extends Component {
   render() {
     return(
       <div>
-        {this.formatInfo(this.props.activeEvent)}
+        {this.formatInfo(this.props.activeEvent)} 
         <Button
           onClick={this.deleteEvent.bind(this, this.props.activeEvent)}
           bsStyle='danger'

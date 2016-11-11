@@ -41,7 +41,10 @@ class EditEvent extends Component {
       'type': data[1],
       'emotion': data[4],
       'energy': data[5],
-      'text': data[6]
+      'confidence': data[6],
+      'satisfaction': data[7],
+      'productivity': data[8],
+      'text': data[9]
     }
   }
 
@@ -159,12 +162,54 @@ class EditEvent extends Component {
                   <option value='4'>4</option>
                   <option value='5'>5</option>
                 </FormControl>
+
               </div>
 
+
               <div style={DivStyles.twoColumnAdd}>
+
+                <ControlLabel>Confidence Level</ControlLabel>
+                <FormControl
+                  componentClass='select'
+                  placeholder={event.confidence}
+                  ref='eventConfidence'
+                >
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </FormControl>
+
+                <ControlLabel>Satisfaction Level</ControlLabel>
+                <FormControl
+                  componentClass='select'
+                  placeholder={event.satisfaction}
+                  ref='eventSatisfaction'
+                >
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </FormControl>
+
+                <ControlLabel>Productivity Level</ControlLabel>
+                <FormControl
+                  componentClass='select'
+                  placeholder={event.productivity}
+                  ref='eventProductivity'
+                >
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                </FormControl>
+
                 <ControlLabel>Description</ControlLabel>
                 <FormControl
-                  style={{resize: 'none', height: '275px'}}
+                  style={{resize: 'none', height: '15vw'}}
                   componentClass='textarea'
                   placeholder='Add a new description!'
                   ref='eventText'

@@ -6,11 +6,13 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "chart.js": "^2.3.0",
     "moment": "^2.15.2",
     "react": "^15.3.2",
     "react-addons-transition-group": "^15.3.2",
     "react-big-calendar": "^0.11.0",
     "react-bootstrap": "^0.30.5",
+    "react-chartjs-2": "^1.5.1",
     "react-datetime": "^2.6.2",
     "react-dom": "^15.3.2",
     "react-google-charts": "^1.2.1",

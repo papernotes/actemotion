@@ -8,15 +8,9 @@ class EmotionBarChart extends Component {
 		this.state={
 			options:{
 				hAxis: {title: 'Event'},
-				vAxis: {title: '% Time Happy'},
+				vAxis: {title: 'Happy Events'},
 				legend: 'none',
 			},
-			data:[
-				['Activity','Happiness Level'],
-				['School',75],
-				['Work',50],
-				['Club',100],
-			]
 		};
 	}
 

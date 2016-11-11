@@ -11,12 +11,7 @@ class FeelingsPieChart extends Component {
 				vAxis: {title: 'Intensity'},
 				'legend': {'position': 'right'},
 				chartArea:{left:10,top:20,width:"95%",height:"95%"}
-			},
-			data:[
-				['Feeling', 'Intensity'],
-				['Happy', 5],
-				['Sad', 4],
-			]
+			}
 		};
 	}
 
