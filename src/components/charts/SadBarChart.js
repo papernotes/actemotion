@@ -8,7 +8,7 @@ class SadBarChart extends Component {
 		this.state={
 			options:{
 				hAxis: {title: 'Event Type'},
-				vAxis: {title: 'Happy Events'},
+				vAxis: {title: 'Sad Events'},
 				legend: 'none',
 			},
 		};
