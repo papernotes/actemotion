@@ -2,22 +2,21 @@ import {Chart} from 'react-google-charts';
 import React, {Component, PropTypes} from 'react';
 import DataFormatter from '../../utils/DataFormatter';
 
-class EnergyPieChart extends Component {
+class SadBarChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
 			options:{
-				hAxis: {title: 'Energy'},
-				vAxis: {title: 'Level'},
-				'legend': {'position': 'bottom'},
-				chartArea:{left:10,top:20,width:"80%",height:"80%"}
+				hAxis: {title: 'Event Type'},
+				vAxis: {title: 'Happy Events'},
+				legend: 'none',
 			},
 		};
 	}
 
 	generateGraph(events) {
 		var formatter = new DataFormatter();
-		var result = formatter.generateEnergyGraph(events);
+		var result = formatter.generateSadGraph(events);
 		return result;
 	}
 
@@ -26,20 +25,19 @@ class EnergyPieChart extends Component {
 
 		return (
 			<Chart
-			chartType="PieChart"
+			chartType="ColumnChart"
 			data={data}
 			options={this.state.options}
-			graph_id="EnergyPieChart"
+			graph_id="SadBarChart"
 			width={2*window.innerWidth/3}
 			height={2*window.innerWidth/3}
-			legend_toggle
 			/>
 		);
 	}
 };
 
-EnergyPieChart.propTypes = {
+SadBarChart.propTypes = {
 	events: PropTypes.array.isRequired
 }
 
-export default EnergyPieChart;
+export default SadBarChart;

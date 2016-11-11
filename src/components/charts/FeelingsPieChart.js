@@ -9,8 +9,8 @@ class FeelingsPieChart extends Component {
 			options:{
 				hAxis: {title: 'Feeling'},
 				vAxis: {title: 'Intensity'},
-				'legend': {'position': 'right'},
-				chartArea:{left:10,top:20,width:"95%",height:"95%"}
+				'legend': {'position': 'bottom'},
+				chartArea:{left:10,top:20,width:"80%",height:"80%"}
 			},
 			data:[
 				['Feeling', 'Intensity'],
