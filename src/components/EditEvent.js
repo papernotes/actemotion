@@ -209,7 +209,7 @@ class EditEvent extends Component {
 
                 <ControlLabel>Description</ControlLabel>
                 <FormControl
-                  style={{resize: 'none', height: '12vw'}}
+                  style={{resize: 'none', height: '15vw'}}
                   componentClass='textarea'
                   placeholder='Add a new description!'
                   ref='eventText'

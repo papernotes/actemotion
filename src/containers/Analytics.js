@@ -8,6 +8,8 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import EnergyLineChart from '../components/charts/EnergyLineChart';
+import TestPieChart from '../components/charts/TestPieChart';
+
 
 class Analytics extends Component {
     render() {
@@ -37,6 +39,13 @@ class Analytics extends Component {
                 <h4 style={{textAlign: 'center', fontSize: '20px'}}>Happy Events During the Week 10/30</h4>
                 <div style={AnalyticsStyles.barChart}>
                   <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
+                </div>
+                <hr />
+                <div>
+                  <TestPieChart events={this.props.event.events}></TestPieChart>
+                </div>
+                <hr />
+                <div> 
                 </div>
             </div>
         );
