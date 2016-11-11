@@ -109,7 +109,7 @@ Toolbar.propTypes = {
   notificationsOn: PropTypes.bool.isRequired,
   setConfirmAddition: PropTypes.func.isRequired,
   activeEvent: PropTypes.object.isRequired,
-  showMessage: PropTypes.bool.isRequired
+  showMessage: PropTypes.bool
 }
 
 export default Toolbar;
