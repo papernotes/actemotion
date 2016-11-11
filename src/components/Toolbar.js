@@ -90,8 +90,7 @@ class Toolbar extends Component {
             <Nav pullRight>
               <NavItem disabled={this.props.showMessage} eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
               <NavDropdown eventKey={6} title='User' id='userDropdown'>
-                <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/settings')}>Settings</MenuItem>
-                <MenuItem eventKey={6.2} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
+                <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
               </NavDropdown>
             </Nav>
 
