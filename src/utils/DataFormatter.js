@@ -39,7 +39,7 @@ export default class DataFormatter {
     }
 
     for (var key in counts) {
-      data.push(['Energy Level ' + key, counts[key]])
+      data.push(['Level ' + key, counts[key]])
     }
     return data;
   }
@@ -66,6 +66,31 @@ export default class DataFormatter {
 
     return data;
   }
+
+
+  generateSadGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Sad Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'sad') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
 
   generateEmotionEvents(events) {
     var newEvents = JSON.parse(JSON.stringify(events));
