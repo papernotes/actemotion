@@ -8,8 +8,7 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
-import CSPBarChart from '../components/charts/CSPBarChart';
-
+//import CSPBarChart from '../components/charts/CSPBarChart';
 
 class Analytics extends Component {
     render() {
@@ -25,6 +24,8 @@ class Analytics extends Component {
                   setConfirmAddition={this.props.actions.setConfirmAddition}
                   activeEvent={this.props.event.activeEvent}
                   setActiveEvent={this.props.actions.setActiveEvent}
+                  setNormalEvents={this.props.actions.setNormalEvents}
+                  location={this.props.location}
                 />
                 <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
                 <br></br>
@@ -63,6 +64,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 Analytics.propTypes = {
+  location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
     setModalOpen: PropTypes.func.isRequired,
     addEvent: PropTypes.func.isRequired,
@@ -74,7 +76,8 @@ Analytics.propTypes = {
     setConfirmModal: PropTypes.func.isRequired,
     saveEdit: PropTypes.func.isRequired,
     setConfirmAddition: PropTypes.func.isRequired,
-    setConfirmEdit: PropTypes.func.isRequired
+    setConfirmEdit: PropTypes.func.isRequired,
+    setNormalEvents: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool

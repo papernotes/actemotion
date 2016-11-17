@@ -7,10 +7,25 @@ import {browserHistory} from 'react-router';
 
 class Toolbar extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      activeKey: 1
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.location.pathname === '/home') 
+      this.setState({activeKey: 1});
+    else
+      this.setState({activeKey: 2})
+  }
+
   // TODO disable NavItem or make active on click
   goToPage(route) {
     browserHistory.push(route);
-    this.props.setNormalEvents(true); // quick fix for resetting calendar items
+    if (route !== '/home')
+      this.props.setNormalEvents(true); // quick fix for resetting calendar items
   }
 
   setModalOpen(bool) {
@@ -83,7 +98,7 @@ class Toolbar extends Component {
           </Navbar.Header>
 
           <Navbar.Collapse>
-            <Nav>
+            <Nav activeKey={this.state.activeKey}>
               <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
               <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Your Emotions</NavItem>
             </Nav>

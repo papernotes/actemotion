@@ -54,6 +54,7 @@ class Home extends Component {
           setActiveEvent={this.props.actions.setActiveEvent}
           showMessage={this.state.showMessage}
           setNormalEvents={this.props.actions.setNormalEvents}
+          location={this.props.location}
         />
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Events in emotion view can't be edited or added</p>
@@ -96,6 +97,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 Home.propTypes = {
+  location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
     setModalOpen: PropTypes.func.isRequired,
     addEvent: PropTypes.func.isRequired,
@@ -107,7 +109,8 @@ Home.propTypes = {
     setConfirmModal: PropTypes.func.isRequired,
     saveEdit: PropTypes.func.isRequired,
     setConfirmAddition: PropTypes.func.isRequired,
-    setConfirmEdit: PropTypes.func.isRequired
+    setConfirmEdit: PropTypes.func.isRequired,
+    setNormalEvents: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
