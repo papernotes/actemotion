@@ -10,6 +10,7 @@ class Toolbar extends Component {
   // TODO disable NavItem or make active on click
   goToPage(route) {
     browserHistory.push(route);
+    this.props.setNormalEvents(true); // quick fix for resetting calendar items
   }
 
   setModalOpen(bool) {
@@ -110,7 +111,8 @@ Toolbar.propTypes = {
   notificationsOn: PropTypes.bool.isRequired,
   setConfirmAddition: PropTypes.func.isRequired,
   activeEvent: PropTypes.object.isRequired,
-  showMessage: PropTypes.bool
+  showMessage: PropTypes.bool,
+  setNormalEvents: PropTypes.func.isRequired
 }
 
 export default Toolbar;
