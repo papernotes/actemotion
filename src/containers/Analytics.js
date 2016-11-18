@@ -40,7 +40,7 @@ class Analytics extends Component {
         this.setState({activeKey: 1});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h3>Overall Emotions Week of 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
           </div>
         );
@@ -49,7 +49,7 @@ class Analytics extends Component {
         this.setState({activeKey: 2});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h3>Energy Level Week of 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Levels for All Events</h4>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
           </div>
         );
@@ -58,7 +58,7 @@ class Analytics extends Component {
         this.setState({activeKey: 3});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h3>Happy Events During the Week 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Happy" Events</h4>
             <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
             <p>These events made you happy for the week!</p>
           </div>
@@ -68,7 +68,7 @@ class Analytics extends Component {
         this.setState({activeKey: 4});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h3>Sad Events During the Week 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Sad" Events</h4>
             <SadBarChart events={this.props.event.events}></SadBarChart>
             <p>These events made you sad for the week</p>
           </div>

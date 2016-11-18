@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
-import DivStyles from '../styles/DivStyles';
 require('../styles/style.css');
 
 class Login extends Component {
