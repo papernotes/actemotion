@@ -11,8 +11,10 @@ import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 import App from './containers/App';
 import CreateAccount from './components/CreateAccount';
 import Home from './containers/Home';
+import Home2 from './containers/Home2';
 import Settings from './containers/Settings';
 import Analytics from './containers/Analytics';
+import Analytics2 from './containers/Analytics2';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 import AddEvent from './components/AddEvent';
@@ -38,9 +40,11 @@ render(
             <Route path='/' component={App}>
                 <IndexRoute component={Login}/>
                 <Route path='home' component={Home}/>
+                <Route path='home2' component={Home2}/>
                 <Route path='create' component={CreateAccount}/>
                 <Route path='settings' component={Settings}/>
                 <Route path='analytics' component={Analytics}/>
+                <Route path='analytics2' component={Analytics2}/>
                 <Route path='editevent' component={AddEvent}/>
                 <Route path='*' component={NotFound}/>
             </Route>

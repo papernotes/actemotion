@@ -13,7 +13,7 @@ import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
 require('../styles/style.css');
 
-class Analytics extends Component {
+class Analytics2 extends Component {
 
   constructor() {
     super();
@@ -101,7 +101,8 @@ class Analytics extends Component {
           setActiveEvent={this.props.actions.setActiveEvent}
           setNormalEvents={this.props.actions.setNormalEvents}
           location={this.props.location}
-          analyticsTitle={'Emotion Data Analytics'}
+          analyticsTitle={'Your Emotions'}
+          secondaryRoute={'/home2'}
         />
         <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
         <br></br>
@@ -139,7 +140,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-Analytics.propTypes = {
+Analytics2.propTypes = {
   analyticsTitle: PropTypes.string,
   location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
@@ -173,4 +174,4 @@ Analytics.propTypes = {
   })
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Analytics);
+export default connect(mapStateToProps,mapDispatchToProps)(Analytics2);

@@ -6,7 +6,7 @@ import {Button} from 'react-bootstrap';
 import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
 
-class Home extends Component {
+class Home2 extends Component {
   constructor() {
     super();
     this.state = {
@@ -60,7 +60,9 @@ class Home extends Component {
           showMessage={this.state.showMessage}
           setNormalEvents={this.props.actions.setNormalEvents}
           location={this.props.location}
-          analyticsTitle={'Emotion Data Analytics'}
+          analyticsTitle={'Your Emotions'}
+          secondaryRoute={'/home2'}
+          analyticsRoute={'/analytics2'}
         />
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
@@ -103,7 +105,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-Home.propTypes = {
+Home2.propTypes = {
   analyticsTitle: PropTypes.string,
   location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
@@ -137,4 +139,4 @@ Home.propTypes = {
   })
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps)(Home2);
