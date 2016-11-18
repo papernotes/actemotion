@@ -60,6 +60,7 @@ class Analytics extends Component {
           <div style={AnalyticsStyles.barChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Happy Events During the Week 10/30</h4>
             <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
+            <p>These events made you happy for the week!</p>
           </div>
         );
 
@@ -69,6 +70,7 @@ class Analytics extends Component {
           <div style={AnalyticsStyles.barChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Sad Events During the Week 10/30</h4>
             <SadBarChart events={this.props.event.events}></SadBarChart>
+            <p>These events made you sad for the week</p>
           </div>
         );
 
