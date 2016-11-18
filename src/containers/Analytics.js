@@ -75,7 +75,7 @@ class Analytics extends Component {
       default:
         this.setState({activeKey: 1});
         return (
-          <div style={{textAlign: 'center'}}>
+          <div style={{paddingTop: '25%', textAlign: 'center'}}>
             <h3>Pick a chart from the left!</h3>
             <p>Find information about yourself!</p>
           </div>

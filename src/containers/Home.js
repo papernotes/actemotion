@@ -64,6 +64,7 @@ class Home extends Component {
           <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
           <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
           <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
+          <p><b>Today is {new Date().toDateString()}</b></p>
         </div>
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
