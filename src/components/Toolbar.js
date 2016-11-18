@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {MenuItem, Nav, NavItem, Navbar, NavDropdown, Modal} from 'react-bootstrap';
+import {Nav, NavItem, Navbar, Modal} from 'react-bootstrap';
 import AddEvent from './AddEvent';
 import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
