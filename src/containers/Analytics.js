@@ -18,13 +18,15 @@ class Analytics extends Component {
   constructor() {
     super();
     this.state = {
+      activeKey: 1,
       displayedGraph: null
     }
   }
 
   componentWillMount() {
-    var graph = this.createGraph('FeelingsPieChart');
+    var graph = this.createGraph('');
     this.setState({displayedGraph: graph});
+    this.setState({activeKey: 1});
   }
 
   handleClick(type) {
@@ -35,6 +37,7 @@ class Analytics extends Component {
   createGraph(type) {
     switch(type){
       case 'FeelingsPieChart':
+        this.setState({activeKey: 1});
         return (
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
@@ -43,6 +46,7 @@ class Analytics extends Component {
         );
 
       case 'EnergyPieChart':
+        this.setState({activeKey: 2});
         return (
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
@@ -51,6 +55,7 @@ class Analytics extends Component {
         );
 
       case 'EmotionBarChart':
+        this.setState({activeKey: 3});
         return (
           <div style={AnalyticsStyles.barChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Happy Events During the Week 10/30</h4>
@@ -59,6 +64,7 @@ class Analytics extends Component {
         );
 
       case 'SadBarChart':
+        this.setState({activeKey: 4});
         return (
           <div style={AnalyticsStyles.barChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Sad Events During the Week 10/30</h4>
@@ -67,10 +73,11 @@ class Analytics extends Component {
         );
 
       default:
+        this.setState({activeKey: 1});
         return (
-          <div>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
-            <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
+          <div style={{textAlign: 'center'}}>
+            <h3>Pick a chart from the left!</h3>
+            <p>Find information about yourself!</p>
           </div>
         );
     }
@@ -99,7 +106,7 @@ class Analytics extends Component {
 
         <div style={DivStyles.twoColumnSettings}>
           <h2>Available Graphs</h2>
-          <Nav>
+          <Nav activeKey={this.state.activeKey}>
             <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>Feelings Pie Chart</NavItem>
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
