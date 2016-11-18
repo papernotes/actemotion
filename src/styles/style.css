@@ -1,28 +1,57 @@
-.navbar-default {
+navbar-default {
 	background-color: #3174AD;
 	border-color: ;
 }
 
+.navbar-default {
+	width: device-width;
+	background-color: #2E94B9;
+	border-color: ;
+}
+
 .navbar-default .navbar-brand {
-	color: white;
+	padding-left: 20px;
+	color: #F0FBFF;
 }
 
 .navbar-default .navbar-brand:hover{
-	color: black;
+	color: #333;
+}
+
+h2 {
+	color: #24728f;
+}
+h4 {
+	color: #24728f;
 }
 
 .navbar-default .navbar-nav .active a {
 	color: #3174AD;
+	background-color: #F0FBFF;
 }
 
 .navbar-default .navbar-nav li a {
 	color: white;
 }
 
-.col-sm-6 {
-	max-width: device-width
+
+.login {
+	background-image: url(https://i.ytimg.com/vi/hZpYLHw0s4s/maxresdefault.jpg);
+}
+
+rbc-event{
+	background-color: #1B5E20;
+	color: #F8DA5B
 }
 
 .rbc-event{
-	background-color: #1B5E20;
+	background-color: #e6be0a;
+}
+
+.rbc-event.rbc-selected {
+	background-color: #2E94B9;
+}
+
+.navbar-default .navbar-toggle{
+	background-color: #F0FBFF;
 }
