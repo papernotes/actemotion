@@ -1,0 +1,28 @@
+.navbar-default {
+	background-color: #3174AD;
+	border-color: ;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.navbar-default .navbar-brand:hover{
+	color: black;
+}
+
+.navbar-default .navbar-nav .active a {
+	color: #3174AD;
+}
+
+.navbar-default .navbar-nav li a {
+	color: white;
+}
+
+.col-sm-6 {
+	max-width: device-width
+}
+
+.rbc-event{
+	background-color: #1B5E20;
+}

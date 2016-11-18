@@ -4,6 +4,7 @@ import AddEvent from './AddEvent';
 import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
+require('../styles/style.css');
 
 class Toolbar extends Component {
 
@@ -105,9 +106,7 @@ class Toolbar extends Component {
 
             <Nav pullRight>
               <NavItem disabled={this.props.showMessage} eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
-              <NavDropdown eventKey={6} title='User' id='userDropdown'>
-                <MenuItem eventKey={6.1} onClick={this.goToPage.bind(this, '/')}>Logout</MenuItem>
-              </NavDropdown>
+              <NavItem eventKey={6.1} onClick={this.goToPage.bind(this, '/')}>Logout</NavItem>
             </Nav>
 
           </Navbar.Collapse>
