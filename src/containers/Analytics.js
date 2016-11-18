@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Button} from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
@@ -27,10 +27,9 @@ class Analytics extends Component {
     this.setState({displayedGraph: graph});
   }
 
-  handleClick() {
-    var graph = this.createGraph('EnergyPieChart');
+  handleClick(type) {
+    var graph = this.createGraph(type);
     this.setState({displayedGraph: graph})
-    return graph;
   }
 
   createGraph(type) {
@@ -59,7 +58,7 @@ class Analytics extends Component {
           </div>
         );
 
-      case '':
+      case 'SadBarChart':
         return (
           <div style={AnalyticsStyles.barChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Sad Events During the Week 10/30</h4>
@@ -99,9 +98,13 @@ class Analytics extends Component {
         <p></p><p></p>
 
         <div style={DivStyles.twoColumnSettings}>
-          <h2>Stuff</h2>
-          <p>Info</p>
-          <Button onClick={this.handleClick.bind(this)}>Click</Button>
+          <h2>Available Graphs</h2>
+          <Nav>
+            <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>Feelings Pie Chart</NavItem>
+            <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
+            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
+            <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
+          </Nav>
         </div>
 
         <div style={DivStyles.twoColumnSettings}>
