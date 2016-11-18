@@ -101,7 +101,7 @@ class Toolbar extends Component {
           <Navbar.Collapse>
             <Nav activeKey={this.state.activeKey}>
               <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
-              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Your Emotions</NavItem>
+              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Emotions Data Analytics</NavItem>
             </Nav>
 
             <Nav pullRight>

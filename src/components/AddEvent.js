@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Button, ControlLabel, FormGroup, FormControl} from 'react-bootstrap';
 import DivStyles from '../styles/DivStyles';
 import DateTime from 'react-datetime';
+import moment from 'moment';
 require('react-datetime/css/react-datetime.css');
 
 class AddEvent extends Component {
@@ -82,6 +83,15 @@ class AddEvent extends Component {
       }
     }
 
+    var later = moment();
+    var validStart = function(current) {
+      return current.isBefore(later);
+    }
+    var yesterday = moment().subtract(1, 'day');
+    var validEnd = function(current) {
+      return current.isAfter(yesterday);
+    }
+
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -119,12 +129,14 @@ class AddEvent extends Component {
                 <DateTime
                   defaultValue={new Date()}
                   ref='eventStart'
+                  isValidDate={validStart}
                 />
 
                 <ControlLabel>End Time</ControlLabel>
                 <DateTime
                   defaultValue={new Date()}
                   ref='eventEnd'
+                  isValidDate={validEnd}
                 />
 
                 <ControlLabel>Emotion</ControlLabel>
