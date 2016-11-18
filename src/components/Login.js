@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
 import DivStyles from '../styles/DivStyles';
+require('../styles/style.css');
 
 class Login extends Component {
 
@@ -15,7 +16,8 @@ class Login extends Component {
 
   render() {
     return(
-      <div style={DivStyles.centerPage}>
+      <div className="login">
+        <div style={DivStyles.centerPage}>
         <h1>actemotion</h1>
         <form onSubmit={this.preventDefault.bind(this)}>
           <FormGroup
@@ -34,6 +36,7 @@ class Login extends Component {
         </form>
         <Button onClick={this.goToPage.bind(this, '/create')}>Create Account</Button>
         <Button bsStyle='primary' onClick={this.goToPage.bind(this, '/home')}>Login</Button>  
+      </div>
       </div>
     );
   }

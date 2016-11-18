@@ -11,7 +11,7 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
-//import CSPBarChart from '../components/charts/CSPBarChart';
+require('../styles/style.css');
 
 class Analytics extends Component {
 
