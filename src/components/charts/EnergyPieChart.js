@@ -30,8 +30,8 @@ class EnergyPieChart extends Component {
 			data={data}
 			options={this.state.options}
 			graph_id="EnergyPieChart"
-			width={2*window.innerWidth/3}
-			height={2*window.innerWidth/3}
+			width='40vw'
+			height='50vh'
 			legend_toggle
 			/>
 		);

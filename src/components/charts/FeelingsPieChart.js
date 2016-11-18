@@ -30,8 +30,8 @@ class FeelingsPieChart extends Component {
 			data={data}
 			options={this.state.options}
 			graph_id="FeelingsPieChart"
-			width={2*window.innerWidth/3}
-			height={2*window.innerWidth/3}
+			width='40vw'
+			height='50vh'
 			legend_toggle
 			/>
 		);
