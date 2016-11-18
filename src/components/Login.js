@@ -17,7 +17,6 @@ class Login extends Component {
   render() {
     return(
       <div className="login">
-        <div style={DivStyles.centerPage}>
         <h1>actemotion</h1>
         <form onSubmit={this.preventDefault.bind(this)}>
           <FormGroup
@@ -36,7 +35,6 @@ class Login extends Component {
         </form>
         <Button onClick={this.goToPage.bind(this, '/create')}>Create Account</Button>
         <Button bsStyle='primary' onClick={this.goToPage.bind(this, '/home')}>Login</Button>  
-      </div>
       </div>
     );
   }

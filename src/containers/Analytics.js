@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Nav, NavItem} from 'react-bootstrap';
+import {Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
@@ -37,7 +37,7 @@ class Analytics extends Component {
       case 'FeelingsPieChart':
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
+            <h3>Overall Emotions Week of 10/30</h3>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
           </div>
         );
@@ -45,7 +45,7 @@ class Analytics extends Component {
       case 'EnergyPieChart':
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
+            <h3>Energy Level Week of 10/30</h3>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
           </div>
         );
@@ -53,7 +53,7 @@ class Analytics extends Component {
       case 'EmotionBarChart':
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Happy Events During the Week 10/30</h4>
+            <h3>Happy Events During the Week 10/30</h3>
             <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
           </div>
         );
@@ -61,7 +61,7 @@ class Analytics extends Component {
       case 'SadBarChart':
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Sad Events During the Week 10/30</h4>
+            <h3>Sad Events During the Week 10/30</h3>
             <SadBarChart events={this.props.event.events}></SadBarChart>
           </div>
         );
@@ -69,7 +69,7 @@ class Analytics extends Component {
       default:
         return (
           <div>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
+            <h3>Overall Emotions Week of 10/30</h3>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
           </div>
         );
@@ -98,7 +98,7 @@ class Analytics extends Component {
         <p></p><p></p>
 
         <div style={DivStyles.twoColumnSettings}>
-          <h2>Available Graphs</h2>
+          <h3>Available Graphs</h3>
           <Nav>
             <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>Feelings Pie Chart</NavItem>
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
@@ -110,7 +110,6 @@ class Analytics extends Component {
         <div style={DivStyles.twoColumnSettings}>
           <div>{this.state.displayedGraph}</div>
         </div>
-
       </div>
     );
   }

@@ -1,12 +1,6 @@
-navbar-default {
-	background-color: #3174AD;
-	border-color: ;
-}
-
 .navbar-default {
 	width: device-width;
 	background-color: #2E94B9;
-	border-color: ;
 }
 
 .navbar-default .navbar-brand {
@@ -18,10 +12,10 @@ navbar-default {
 	color: #333;
 }
 
-h2 {
+h3 {
 	color: #24728f;
 }
-h4 {
+h2 {
 	color: #24728f;
 }
 
@@ -34,16 +28,6 @@ h4 {
 	color: white;
 }
 
-
-.login {
-	background-image: url(https://i.ytimg.com/vi/hZpYLHw0s4s/maxresdefault.jpg);
-}
-
-rbc-event{
-	background-color: #1B5E20;
-	color: #F8DA5B
-}
-
 .rbc-event{
 	background-color: #e6be0a;
 }
@@ -54,4 +38,19 @@ rbc-event{
 
 .navbar-default .navbar-toggle{
 	background-color: #F0FBFF;
+}
+
+.login {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30vw;
+    //background-image: url(http://instantbrainpower.com/wp-content/uploads/2016/05/Depositphotos_6519040_original-1080x675.jpg);
+}
+
+.graphChoice {
+	padding-left: 15px;
 }

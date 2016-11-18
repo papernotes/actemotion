@@ -13,7 +13,7 @@ class EventInfo extends Component {
       <div>
       <Grid>
         <Row>
-        <Col sm={6} md={3}>
+        <Col sm={4} md={3}>
           <p>Type: <b>{eventData.type}</b></p>  
           <p>Emotion: <b>{eventData.emotion}</b></p>
           <p>Energy Level: <b>{eventData.energy}</b></p>
@@ -23,13 +23,13 @@ class EventInfo extends Component {
           <p>Productivity Level: <b>{eventData.productivity}</b></p>
         </Col>
           
-        <Col sm={6} md={3}>
+        <Col sm={4} md={3}>
+          <Button bsStyle="warning" onClick={this.goToPage.bind(this, '/analytics')}>
+            Go To Emotion Data 
+          </Button> 
           <p>Description: <b>{eventData.text}</b></p>
           <p>Start Time: <b>{eventData.start.toLocaleString()}</b></p>
           <p>End Time: <b>{eventData.end.toLocaleString()}</b></p>
-          <Button onClick={this.goToPage.bind(this, '/analytics')}>
-            Go To Emotion Data 
-          </Button>
          </Col>
         </Row>
       </Grid>
