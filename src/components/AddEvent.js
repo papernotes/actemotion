@@ -92,6 +92,9 @@ class AddEvent extends Component {
       return current.isAfter(yesterday);
     }
 
+    var endHour = new Date();
+    endHour.setHours(endHour.getHours()+1);
+
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -134,7 +137,7 @@ class AddEvent extends Component {
 
                 <ControlLabel>End Time</ControlLabel>
                 <DateTime
-                  defaultValue={new Date()}
+                  defaultValue={endHour}
                   ref='eventEnd'
                   isValidDate={validEnd}
                 />

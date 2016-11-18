@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
@@ -13,7 +13,7 @@ import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
 require('../styles/style.css');
 
-class Analytics extends Component {
+class Analytics2 extends Component {
 
   constructor() {
     super();
@@ -40,7 +40,7 @@ class Analytics extends Component {
         this.setState({activeKey: 1});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h3>Overall Emotions Week of 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Overall Emotions Week of 10/30</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
           </div>
         );
@@ -49,7 +49,7 @@ class Analytics extends Component {
         this.setState({activeKey: 2});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h3>Energy Level Week of 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Level Week of 10/30</h4>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
           </div>
         );
@@ -58,7 +58,7 @@ class Analytics extends Component {
         this.setState({activeKey: 3});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h3>Happy Events During the Week 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Happy Events During the Week 10/30</h4>
             <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
             <p>These events made you happy for the week!</p>
           </div>
@@ -68,7 +68,7 @@ class Analytics extends Component {
         this.setState({activeKey: 4});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h3>Sad Events During the Week 10/30</h3>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Sad Events During the Week 10/30</h4>
             <SadBarChart events={this.props.event.events}></SadBarChart>
             <p>These events made you sad for the week</p>
           </div>
@@ -77,9 +77,9 @@ class Analytics extends Component {
       default:
         this.setState({activeKey: 1});
         return (
-          <div>
+          <div style={{paddingTop: '25%', textAlign: 'center'}}>
             <h3>Pick a chart from the left!</h3>
-            <p>Find information about yourself!</p>:
+            <p>Find information about yourself!</p>
           </div>
         );
     }
@@ -101,7 +101,8 @@ class Analytics extends Component {
           setActiveEvent={this.props.actions.setActiveEvent}
           setNormalEvents={this.props.actions.setNormalEvents}
           location={this.props.location}
-          analyticsTitle={'Emotion Data Analytics'}
+          analyticsTitle={'Your Emotions'}
+          secondaryRoute={'/home2'}
         />
         <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
         <br></br>
@@ -120,6 +121,7 @@ class Analytics extends Component {
         <div style={DivStyles.twoColumnSettings}>
           <div>{this.state.displayedGraph}</div>
         </div>
+
       </div>
     );
   }
@@ -138,7 +140,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-Analytics.propTypes = {
+Analytics2.propTypes = {
   analyticsTitle: PropTypes.string,
   location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
@@ -172,4 +174,4 @@ Analytics.propTypes = {
   })
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Analytics);
+export default connect(mapStateToProps,mapDispatchToProps)(Analytics2);

@@ -20,6 +20,7 @@ class Toolbar extends Component {
       this.setState({activeKey: 1});
     else
       this.setState({activeKey: 2})
+    this.setState({activeKey: 0}) // TODO remove
   }
 
   // TODO disable NavItem or make active on click
@@ -39,6 +40,11 @@ class Toolbar extends Component {
 
   // TODO add Notifications later
   render() {
+
+    var route = this.props.secondaryRoute || '/home';
+    var analyticsRoute = this.props.analyticsRoute || '/analytics';
+    var analyticsToolbar = this.props.analyticsTitle || 'Emotion Data Analytics'
+
     return(
       <div>
         <Modal
@@ -100,8 +106,8 @@ class Toolbar extends Component {
 
           <Navbar.Collapse>
             <Nav activeKey={this.state.activeKey}>
-              <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
-              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Emotions Data Analytics</NavItem>
+              <NavItem eventKey={1} onClick={this.goToPage.bind(this, route)}>Home</NavItem>
+              <NavItem eventKey={2} onClick={this.goToPage.bind(this, analyticsRoute)}>{this.props.analyticsTitle}</NavItem>
             </Nav>
 
             <Nav pullRight>
@@ -118,6 +124,7 @@ class Toolbar extends Component {
 }
 
 Toolbar.propTypes = {
+  analyticsTitle: PropTypes.string.isRequired,
   isAddOpen: PropTypes.bool.isRequired,
   addEvent: PropTypes.func.isRequired,
   setModalOpen: PropTypes.func.isRequired,
