@@ -31,12 +31,16 @@ class Home extends Component {
 
     if (this.state.showMessage) {
       messageStyles = {
-        color: 'rgb(169, 68, 66)'
+        color: 'black'
       }
     }
     else {
       messageStyles = {
-        color: 'white'
+        color: 'white',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        MsUserSelect: 'none',
       }
     }
 
@@ -57,7 +61,7 @@ class Home extends Component {
           location={this.props.location}
         />
         <div style={{textAlign: 'center'}}>
-          <p style={messageStyles}>Events in emotion view can't be edited or added</p>
+          <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
           <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
           <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>

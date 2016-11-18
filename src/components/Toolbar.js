@@ -90,7 +90,7 @@ class Toolbar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-                <Nav eventKey={7} onClick={this.goToPage.bind(this, '/home')}>
+                <Nav onClick={this.goToPage.bind(this, '/home')}>
                     Actemotion
                 </Nav>
             </Navbar.Brand>
