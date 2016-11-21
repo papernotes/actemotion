@@ -18,9 +18,10 @@ class Toolbar extends Component {
   componentWillMount() {
     if (this.props.location.pathname === '/home') 
       this.setState({activeKey: 1});
+    else if (this.props.location.pathname === '/analytics')
+      this.setState({activeKey: 2});
     else
-      this.setState({activeKey: 2})
-    this.setState({activeKey: 0}) // TODO remove
+      this.setState({activeKey: 3});
   }
 
   // TODO disable NavItem or make active on click
@@ -38,13 +39,7 @@ class Toolbar extends Component {
     this.props.setNotifications(bool);
   }
 
-  // TODO add Notifications later
   render() {
-
-    var route = this.props.secondaryRoute || '/home';
-    var analyticsRoute = this.props.analyticsRoute || '/analytics';
-    var analyticsToolbar = this.props.analyticsTitle || 'Emotion Data Analytics'
-
     return(
       <div>
         <Modal
@@ -106,8 +101,9 @@ class Toolbar extends Component {
 
           <Navbar.Collapse>
             <Nav activeKey={this.state.activeKey}>
-              <NavItem eventKey={1} onClick={this.goToPage.bind(this, route)}>Home</NavItem>
-              <NavItem eventKey={2} onClick={this.goToPage.bind(this, analyticsRoute)}>{this.props.analyticsTitle}</NavItem>
+              <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
+              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Emotion Data Analytics</NavItem>
+              <NavItem eventKey={3} onClick={this.goToPage.bind(this, '/calendar')}>Calendar of Events</NavItem>
             </Nav>
 
             <Nav pullRight>

@@ -2,10 +2,11 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
-//import {Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
 
-class Home extends Component {
+class CalendarPage extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,6 +25,26 @@ class Home extends Component {
   }
 
   render() {
+    var messageStyles = {};
+    var normalActive = !this.state.showMessage;
+    var emotionActive = this.state.showMessage;
+
+    if (this.state.showMessage) {
+      messageStyles = {
+        color: 'black'
+      }
+    }
+    else {
+      messageStyles = {
+        color: 'white',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        MsUserSelect: 'none',
+      }
+    }
+
+
     return(
       <div>
         <Toolbar
@@ -41,7 +62,29 @@ class Home extends Component {
           location={this.props.location}
           analyticsTitle={'Emotion Data Analytics'}
         />
-        <h1>Home Page</h1>
+        <div style={{textAlign: 'center'}}>
+          <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
+          <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
+          <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
+          <p><b>Today is {new Date().toDateString()}</b></p>
+        </div>
+        <Calendar
+          isInfoOpen={this.props.event.isInfoOpen}
+          events={this.props.event.renderEvents}
+          setEventModal={this.props.actions.setEventModal}
+          activeEvent={this.props.event.activeEvent}
+          setActiveEvent={this.props.actions.setActiveEvent}
+          deleteEvent={this.props.actions.deleteEvent}
+          setEditModal={this.props.actions.setEditModal}
+          isEditOpen={this.props.event.isEditOpen}
+          setConfirmModal={this.props.actions.setConfirmModal}
+          isConfirmOpen={this.props.event.isConfirmOpen}
+          saveEdit={this.props.actions.saveEdit}
+          showingNormalEvents={this.props.event.showingNormalEvents}
+          setConfirmAddition={this.props.actions.setConfirmAddition}
+          setConfirmEdit={this.props.actions.setConfirmEdit}
+          confirmedEdit={this.props.event.confirmedEdit}
+        />
       </div>
     );
   }
@@ -60,7 +103,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-Home.propTypes = {
+CalendarPage.propTypes = {
   analyticsTitle: PropTypes.string,
   location: PropTypes.object.isRequired,
   actions: PropTypes.shape({
@@ -94,4 +137,4 @@ Home.propTypes = {
   })
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps)(CalendarPage);

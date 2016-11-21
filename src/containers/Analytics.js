@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Nav, NavItem, Grid, Row, Col} from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
@@ -79,7 +79,7 @@ class Analytics extends Component {
         return (
           <div>
             <h3>Pick a chart from the left!</h3>
-            <p>Find information about yourself!</p>:
+            <p>Find information about yourself!</p>
           </div>
         );
     }
