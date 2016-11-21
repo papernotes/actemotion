@@ -2,8 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
-//import {Button} from 'react-bootstrap';
 import Toolbar from '../components/Toolbar';
+import DivStyles from '../styles/DivStyles';
 
 class Home extends Component {
   constructor() {
@@ -42,6 +42,14 @@ class Home extends Component {
           analyticsTitle={'Emotion Data Analytics'}
         />
         <h1>Home Page</h1>
+        <div style={{paddingLeft: '20vw'}}>
+          <div style={DivStyles.twoColumn}>
+            <h2>List of events</h2>
+          </div>
+          <div style={DivStyles.twoColumn}>
+            <h2>How to use this site</h2>
+          </div>
+        </div>
       </div>
     );
   }

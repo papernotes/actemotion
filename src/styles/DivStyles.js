@@ -31,6 +31,11 @@ const DivStyles = {
     float: 'left',
     marginLeft: '50px'
   },
+  twoColumn: {
+    height: '100%',
+    width: '40%',
+    float: 'left',
+  },
   eventButtons: {
     float: 'right',
     marginTop: '5px'
