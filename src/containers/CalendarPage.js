@@ -16,13 +16,11 @@ class CalendarPage extends Component {
 
   showNormalEvents() {
     this.props.actions.setNormalEvents(true);
-    this.props.actions.setViews(['month', 'day', 'week']);
     this.setState({showMessage: false});
   }
 
   showEmotionEvents() {
     this.props.actions.setNormalEvents(false);
-    this.props.actions.setViews(['month']);
     this.setState({showMessage: true});
   }
 
@@ -122,7 +120,6 @@ CalendarPage.propTypes = {
     setConfirmAddition: PropTypes.func.isRequired,
     setConfirmEdit: PropTypes.func.isRequired,
     setNormalEvents: PropTypes.func.isRequired,
-    setViews: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
@@ -138,7 +135,6 @@ CalendarPage.propTypes = {
     showingNormalEvents: PropTypes.bool.isRequired,
     confirmedAddition: PropTypes.bool.isRequired,
     confirmedEdit: PropTypes.bool.isRequired,
-    views: PropTypes.array.isRequired
   })
 }
 

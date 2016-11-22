@@ -71,9 +71,3 @@ export function setConfirmEdit(bool) {
     type: types.SET_CONFIRM_EDIT, bool
   }
 }
-
-export function setViews(array) {
-  return {
-    type: types.SET_VIEWS, array
-  }
-}
