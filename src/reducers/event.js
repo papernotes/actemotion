@@ -1,6 +1,6 @@
 import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, 
         DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT, SET_NORMAL_EVENTS,
-        SET_CONFIRM_ADDITION, SET_CONFIRM_EDIT} from '../constants/ActionTypes';
+        SET_CONFIRM_ADDITION, SET_CONFIRM_EDIT, SET_VIEWS} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
 import DataFormatter from '../utils/DataFormatter';
 
@@ -15,7 +15,8 @@ const initialState = {
   activeEvent: {},
   events: TempEvents,
   renderEvents: TempEvents,
-  showingNormalEvents: true
+  showingNormalEvents: true,
+  views: ['month', 'day', 'week']
 }
 
 export default function event(state=initialState, action) {
@@ -104,11 +105,14 @@ export default function event(state=initialState, action) {
       })
 
     case SET_CONFIRM_EDIT:
-      console.log("G")
       return Object.assign({}, state, {
         confirmedEdit: action.bool
       })
 
+    case SET_VIEWS:
+      return Object.assign({}, state, {
+        views: action.array
+      })
     default:
       return state
   }
