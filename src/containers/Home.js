@@ -53,10 +53,11 @@ class Home extends Component {
           <div style={DivStyles.twoColumnSettings}>
             <h2>How to use this site</h2>
             <Well>
-              This application allows users to track their emotions in respect to each event that they attend. 
-              Add Events on the toolbar, look at events on the Calendar, update events with their corresponding emotions,
-              and view the results on the Analytics page.
+              This application allows users to track their emotions in respect to each event that they attend.
             </Well>
+            <Well>Add Events from the Toolbar</Well>
+            <Well>Look and edit your events in the Calendar of Events view</Well>
+            <Well>View analytics about all of your emotions in the Emotion Data Analytics tab</Well>
           </div>
         </div>
       </div>
