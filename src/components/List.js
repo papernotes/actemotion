@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import DivStyles from '../styles/DivStyles';
 import ListEvent from './ListEvent';
 import ListStyles from '../styles/ListStyles';
 

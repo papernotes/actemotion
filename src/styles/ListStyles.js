@@ -3,7 +3,7 @@ const ListStyles = {
     height: '10vh',
     width: '100%',
     backgroundColor: 'rgb(206, 236, 236)',
-    paddingBottom: '3px'
+    marginBottom:'5px'
   },
   list: {
     height: '50vh',

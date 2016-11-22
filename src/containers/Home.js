@@ -5,6 +5,7 @@ import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
 import List from '../components/List';
+import {Well} from 'react-bootstrap';
 
 class Home extends Component {
   constructor() {
@@ -42,14 +43,20 @@ class Home extends Component {
           location={this.props.location}
           analyticsTitle={'Emotion Data Analytics'}
         />
-        <h1>Home Page</h1>
-        <div style={{paddingLeft: '20vw'}}>
-          <div style={DivStyles.twoColumn}>
+        <h2 style={{textAlign: 'center', fontSize: '30px'}}>Home</h2>
+        <div style={{width: '100%'}}>
+          <div style={DivStyles.twoColumnSettings}>
             <h2>List of events</h2>
+            <p>Scroll through to see your events!</p>
             <List events={this.props.event.events}/>
           </div>
-          <div style={DivStyles.twoColumn}>
+          <div style={DivStyles.twoColumnSettings}>
             <h2>How to use this site</h2>
+            <Well>
+              This application allows users to track their emotions in respect to each event that they attend. 
+              Add Events on the toolbar, look at events on the Calendar, update events with their corresponding emotions,
+              and view the results on the Analytics page.
+            </Well>
           </div>
         </div>
       </div>
