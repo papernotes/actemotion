@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
+import List from '../components/List';
 
 class Home extends Component {
   constructor() {
@@ -45,6 +46,7 @@ class Home extends Component {
         <div style={{paddingLeft: '20vw'}}>
           <div style={DivStyles.twoColumn}>
             <h2>List of events</h2>
+            <List events={this.props.event.events}/>
           </div>
           <div style={DivStyles.twoColumn}>
             <h2>How to use this site</h2>
