@@ -42,6 +42,7 @@ class Analytics extends Component {
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
+            <p>The percentage of time that you have felt each emotion</p>
           </div>
         );
 
@@ -51,6 +52,7 @@ class Analytics extends Component {
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Levels for All Events</h4>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
+            <p>The percentage of time you have felt each energy level </p>
           </div>
         );
 

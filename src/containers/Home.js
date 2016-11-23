@@ -5,7 +5,8 @@ import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
 import List from '../components/List';
-import {Well} from 'react-bootstrap';
+import {Well, Modal} from 'react-bootstrap';
+require('../styles/style.css');
 
 class Home extends Component {
   constructor() {
@@ -13,6 +14,10 @@ class Home extends Component {
     this.state = {
       showMessage: false
     }
+  }
+
+  setModalOpen(bool) {
+    this.props.setModalOpen(bool);
   }
 
   showNormalEvents() {
@@ -46,18 +51,14 @@ class Home extends Component {
         <h2 style={{textAlign: 'center', fontSize: '30px'}}>Home</h2>
         <div style={{width: '100%'}}>
           <div style={DivStyles.twoColumnSettings}>
-            <h2>List of events</h2>
-            <p>Scroll through to see your events!</p>
+            <h2>Past Events</h2>
             <List events={this.props.event.events}/>
           </div>
           <div style={DivStyles.twoColumnSettings}>
-            <h2>How to use this site</h2>
-            <Well>
-              This application allows users to track their emotions in respect to each event that they attend.
+            <h2 className="wellTitle">How to use this site</h2>
+            <Well> <p>This application allows users to track their emotions in respect to each event that they attend. Explain more...</p> <p>Add Events from the Toolbar.</p>
+            <p>Look and edit your events in the Calendar of Events view. </p> <p>View analytics about all of your emotions in the Emotion Data Analytics tab.</p>
             </Well>
-            <Well>Add Events from the Toolbar</Well>
-            <Well>Look and edit your events in the Calendar of Events view</Well>
-            <Well>View analytics about all of your emotions in the Emotion Data Analytics tab</Well>
           </div>
         </div>
       </div>

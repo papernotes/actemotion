@@ -5,6 +5,7 @@ import * as Actions from '../actions';
 import {Button} from 'react-bootstrap';
 import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
+require('../styles/style.css');
 
 class CalendarPage extends Component {
   constructor() {

@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import ListEvent from './ListEvent';
-import ListStyles from '../styles/ListStyles';
 
 class List extends Component {
 
@@ -15,7 +14,7 @@ class List extends Component {
     console.log(listItems);
 
     return(
-      <div style={ListStyles.list}>
+      <div className="list">
         {listItems}
       </div>
     );

@@ -5,9 +5,9 @@ class ListEvent extends Component {
 
   render() {
     return(
-      <div style={ListStyles.card}>
-        <h3>{this.props.title}</h3>
-        <h4>Feeling: {this.props.emotion}</h4>
+      <div className="listObject">
+          <h3>{this.props.title}</h3>
+          <h4>Feeling: {this.props.emotion}</h4>
       </div>
     );
   }
