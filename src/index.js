@@ -22,8 +22,15 @@ import Home2 from './containers/Home2';
 import Settings from './containers/Settings';
 import Analytics2 from './containers/Analytics2';
 
-
 import * as reducers from './reducers';
+
+var ReactGA = require('react-ga');
+ReactGA.initialize('UA-87909453-1');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
 
 const reducer = combineReducers({
   ...reducers,
@@ -40,7 +47,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={history} onUpdate={logPageView}>
             <Route path='/' component={App}>
                 <IndexRoute component={Login}/>
                 <Route path='home' component={Home}/>
