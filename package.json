@@ -2,7 +2,6 @@
   "name": "actemotion",
   "version": "0.1.0",
   "private": true,
-  },
   "dependencies": {
     "react-scripts": "0.7.0",
     "chart.js": "^2.3.0",
