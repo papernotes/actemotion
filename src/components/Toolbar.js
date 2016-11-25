@@ -28,18 +28,18 @@ class Toolbar extends Component {
 
   // TODO disable NavItem or make active on click
   goToPage(route) {
-    if (route === '/home2') {
+    if (route === '/analytics') {
       ReactGA.ga('send', 'pageview', '/home');
       ReactGA.event({
         category: 'Navigation',
-        action: 'Went to Home 1'
+        action: 'Went to Analytics 1'
       });
     }
-    else if (route === '/home') {
+    else if (route === '/analytics2') {
       ReactGA.ga('send', 'pageview', '/home2');
       ReactGA.event({
         category: 'Navigation',
-        action: 'Went to Home 2'
+        action: 'Went to Analytics 2'
       });
     }
 
