@@ -11,6 +11,7 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
+import CSPBarChart from '../components/charts/CSPBarChart';
 require('../styles/style.css');
 
 class Analytics extends Component {
@@ -76,12 +77,25 @@ class Analytics extends Component {
           </div>
         );
 
+      case 'CSPBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+          <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
+            <CSPBarChart events={this.props.event.events}></CSPBarChart>
+            <p>Your average confidence, satisfaction, and productivity.</p>
+          </div>
+        );
+
       default:
         this.setState({activeKey: 1});
         return (
           <div>
-            <h3>Pick a chart from the left!</h3>
-            <p>Find information about yourself!</p>
+            <div style={AnalyticsStyles.pieChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
+            <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
+            <p>The percentage of time that you have felt each emotion</p>
+          </div>
           </div>
         );
     }
@@ -116,6 +130,7 @@ class Analytics extends Component {
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
 

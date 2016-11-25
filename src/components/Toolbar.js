@@ -113,7 +113,7 @@ class Toolbar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-                <Nav onClick={this.goToPage.bind(this, '/home')}>
+                <Nav className="logo" onClick={this.goToPage.bind(this, '/home')}>
                     Actemotion
                 </Nav>
             </Navbar.Brand>

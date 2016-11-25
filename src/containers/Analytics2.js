@@ -74,12 +74,25 @@ class Analytics2 extends Component {
           </div>
         );
 
+      case 'CSPBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+          <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
+            <CSPBarChart events={this.props.event.events}></CSPBarChart>
+            <p>Your average confidence, satisfaction, and productivity.</p>
+          </div>
+        );
+
       default:
         this.setState({activeKey: 1});
         return (
-          <div style={{paddingTop: '25%', textAlign: 'center'}}>
-            <h3>Pick a chart from the left!</h3>
-            <p>Find information about yourself!</p>
+          <div>
+            <div style={AnalyticsStyles.pieChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
+            <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
+            <p>The percentage of time that you have felt each emotion</p>
+          </div>
           </div>
         );
     }
@@ -115,6 +128,7 @@ class Analytics2 extends Component {
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
 
