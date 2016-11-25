@@ -116,6 +116,7 @@ class Analytics2 extends Component {
           location={this.props.location}
           analyticsTitle={'Your Emotions'}
           secondaryRoute={'/home2'}
+          analyticsRoute={'/analytics2'}
         />
         <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
         <br></br>
