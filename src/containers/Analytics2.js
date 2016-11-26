@@ -82,6 +82,8 @@ class Analytics2 extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
             <AngryBarChart events={this.props.event.events}></AngryBarChart>
             <p>These events made you angry for the week</p>
+          </div>
+        );
 
       case 'CSPBarChart':
         this.setState({activeKey: 6});
@@ -101,7 +103,7 @@ class Analytics2 extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
             <p>The percentage of time that you have felt each emotion</p>
-          </div>
+            </div>
           </div>
         );
     }

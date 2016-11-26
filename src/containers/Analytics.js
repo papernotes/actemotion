@@ -78,8 +78,6 @@ class Analytics extends Component {
           </div>
         );
 
-<<<<<<< HEAD
-
       case 'AngryBarChart':
         this.setState({activeKey: 5});
         return (
@@ -87,15 +85,16 @@ class Analytics extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
             <AngryBarChart events={this.props.event.events}></AngryBarChart>
             <p>These events made you angry for the week</p>
-=======
+          </div>
+        );
+      
       case 'CSPBarChart':
-        this.setState({activeKey: 5});
+        this.setState({activeKey: 6});
         return (
           <div style={AnalyticsStyles.barChart}>
           <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
             <CSPBarChart events={this.props.event.events}></CSPBarChart>
             <p>Your average confidence, satisfaction, and productivity.</p>
->>>>>>> 7b2ac1ca1954240b2d8a498079127c6b4857ea33
           </div>
         );
 
@@ -107,7 +106,7 @@ class Analytics extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
             <p>The percentage of time that you have felt each emotion</p>
-          </div>
+            </div>
           </div>
         );
     }
@@ -142,11 +141,8 @@ class Analytics extends Component {
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
-<<<<<<< HEAD
             <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Bar Chart</NavItem>
-=======
-            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
->>>>>>> 7b2ac1ca1954240b2d8a498079127c6b4857ea33
+            <NavItem eventKey={6} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
 
