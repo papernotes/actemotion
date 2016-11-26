@@ -2,13 +2,13 @@ import {Chart} from 'react-google-charts';
 import React, {Component, PropTypes} from 'react';
 import DataFormatter from '../../utils/DataFormatter';
 
-class EmotionBarChart extends Component {
+class AngryBarChart extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
 			options:{
 				hAxis: {title: 'Event Type'},
-				vAxis: {title: 'Happy Events'},
+				vAxis: {title: 'Angry Events'},
 				legend: 'none',
 			},
 		};
@@ -16,7 +16,7 @@ class EmotionBarChart extends Component {
 
 	generateGraph(events) {
 		var formatter = new DataFormatter();
-		var result = formatter.generateEmotionGraph(events);
+		var result = formatter.generateAngryGraph(events);
 		return result;
 	}
 
@@ -28,7 +28,7 @@ class EmotionBarChart extends Component {
 			chartType="ColumnChart"
 			data={data}
 			options={this.state.options}
-			graph_id="EmotionBarChart"
+			graph_id="AngryBarChart"
 			width='40vw'
 			height='50vh'
 			/>
@@ -36,8 +36,8 @@ class EmotionBarChart extends Component {
 	}
 };
 
-EmotionBarChart.propTypes = {
+AngryBarChart.propTypes = {
 	events: PropTypes.array.isRequired
 }
 
-export default EmotionBarChart;
+export default AngryBarChart;

@@ -11,6 +11,8 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
+import AngryBarChart from '../components/charts/AngryBarChart';
+
 require('../styles/style.css');
 
 class Analytics extends Component {
@@ -76,6 +78,17 @@ class Analytics extends Component {
           </div>
         );
 
+
+      case 'AngryBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
+            <AngryBarChart events={this.props.event.events}></AngryBarChart>
+            <p>These events made you angry for the week</p>
+          </div>
+        );
+
       default:
         this.setState({activeKey: 1});
         return (
@@ -114,8 +127,9 @@ class Analytics extends Component {
           <Nav activeKey={this.state.activeKey}>
             <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>Feelings Pie Chart</NavItem>
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
-            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
+            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Bar Chart</NavItem>
           </Nav>
         </div>
 
