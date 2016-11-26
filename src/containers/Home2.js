@@ -2,9 +2,10 @@ import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions';
-import {Button} from 'react-bootstrap';
-import Calendar from '../components/Calendar';
 import Toolbar from '../components/Toolbar';
+import DivStyles from '../styles/DivStyles';
+import List from '../components/List';
+import {Well} from 'react-bootstrap';
 
 class Home2 extends Component {
   constructor() {
@@ -25,26 +26,6 @@ class Home2 extends Component {
   }
 
   render() {
-    var messageStyles = {};
-    var normalActive = !this.state.showMessage;
-    var emotionActive = this.state.showMessage;
-
-    if (this.state.showMessage) {
-      messageStyles = {
-        color: 'black'
-      }
-    }
-    else {
-      messageStyles = {
-        color: 'white',
-        userSelect: 'none',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        MsUserSelect: 'none',
-      }
-    }
-
-
     return(
       <div>
         <Toolbar
@@ -64,29 +45,20 @@ class Home2 extends Component {
           secondaryRoute={'/home2'}
           analyticsRoute={'/analytics2'}
         />
-        <div style={{textAlign: 'center'}}>
-          <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
-          <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
-          <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
-          <p><b>Today is {new Date().toDateString()}</b></p>
+        <h2 style={{textAlign: 'center', fontSize: '30px'}}>Home</h2>
+        <div style={{width: '100%'}}>
+          <div style={DivStyles.twoColumnSettings}>
+            <h2>List of events</h2>
+            <p>Scroll through to see your events!</p>
+            <List events={this.props.event.events}/>
+          </div>
+          <div style={DivStyles.twoColumnSettings}>
+            <h2>How to use this site</h2>
+            <Well> <p>This application allows users to track their emotions in respect to each event that they attend.</p> <p>Add Events from the Toolbar.</p>
+            <p>Look and edit your events in the Calendar of Events view. </p> <p>View analytics about all of your emotions in the Emotion Data Analytics tab.</p>
+            </Well>
+          </div>
         </div>
-        <Calendar
-          isInfoOpen={this.props.event.isInfoOpen}
-          events={this.props.event.renderEvents}
-          setEventModal={this.props.actions.setEventModal}
-          activeEvent={this.props.event.activeEvent}
-          setActiveEvent={this.props.actions.setActiveEvent}
-          deleteEvent={this.props.actions.deleteEvent}
-          setEditModal={this.props.actions.setEditModal}
-          isEditOpen={this.props.event.isEditOpen}
-          setConfirmModal={this.props.actions.setConfirmModal}
-          isConfirmOpen={this.props.event.isConfirmOpen}
-          saveEdit={this.props.actions.saveEdit}
-          showingNormalEvents={this.props.event.showingNormalEvents}
-          setConfirmAddition={this.props.actions.setConfirmAddition}
-          setConfirmEdit={this.props.actions.setConfirmEdit}
-          confirmedEdit={this.props.event.confirmedEdit}
-        />
       </div>
     );
   }

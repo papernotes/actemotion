@@ -7,8 +7,8 @@ class CSPBarChart extends Component {
 		super(props);
 		this.state={
 			options:{
-				hAxis: {title: 'Feelings About Events'},
-				vAxis: {title: '# Occurrences'},
+				hAxis: {title: 'Confidence, Satisfaction, and Productivity'},
+				vAxis: {title: 'Average Level'},
 				legend: 'none',
 			}
 		};
@@ -29,8 +29,8 @@ class CSPBarChart extends Component {
 			data={data}
 			options={this.state.options}
 			graph_id="CSPBarChart"
-			width={2*window.innerWidth/3}
-			height={2*window.innerWidth/3}
+			width='40vw'
+			height='50vh'
 			/>
 		);
 	}

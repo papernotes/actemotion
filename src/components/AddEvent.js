@@ -167,11 +167,11 @@ class AddEvent extends Component {
                   placeholder='Event Type'
                   ref='eventEnergy'
                 >
-                  <option value='1'>1</option>
+                  <option value='1'>1 (Least Energetic)</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
                   <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value='5'>5 (Most Energetic)</option>
                 </FormControl>
               </div>
 
@@ -183,11 +183,11 @@ class AddEvent extends Component {
                   placeholder={event.confidence}
                   ref='eventConfidence'
                 >
-                  <option value='1'>1</option>
+                  <option value='1'>1 (Least Confident)</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
                   <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value='5'>5 (Most Confident)</option>
                 </FormControl>
 
                 <ControlLabel>Satisfaction Level</ControlLabel>
@@ -196,11 +196,11 @@ class AddEvent extends Component {
                   placeholder={event.satisfaction}
                   ref='eventSatisfaction'
                 >
-                  <option value='1'>1</option>
+                  <option value='1'>1 (Least Satisfied)</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
                   <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value='5'>5 (Most Satisfied)</option>
                 </FormControl>
 
                 <ControlLabel>Productivity Level</ControlLabel>
@@ -209,11 +209,11 @@ class AddEvent extends Component {
                   placeholder={event.productivity}
                   ref='eventProductivity'
                 >
-                  <option value='1'>1</option>
+                  <option value='1'>1 (Least Productive)</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
                   <option value='4'>4</option>
-                  <option value='5'>5</option>
+                  <option value='5'>5 (Most Productive)</option>
                 </FormControl>
 
                 <ControlLabel>Description</ControlLabel>

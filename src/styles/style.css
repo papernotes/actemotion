@@ -19,7 +19,7 @@ h2 {
 	color: #24728f;
 }
 
-.navbar-default .navbar-nav .active a {
+.navbar-default .navbar-nav .active li a {
 	color: #3174AD;
 	background-color: #F0FBFF;
 }
@@ -56,6 +56,8 @@ div .rbc-event{
 
 div .listObject {
 	border: groove;
+	border-radius: 10px;
+	border-color: #F0FBFF;
 	height: 12vh;
     width: 100%;
     background-color: #F0FBFF;
@@ -79,4 +81,8 @@ div .well {
 }
 .wellTitle {
 	margin-left: 15px;
+}
+
+.logo {
+	font-family: ;
 }

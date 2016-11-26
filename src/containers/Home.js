@@ -52,11 +52,12 @@ class Home extends Component {
         <div style={{width: '100%'}}>
           <div style={DivStyles.twoColumnSettings}>
             <h2>Past Events</h2>
+            <p>Scroll through to see your events!</p>
             <List events={this.props.event.events}/>
           </div>
           <div style={DivStyles.twoColumnSettings}>
             <h2 className="wellTitle">How to use this site</h2>
-            <Well> <p>This application allows users to track their emotions in respect to each event that they attend. Explain more...</p> <p>Add Events from the Toolbar.</p>
+            <Well> <p>This application allows users to track their emotions in respect to each event that they attend.</p> <p>Add Events from the Toolbar.</p>
             <p>Look and edit your events in the Calendar of Events view. </p> <p>View analytics about all of your emotions in the Emotion Data Analytics tab.</p>
             </Well>
           </div>

@@ -5,6 +5,7 @@ import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
 require('../styles/style.css');
+import ReactGA from 'react-ga';
 
 class Toolbar extends Component {
 
@@ -22,10 +23,26 @@ class Toolbar extends Component {
       this.setState({activeKey: 2});
     else
       this.setState({activeKey: 3});
+    this.setState({activeKey: 0});  // TODO remove
   }
 
   // TODO disable NavItem or make active on click
   goToPage(route) {
+    if (route === '/analytics') {
+      ReactGA.ga('send', 'pageview', '/home');
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'Went to Analytics 1'
+      });
+    }
+    else if (route === '/analytics2') {
+      ReactGA.ga('send', 'pageview', '/home2');
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'Went to Analytics 2'
+      });
+    }
+
     browserHistory.push(route);
     if (route !== '/home')
       this.props.setNormalEvents(true); // quick fix for resetting calendar items
@@ -40,6 +57,10 @@ class Toolbar extends Component {
   }
 
   render() {
+    var route = this.props.secondaryRoute || '/home';
+    var analyticsRoute = this.props.analyticsRoute || '/analytics';
+    var analyticsToolbar = this.props.analyticsTitle || 'Emotion Data Analytics';
+
     return(
       <div>
         <Modal
@@ -92,7 +113,7 @@ class Toolbar extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-                <Nav onClick={this.goToPage.bind(this, '/home')}>
+                <Nav className="logo" onClick={this.goToPage.bind(this, '/home')}>
                     Actemotion
                 </Nav>
             </Navbar.Brand>
@@ -101,8 +122,8 @@ class Toolbar extends Component {
 
           <Navbar.Collapse>
             <Nav activeKey={this.state.activeKey}>
-              <NavItem eventKey={1} onClick={this.goToPage.bind(this, '/home')}>Home</NavItem>
-              <NavItem eventKey={2} onClick={this.goToPage.bind(this, '/analytics')}>Emotion Data Analytics</NavItem>
+              <NavItem eventKey={1} onClick={this.goToPage.bind(this, route)}>Home</NavItem>
+              <NavItem eventKey={2} onClick={this.goToPage.bind(this, analyticsRoute)}>{this.props.analyticsTitle}</NavItem>
               <NavItem eventKey={3} onClick={this.goToPage.bind(this, '/calendar')}>Calendar of Events</NavItem>
             </Nav>
 

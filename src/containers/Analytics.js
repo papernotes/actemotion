@@ -12,7 +12,7 @@ import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
 import AngryBarChart from '../components/charts/AngryBarChart';
-
+import CSPBarChart from '../components/charts/CSPBarChart';
 require('../styles/style.css');
 
 class Analytics extends Component {
@@ -78,6 +78,7 @@ class Analytics extends Component {
           </div>
         );
 
+<<<<<<< HEAD
 
       case 'AngryBarChart':
         this.setState({activeKey: 5});
@@ -86,6 +87,15 @@ class Analytics extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
             <AngryBarChart events={this.props.event.events}></AngryBarChart>
             <p>These events made you angry for the week</p>
+=======
+      case 'CSPBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+          <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
+            <CSPBarChart events={this.props.event.events}></CSPBarChart>
+            <p>Your average confidence, satisfaction, and productivity.</p>
+>>>>>>> 7b2ac1ca1954240b2d8a498079127c6b4857ea33
           </div>
         );
 
@@ -93,8 +103,11 @@ class Analytics extends Component {
         this.setState({activeKey: 1});
         return (
           <div>
-            <h3>Pick a chart from the left!</h3>
-            <p>Find information about yourself!</p>
+            <div style={AnalyticsStyles.pieChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
+            <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
+            <p>The percentage of time that you have felt each emotion</p>
+          </div>
           </div>
         );
     }
@@ -129,7 +142,11 @@ class Analytics extends Component {
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
+<<<<<<< HEAD
             <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Bar Chart</NavItem>
+=======
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
+>>>>>>> 7b2ac1ca1954240b2d8a498079127c6b4857ea33
           </Nav>
         </div>
 
