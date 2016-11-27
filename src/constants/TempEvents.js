@@ -10,7 +10,7 @@ const TempEvents = [
     'start': new Date(),
     'text': 'This is a leisurely and pleasant event',
     'title': 'Lunch with Friend',
-    'type': 'leisure',
+    'type': 'leisure'
   },
   {
     'allDay': false,
@@ -23,20 +23,7 @@ const TempEvents = [
     'start': new Date(),
     'text': 'This is an unnecessary meeting',
     'title': '2 Hour Meeting',
-    'type': 'school',
-  },
-    {
-    'allDay': false,
-    'emotion': 'fear',
-    'end': new Date(2016, 10, 8),
-    'energy': 5,
-    'confidence' : 1,
-    'satisfaction': 1,
-    'productivity': 1,
-    'start': new Date(2016, 10, 8),
-    'text': 'Scared for our country',
-    'title': 'Election :(((',
-    'type': 'leisure',
+    'type': 'school'
   },
   {
     'allDay': false,
@@ -49,7 +36,7 @@ const TempEvents = [
     'start': new Date(2016, 10, 11),
     'text': 'No school on this day',
     'title': 'No school',
-    'type': 'school',
+    'type': 'school'
   },
   {
     'allDay': false,
@@ -62,7 +49,7 @@ const TempEvents = [
     'start': new Date(2016, 10, 12),
     'text': 'Some flavorful description',
     'title': 'Test Event 4',
-    'type': 'work',
+    'type': 'work'
   },
   {
     'allDay': false,
@@ -75,7 +62,7 @@ const TempEvents = [
     'start': new Date(2016, 10, 25),
     'text': 'Some flavorful description',
     'title': 'Test Event 5',
-    'type': 'leisure',
+    'type': 'leisure'
   },
   {
     'allDay': false,
@@ -88,20 +75,137 @@ const TempEvents = [
     'start': new Date(2016, 10, 25),
     'text': 'Some flavorful description',
     'title': 'Test Event 6',
-    'type': 'work',
+    'type': 'work'
   },
   {
     'allDay': false,
     'emotion': 'happy',
     'end': new Date(2016, 10, 22),
     'energy': 2,
-    'confidence' : 5,
+    'confidence' : 3,
     'satisfaction': 5,
     'productivity': 1,
     'start': new Date(2016, 10, 21),
     'text': 'Some flavorful description',
     'title': 'Test Event 7',
-    'type': 'work',
+    'type': 'work'
+  },
+  {
+    'allDay': false,
+    'emotion': 'hope',
+    'end': new Date(2016, 10, 28),
+    'energy': 2,
+    'confidence' : 2,
+    'satisfaction': 5,
+    'productivity': 1,
+    'start': new Date(2016, 10, 28),
+    'text': 'Starting up on some running',
+    'title': 'Running',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'hope',
+    'end': new Date(2016, 10, 29),
+    'energy': 2,
+    'confidence' : 2,
+    'satisfaction': 4,
+    'productivity': 2,
+    'start': new Date(2016, 10, 29),
+    'text': 'Back to getting stronger',
+    'title': '5x5 Program',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'happy',
+    'end': new Date(2016, 10, 30),
+    'energy': 2,
+    'confidence' : 2,
+    'satisfaction': 4,
+    'productivity': 3,
+    'start': new Date(2016, 10, 30),
+    'text': 'Doing some exercise, stress relief',
+    'title': 'Jogging',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'sad',
+    'end': new Date(2016, 10, 30),
+    'energy': 2,
+    'confidence' : 3,
+    'satisfaction': 5,
+    'productivity': 2,
+    'start': new Date(2016, 10, 30),
+    'text': 'Just grading work',
+    'title': 'Grading',
+    'type': 'work'
+  },
+  {
+    'allDay': false,
+    'emotion': 'happy',
+    'end': new Date(2016, 11, 1),
+    'energy': 2,
+    'confidence' : 2,
+    'satisfaction': 5,
+    'productivity': 4,
+    'start': new Date(2016, 11, 1),
+    'text': 'Trying to get stronger',
+    'title': '5x5 Program',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'anxious',
+    'end': new Date(2016, 11, 2),
+    'energy': 2,
+    'confidence' : 3,
+    'satisfaction': 5,
+    'productivity': 3,
+    'start': new Date(2016, 11, 2),
+    'text': 'Doing some studying',
+    'title': 'Studying',
+    'type': 'school'
+  },
+  {
+    'allDay': false,
+    'emotion': 'fear',
+    'end': new Date(2016, 11, 7),
+    'energy': 2,
+    'confidence' : 3,
+    'satisfaction': 5,
+    'productivity': 3,
+    'start': new Date(2016, 11, 7),
+    'text': 'Running competition',
+    'title': 'Competing',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'surprise',
+    'end': new Date(2016, 11, 7),
+    'energy': 2,
+    'confidence' : 3,
+    'satisfaction': 5,
+    'productivity': 3,
+    'start': new Date(2016, 11, 7),
+    'text': 'Somehow won',
+    'title': 'Won competition',
+    'type': 'exercise'
+  },
+  {
+    'allDay': false,
+    'emotion': 'hope',
+    'end': new Date(2016, 11, 10),
+    'energy': 2,
+    'confidence' : 3,
+    'satisfaction': 5,
+    'productivity': 3,
+    'start': new Date(2016, 11, 10),
+    'text': 'Training for the next competition',
+    'title': 'Training',
+    'type': 'exercise'
   }
 ]
 
