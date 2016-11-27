@@ -84,9 +84,9 @@ export default class DataFormatter {
     conf = conf / events.length;
     sat = sat / events.length;
     prod = prod / events.length;
-    console.log(conf);
-    console.log(sat);
-    console.log(prod);
+    // console.log(conf);
+    // console.log(sat);
+    // console.log(prod);
 
     data.push(['CSP', 'Average Level'], ['Confidence', conf], 
       ['Satisfaction', sat], ['Productivity', prod]);

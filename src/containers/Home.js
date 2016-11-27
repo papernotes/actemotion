@@ -5,7 +5,7 @@ import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
 import List from '../components/List';
-import {Well, Modal} from 'react-bootstrap';
+import {Well} from 'react-bootstrap';
 require('../styles/style.css');
 
 class Home extends Component {

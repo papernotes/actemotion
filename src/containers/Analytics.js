@@ -35,7 +35,6 @@ class Analytics extends Component {
 
   // workaround to refresh graphs
   componentWillReceiveProps() {
-    var currKey = this.state.activeKey;
     if (this.props.event.events.length > this.state.size) {
       this.handleClick('FeelingsPieChart');
     }
