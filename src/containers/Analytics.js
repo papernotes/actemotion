@@ -21,7 +21,8 @@ class Analytics extends Component {
     super();
     this.state = {
       activeKey: 1,
-      displayedGraph: null
+      displayedGraph: null,
+      size: 0
     }
   }
 
@@ -29,6 +30,15 @@ class Analytics extends Component {
     var graph = this.createGraph('');
     this.setState({displayedGraph: graph});
     this.setState({activeKey: 1});
+    this.setState({size: this.props.event.events.length})
+  }
+
+  // workaround to refresh graphs
+  componentWillReceiveProps() {
+    var currKey = this.state.activeKey;
+    if (this.props.event.events.length > this.state.size) {
+      this.handleClick('FeelingsPieChart');
+    }
   }
 
   handleClick(type) {
