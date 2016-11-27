@@ -5,7 +5,17 @@ class List extends Component {
 
   createListItems() {
     return this.props.events.map((event, index) => {
-      return (<ListEvent key={index} title={event.title} emotion={event.emotion}/>);
+      return (<ListEvent 
+        showingNormalEvents={true}
+        setActiveEvent={this.props.setActiveEvent}
+        setEventModal={this.props.setEventModal}
+        setEditModal={this.props.setEditModal}
+        setConfirmEdit={this.props.setConfirmEdit}
+        event={event}
+        key={index}
+        title={event.title}
+        emotion={event.emotion}
+      />);
     })
   }
 

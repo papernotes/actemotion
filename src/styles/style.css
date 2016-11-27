@@ -58,10 +58,10 @@ div .listObject {
 	border: groove;
 	border-radius: 10px;
 	border-color: #F0FBFF;
-	height: 12vh;
-    width: 100%;
-    background-color: #F0FBFF;
-    margin-bottom: 5px;
+	height: 16vh;
+  width: 100%;
+  background-color: #F0FBFF;
+  margin-bottom: 5px;
 }
 
 .list {
