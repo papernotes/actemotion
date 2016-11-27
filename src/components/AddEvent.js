@@ -126,6 +126,7 @@ class AddEvent extends Component {
                   <option value='school'>school</option>
                   <option value='work'>work</option>
                   <option value='leisure'>leisure</option>
+                  <option value='exercise'>exercise</option>
                 </FormControl>
 
                 <ControlLabel>Start Time</ControlLabel>

@@ -118,6 +118,29 @@ export default class DataFormatter {
   }
 
 
+  generateAngryGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Angry Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'angry') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
 
 
   generateEmotionEvents(events) {

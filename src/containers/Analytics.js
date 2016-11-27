@@ -11,6 +11,7 @@ import AnalyticsStyles from '../styles/AnalyticsStyles';
 import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
+import AngryBarChart from '../components/charts/AngryBarChart';
 import CSPBarChart from '../components/charts/CSPBarChart';
 require('../styles/style.css');
 
@@ -53,7 +54,7 @@ class Analytics extends Component {
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Levels for All Events</h4>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
-            <p>The percentage of time you have felt each energy level </p>
+            <p>The percentage of time you have felt each energy level where 1 is least energetic and 5 is most energetic.</p>
           </div>
         );
 
@@ -77,8 +78,18 @@ class Analytics extends Component {
           </div>
         );
 
-      case 'CSPBarChart':
+      case 'AngryBarChart':
         this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
+            <AngryBarChart events={this.props.event.events}></AngryBarChart>
+            <p>These events made you angry for the week</p>
+          </div>
+        );
+      
+      case 'CSPBarChart':
+        this.setState({activeKey: 6});
         return (
           <div style={AnalyticsStyles.barChart}>
           <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
@@ -95,7 +106,7 @@ class Analytics extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
             <p>The percentage of time that you have felt each emotion</p>
-          </div>
+            </div>
           </div>
         );
     }
@@ -130,6 +141,7 @@ class Analytics extends Component {
             <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels Pie Chart</NavItem>
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Events Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Events Bar Chart</NavItem>
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Events Bar Chart</NavItem>
             <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
