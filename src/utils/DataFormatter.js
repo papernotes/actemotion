@@ -67,6 +67,31 @@ export default class DataFormatter {
 
     return data;
   }
+  
+
+  generateCSPGraph(events) {
+    var data = [];
+    var conf = 0;
+    var sat = 0;
+    var prod = 0;
+
+    for (var i in events) {
+      conf = conf + events[i].confidence;
+      sat = sat + events[i].satisfaction;
+      prod = prod + events[i].productivity;
+    }
+
+    conf = conf / events.length;
+    sat = sat / events.length;
+    prod = prod / events.length;
+    console.log(conf);
+    console.log(sat);
+    console.log(prod);
+
+    data.push(['CSP', 'Average Level'], ['Confidence', conf], 
+      ['Satisfaction', sat], ['Productivity', prod]);
+    return data;
+  }
 
 
   generateSadGraph(events) {
@@ -113,40 +138,6 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
-  }
-
-
-    generateCSPGraph(events) {
-    var counts = {};
-    var data = [];
-    data.push(['Emotion', 'Intensity']);
-
-    for (var i in events) {
-      if (events[i].confidence == null) {
-        counts[events[i].confidence] = 1;
-      }
-      else {
-        ++counts[events[i].confidence];
-      }
-      /*
-      if (cevents[i].satisfaction === null) {
-        counts[events[i].satisfaction] = 1;
-      }
-      else {
-        ++counts[events[i].satisfaction];
-      }
-      if (events[i].productivity === null) {
-        counts[events[i].productivity] = 1;
-      }
-      else {
-        ++counts[events[i].confidence];
-      } */
-    }
-
-    for (var key in counts) {
-      data.push([key, counts[key]])
-    }
     return data;
   }
 

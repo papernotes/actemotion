@@ -12,6 +12,7 @@ import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
 import AngryBarChart from '../components/charts/AngryBarChart';
+import CSPBarChart from '../components/charts/CSPBarChart';
 require('../styles/style.css');
 
 class Analytics2 extends Component {
@@ -41,7 +42,7 @@ class Analytics2 extends Component {
         this.setState({activeKey: 1});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Emotions for All Events</h4>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
           </div>
         );
@@ -52,6 +53,7 @@ class Analytics2 extends Component {
           <div style={AnalyticsStyles.pieChart}>
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Levels for All Events</h4>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
+            <p>The percentage of time you have felt each energy level where 1 is least energetic and 5 is most energetic.</p>
           </div>
         );
 
@@ -136,11 +138,11 @@ class Analytics2 extends Component {
         <div style={DivStyles.twoColumnSettings}>
           <h2>Available Graphs</h2>
           <Nav activeKey={this.state.activeKey}>
-            <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>Feelings Pie Chart</NavItem>
-            <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Pie Chart</NavItem>
-            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Emotion Bar Chart</NavItem>
-            <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Bar Chart</NavItem>
-            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Bar Chart</NavItem>
+            <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>All Emotions Pie Chart</NavItem>
+            <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels Pie Chart</NavItem>
+            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Events Bar Chart</NavItem>
+            <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Events Bar Chart</NavItem>
+            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Events Bar Chart</NavItem>
             <NavItem eventKey={6} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
