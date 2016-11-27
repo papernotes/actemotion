@@ -7,7 +7,7 @@ class CSPBarChart extends Component {
 		super(props);
 		this.state={
 			options:{
-				hAxis: {title: 'Confidence, Satisfaction, and Productivity'},
+				hAxis: {title: 'Feeling'},
 				vAxis: {title: 'Average Level'},
 				legend: 'none',
 			}
