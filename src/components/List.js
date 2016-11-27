@@ -11,7 +11,6 @@ class List extends Component {
 
   render() {
     var listItems = this.createListItems();
-    console.log(listItems);
 
     return(
       <div className="list">

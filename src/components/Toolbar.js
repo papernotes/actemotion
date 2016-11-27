@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Nav, NavItem, Navbar, Modal} from 'react-bootstrap';
+import {Nav, NavItem, Navbar, Modal, Button} from 'react-bootstrap';
 import AddEvent from './AddEvent';
 import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
@@ -59,10 +59,21 @@ class Toolbar extends Component {
   render() {
     var route = this.props.secondaryRoute || '/home';
     var analyticsRoute = this.props.analyticsRoute || '/analytics';
-    var analyticsToolbar = this.props.analyticsTitle || 'Emotion Data Analytics';
 
     return(
       <div>
+        <Button onClick={this.setModalOpen.bind(this, true)} style={{
+          position: 'absolute',
+          width: '100px',
+          height: '75px',
+          backgroundColor: 'rgb(40, 126, 255)',
+          textColor: 'white',
+          top: '10vh',
+          right: '5vw',
+          color: 'white'
+        }}>
+          Add Event!
+        </Button>
         <Modal
           show={this.props.isAddOpen}
           onHide={this.setModalOpen.bind(this, false)}
@@ -128,7 +139,6 @@ class Toolbar extends Component {
             </Nav>
 
             <Nav pullRight>
-              <NavItem disabled={this.props.showMessage} eventKey={4} onClick={this.setModalOpen.bind(this, true)}>Add Event</NavItem>
               <NavItem eventKey={6.1} onClick={this.goToPage.bind(this, '/')}>Logout</NavItem>
             </Nav>
 
@@ -141,7 +151,6 @@ class Toolbar extends Component {
 }
 
 Toolbar.propTypes = {
-  analyticsTitle: PropTypes.string.isRequired,
   isAddOpen: PropTypes.bool.isRequired,
   addEvent: PropTypes.func.isRequired,
   setModalOpen: PropTypes.func.isRequired,
