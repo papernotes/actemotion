@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Nav, NavItem, Navbar, Modal, Button} from 'react-bootstrap';
 import AddEvent from './AddEvent';
+import AddNewType from './AddNewType';
 import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
@@ -56,6 +57,10 @@ class Toolbar extends Component {
     this.props.setNotifications(bool);
   }
 
+  setNewTypeModal(bool) {
+    this.props.setNewTypeModal(bool);
+  }
+
   render() {
     var route = this.props.secondaryRoute || '/home';
     var analyticsRoute = this.props.analyticsRoute || '/analytics';
@@ -89,6 +94,26 @@ class Toolbar extends Component {
               setConfirmAddition={this.props.setConfirmAddition}
               setActiveEvent={this.props.setActiveEvent}
               eventTypes={this.props.eventTypes}
+              setNewTypeModal={this.props.setNewTypeModal}
+              isNewTypeOpen={this.props.isNewTypeOpen}
+              addNewType={this.props.addNewType}
+            />
+          </Modal.Body>
+        </Modal>
+
+        <Modal
+          show={this.props.isNewTypeOpen}
+          onHide={this.setNewTypeModal.bind(this, false)}
+          backdrop='static'
+        >
+          <Modal.Header closeButton={true}>
+            <Modal.Title>Adding New Event Type</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <AddNewType
+              setNewTypeModal={this.props.setNewTypeModal}
+              setModalOpen={this.props.setModalOpen}
+              addNewType={this.props.addNewType}
             />
           </Modal.Body>
         </Modal>
@@ -161,7 +186,10 @@ Toolbar.propTypes = {
   activeEvent: PropTypes.object.isRequired,
   showMessage: PropTypes.bool,
   setNormalEvents: PropTypes.func.isRequired,
-  eventTypes: PropTypes.array.isRequired
+  eventTypes: PropTypes.array.isRequired,
+  setNewTypeModal: PropTypes.func.isRequired,
+  isNewTypeOpen: PropTypes.bool.isRequired,
+  addNewType: PropTypes.func.isRequired
 }
 
 export default Toolbar;
