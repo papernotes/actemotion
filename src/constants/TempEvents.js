@@ -40,15 +40,15 @@ const TempEvents = [
   },
   {
     'allDay': false,
-    'emotion': 'sad',
+    'emotion': 'happy',
     'end': new Date(2016, 10, 15),
     'energy': 2,
     'confidence' : 5,
     'satisfaction': 2,
     'productivity': 5,
     'start': new Date(2016, 10, 12),
-    'text': 'Some flavorful description',
-    'title': 'Test Event 4',
+    'text': 'Vegas Work Trip',
+    'title': 'Business Trip',
     'type': 'work'
   },
   {
@@ -60,26 +60,26 @@ const TempEvents = [
     'satisfaction': 5,
     'productivity': 1,
     'start': new Date(2016, 10, 25),
-    'text': 'Some flavorful description',
-    'title': 'Test Event 5',
+    'text': 'Went out with the CSE 170 team',
+    'title': 'Meet Friends',
     'type': 'leisure'
   },
   {
     'allDay': false,
-    'emotion': 'sad',
+    'emotion': 'envy',
     'end': new Date(2016, 10, 25),
     'energy': 1,
     'confidence' : 2,
     'satisfaction': 1,
     'productivity': 1,
     'start': new Date(2016, 10, 25),
-    'text': 'Some flavorful description',
-    'title': 'Test Event 6',
+    'text': 'Someone else got the promotion',
+    'title': 'Bad Work Day',
     'type': 'work'
   },
   {
     'allDay': false,
-    'emotion': 'happy',
+    'emotion': 'disgust',
     'end': new Date(2016, 10, 22),
     'energy': 2,
     'confidence' : 3,
@@ -87,8 +87,8 @@ const TempEvents = [
     'productivity': 1,
     'start': new Date(2016, 10, 21),
     'text': 'Some flavorful description',
-    'title': 'Test Event 7',
-    'type': 'work'
+    'title': 'Midterm Exam',
+    'type': 'school'
   },
   {
     'allDay': false,
@@ -118,7 +118,7 @@ const TempEvents = [
   },
   {
     'allDay': false,
-    'emotion': 'happy',
+    'emotion': 'joy',
     'end': new Date(2016, 10, 30),
     'energy': 2,
     'confidence' : 2,

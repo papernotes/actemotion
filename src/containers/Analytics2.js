@@ -12,6 +12,14 @@ import EnergyPieChart from '../components/charts/EnergyPieChart';
 import EmotionBarChart from '../components/charts/EmotionBarChart';
 import SadBarChart from '../components/charts/SadBarChart';
 import AngryBarChart from '../components/charts/AngryBarChart';
+import AnxiousBarChart from '../components/charts/AnxiousBarChart';
+import DisgustBarChart from '../components/charts/DisgustBarChart';
+import EnvyBarChart from '../components/charts/EnvyBarChart';
+import ExcitedBarChart from '../components/charts/ExcitedBarChart';
+import FearBarChart from '../components/charts/FearBarChart';
+import HopeBarChart from '../components/charts/HopeBarChart';
+import JoyBarChart from '../components/charts/JoyBarChart';
+import SurpriseBarChart from '../components/charts/SurpriseBarChart';
 import CSPBarChart from '../components/charts/CSPBarChart';
 require('../styles/style.css');
 
@@ -84,6 +92,86 @@ class Analytics2 extends Component {
             <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Events</h4>
             <AngryBarChart events={this.props.event.events}></AngryBarChart>
             <p>These events made you angry for the week</p>
+          </div>
+        );      
+
+      case 'AnxiousBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Anxious" Events</h4>
+            <AnxiousBarChart events={this.props.event.events}></AnxiousBarChart>
+            <p>These events made you anxious for the week</p>
+          </div>
+        );
+
+      case 'DisgustBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Disgust" Events</h4>
+            <DisgustBarChart events={this.props.event.events}></DisgustBarChart>
+            <p>These events made you disgusted for the week</p>
+          </div>
+        );
+
+      case 'EnvyBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Envy" Events</h4>
+            <EnvyBarChart events={this.props.event.events}></EnvyBarChart>
+            <p>These events made you envious for the week</p>
+          </div>
+        );
+
+      case 'ExcitedBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Excited" Events</h4>
+            <ExcitedBarChart events={this.props.event.events}></ExcitedBarChart>
+            <p>These events made you excited for the week</p>
+          </div>
+        );
+
+      case 'FearBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Fear" Events</h4>
+            <FearBarChart events={this.props.event.events}></FearBarChart>
+            <p>These events made you fear for the week</p>
+          </div>
+        );
+
+      case 'HopeBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Hope" Events</h4>
+            <HopeBarChart events={this.props.event.events}></HopeBarChart>
+            <p>These events made you hopeful for the week</p>
+          </div>
+        );
+
+      case 'JoyBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Joy" Events</h4>
+            <JoyBarChart events={this.props.event.events}></JoyBarChart>
+            <p>These events made you joyful for the week</p>
+          </div>
+        );
+
+      case 'SurpriseBarChart':
+        this.setState({activeKey: 5});
+        return (
+          <div style={AnalyticsStyles.barChart}>
+            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Surprise" Events</h4>
+            <SurpriseBarChart events={this.props.event.events}></SurpriseBarChart>
+            <p>These events made you surprised for the week</p>
           </div>
         );
 
@@ -158,7 +246,15 @@ class Analytics2 extends Component {
             <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Events Bar Chart</NavItem>
             <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Events Bar Chart</NavItem>
             <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Events Bar Chart</NavItem>
-            <NavItem eventKey={6} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
+            <NavItem eventKey={6} onClick={this.handleClick.bind(this, 'AnxiousBarChart')}>Anxious Events Bar Chart</NavItem>
+            <NavItem eventKey={7} onClick={this.handleClick.bind(this, 'DisgustBarChart')}>Disgust Events Bar Chart</NavItem>
+            <NavItem eventKey={8} onClick={this.handleClick.bind(this, 'EnvyBarChart')}>Envy Events Bar Chart</NavItem>
+            <NavItem eventKey={9} onClick={this.handleClick.bind(this, 'ExcitedBarChart')}>Excited Events Bar Chart</NavItem>
+            <NavItem eventKey={10} onClick={this.handleClick.bind(this, 'FearBarChart')}>Fear Events Bar Chart</NavItem>
+            <NavItem eventKey={11} onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope Events Bar Chart</NavItem>
+            <NavItem eventKey={12} onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy Events Bar Chart</NavItem>
+            <NavItem eventKey={13} onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Events Bar Chart</NavItem>
+            <NavItem eventKey={14} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
           </Nav>
         </div>
 

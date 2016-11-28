@@ -141,7 +141,189 @@ export default class DataFormatter {
     return data;
   }
 
+   generateAnxiousGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Anxious Events']);
 
+    for (var i in events) {
+      if (events[i].emotion === 'anxious') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+ generateDisgustGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Disgust Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'disgust') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+ generateEnvyGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Envy Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'envy') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+ generateExcitedGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Excited Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'excited') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+ generateFearGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Fear Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'fear') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+ generateHopeGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Hope Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'hope') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+   generateJoyGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Joy Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'joy') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
+
+   generateSurpriseGraph(events) {
+    var counts = {};
+    var data = [];
+    data.push(['Activity', 'Surprise Events']);
+
+    for (var i in events) {
+      if (events[i].emotion === 'surprise') {
+        if (counts[events[i].type] == null) {
+          counts[events[i].type] = 1;
+        }
+        else {
+          ++counts[events[i].type];
+        }
+      }
+    }
+
+    for (var key in counts) {
+      data.push([key, counts[key]])
+    }
+
+    return data;
+  }
 
   generateEmotionEvents(events) {
     var newEvents = JSON.parse(JSON.stringify(events));
