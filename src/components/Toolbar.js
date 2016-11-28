@@ -6,7 +6,6 @@ import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
 require('../styles/style.css');
-import ReactGA from 'react-ga';
 
 class Toolbar extends Component {
 
@@ -29,21 +28,6 @@ class Toolbar extends Component {
 
   // TODO disable NavItem or make active on click
   goToPage(route) {
-    if (route === '/analytics') {
-      ReactGA.ga('send', 'pageview', '/home');
-      ReactGA.event({
-        category: 'Navigation',
-        action: 'Went to Analytics 1'
-      });
-    }
-    else if (route === '/analytics2') {
-      ReactGA.ga('send', 'pageview', '/home2');
-      ReactGA.event({
-        category: 'Navigation',
-        action: 'Went to Analytics 2'
-      });
-    }
-
     browserHistory.push(route);
     if (route !== '/home')
       this.props.setNormalEvents(true); // quick fix for resetting calendar items
