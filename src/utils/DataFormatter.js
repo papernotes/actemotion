@@ -4,6 +4,15 @@
 
 export default class DataFormatter {
 
+  emptyCheck(data) {
+    if (data.length > 1)
+      return data;
+    else {
+      data.push(['no_event', 0]);
+      return data;
+    }
+  }
+
   generateFeelingsGraph(events) {
     var counts = {};
     var data = [];
@@ -21,7 +30,7 @@ export default class DataFormatter {
     for (var key in counts) {
       data.push([key, counts[key]])
     }
-    return data;
+    return this.emptyCheck(data);
   }
 
 
@@ -42,7 +51,7 @@ export default class DataFormatter {
     for (var key in counts) {
       data.push(['Level ' + key, counts[key]])
     }
-    return data;
+    return this.emptyCheck(data);
   }
 
   generateEmotionGraph(events) {
@@ -65,7 +74,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
   
 
@@ -90,7 +99,7 @@ export default class DataFormatter {
 
     data.push(['CSP', 'Average Level'], ['Confidence', conf], 
       ['Satisfaction', sat], ['Productivity', prod]);
-    return data;
+    return this.emptyCheck(data);
   }
 
 
@@ -114,7 +123,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
 
@@ -138,7 +147,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
    generateAnxiousGraph(events) {
@@ -161,7 +170,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
  generateDisgustGraph(events) {
@@ -184,7 +193,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
  generateEnvyGraph(events) {
@@ -207,7 +216,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
  generateExcitedGraph(events) {
@@ -230,7 +239,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
  generateFearGraph(events) {
@@ -253,7 +262,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
  generateHopeGraph(events) {
@@ -276,7 +285,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
    generateJoyGraph(events) {
@@ -299,7 +308,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
    generateSurpriseGraph(events) {
@@ -322,7 +331,7 @@ export default class DataFormatter {
       data.push([key, counts[key]])
     }
 
-    return data;
+    return this.emptyCheck(data);
   }
 
   generateEmotionEvents(events) {
