@@ -267,8 +267,8 @@ class Analytics extends Component {
             <NavItem eventKey={11} onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope Events Bar Chart</NavItem>
             <NavItem eventKey={12} onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy Events Bar Chart</NavItem>
             <NavItem eventKey={13} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Events Bar Chart</NavItem>
-            <NavItem eventKey={14} onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Events Bar Chart</NavItem>          </Nav>
-
+            <NavItem eventKey={14} onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Events Bar Chart</NavItem>
+          </Nav>
         </div>
 
         <div style={DivStyles.twoColumnSettings}>

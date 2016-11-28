@@ -119,7 +119,7 @@ class Calendar extends Component{
           <BigCalendar
             events={this.props.events}
             timeslots={2}
-            views={['month']}
+            views={['month', 'week', 'day']}
             onSelectEvent={event => this.showEventInfo(event, true)}
             defaultDate={new Date()}
           />

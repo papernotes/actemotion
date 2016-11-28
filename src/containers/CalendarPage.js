@@ -85,8 +85,6 @@ class CalendarPage extends Component {
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
           <h4 className="tdDate"><b>{new Date().toDateString()}</b></h4>
-          <Button disabled={normalActive} onClick={this.showNormalEvents.bind(this)}>Event View</Button>
-          <Button disabled={emotionActive} onClick={this.showEmotionEvents.bind(this)}>Emotion View</Button>
         </div>
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}
