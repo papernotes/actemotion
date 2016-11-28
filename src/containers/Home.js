@@ -74,6 +74,8 @@ class Home extends Component {
           setNormalEvents={this.props.actions.setNormalEvents}
           location={this.props.location}
           analyticsTitle={'Emotion Data Analytics'}
+          eventTypes={this.props.event.eventTypes}
+          addNewType={this.props.actions.addNewType}
         />
 
         <Modal
@@ -204,7 +206,8 @@ Home.propTypes = {
     saveEdit: PropTypes.func.isRequired,
     setConfirmAddition: PropTypes.func.isRequired,
     setConfirmEdit: PropTypes.func.isRequired,
-    setNormalEvents: PropTypes.func.isRequired
+    setNormalEvents: PropTypes.func.isRequired,
+    addNewType: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
@@ -219,7 +222,8 @@ Home.propTypes = {
     isConfirmOpen: PropTypes.bool.isRequired,
     showingNormalEvents: PropTypes.bool.isRequired,
     confirmedAddition: PropTypes.bool.isRequired,
-    confirmedEdit: PropTypes.bool.isRequired
+    confirmedEdit: PropTypes.bool.isRequired,
+    eventTypes: PropTypes.array.isRequired
   })
 }
 

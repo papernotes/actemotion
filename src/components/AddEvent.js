@@ -23,6 +23,12 @@ class AddEvent extends Component {
     this.props.setModalOpen(bool);
   }
 
+  generateOptions() {
+    return this.props.eventTypes.map((type, index) => {
+      return (<option key={index} value={type}>{type}</option>);
+    })
+  }
+
   formatEvent(data) {
     return {
       'title': data[0],
@@ -95,6 +101,8 @@ class AddEvent extends Component {
     var endHour = new Date();
     endHour.setHours(endHour.getHours()+1);
 
+    var options = this.generateOptions();
+
     return(
       <div>
         <div style={DivStyles.addEventContent}>
@@ -123,10 +131,7 @@ class AddEvent extends Component {
                   placeholder='Event Type'
                   ref='eventType'
                 >
-                  <option value='school'>school</option>
-                  <option value='work'>work</option>
-                  <option value='leisure'>leisure</option>
-                  <option value='exercise'>exercise</option>
+                  {options}
                 </FormControl>
 
                 <ControlLabel>Start Time</ControlLabel>
@@ -243,7 +248,8 @@ AddEvent.propTypes = {
   setModalOpen: PropTypes.func.isRequired,
   addEvent: PropTypes.func.isRequired,
   setConfirmAddition: PropTypes.func.isRequired,
-  setActiveEvent: PropTypes.func.isRequired
+  setActiveEvent: PropTypes.func.isRequired,
+  eventTypes: PropTypes.array.isRequired
 }
 
 export default AddEvent;

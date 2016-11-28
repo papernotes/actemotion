@@ -62,6 +62,8 @@ class CalendarPage extends Component {
           setNormalEvents={this.props.actions.setNormalEvents}
           location={this.props.location}
           analyticsTitle={'Emotion Data Analytics'}
+          eventTypes={this.props.event.eventTypes}
+          addNewType={this.props.actions.addNewType}
         />
         <div style={{textAlign: 'center'}}>
           <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
@@ -121,6 +123,7 @@ CalendarPage.propTypes = {
     setConfirmAddition: PropTypes.func.isRequired,
     setConfirmEdit: PropTypes.func.isRequired,
     setNormalEvents: PropTypes.func.isRequired,
+    addNewType: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
@@ -136,6 +139,7 @@ CalendarPage.propTypes = {
     showingNormalEvents: PropTypes.bool.isRequired,
     confirmedAddition: PropTypes.bool.isRequired,
     confirmedEdit: PropTypes.bool.isRequired,
+    eventTypes: PropTypes.array.isRequired
   })
 }
 

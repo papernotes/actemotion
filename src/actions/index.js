@@ -71,3 +71,9 @@ export function setConfirmEdit(bool) {
     type: types.SET_CONFIRM_EDIT, bool
   }
 }
+
+export function addNewType(newType) {
+  return {
+    type: types.ADD_NEW_TYPE, newType
+  }
+}
