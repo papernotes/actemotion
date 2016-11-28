@@ -6,6 +6,7 @@
 .navbar-default .navbar-brand {
 	padding-left: 20px;
 	color: #F0FBFF;
+	font-family: 'Muli';
 }
 
 .navbar-default .navbar-brand:hover{
@@ -14,9 +15,11 @@
 
 h3 {
 	color: #24728f;
+	font-family: 'Raleway';
 }
 h2 {
 	color: #24728f;
+	font-family: 'Raleway';
 }
 
 .navbar-default .navbar-nav .active li a {
@@ -26,6 +29,7 @@ h2 {
 
 .navbar-default .navbar-nav li a {
 	color: white;
+	font-family: 'Raleway';
 }
 
 div .rbc-event{
@@ -48,6 +52,7 @@ div .rbc-event{
     transform: translate(-50%, -50%);
     text-align: center;
     width: 30vw;
+    font-family: 'Muli';
 }
 
 .graphChoice {
@@ -77,9 +82,16 @@ div .listObject {
 .list h3 {
 	margin-top: 5px;
 	margin-left: 7px;
+	font-family: 'Muli';
 }
 .list h4 {
 	margin-left: 7px;
+	font-family: 'Raleway';
+}
+
+h4 {
+	font-family: 'Raleway';
+	font-weight: bold;
 }
 div .well {
 	margin-left: 15px;
@@ -112,8 +124,10 @@ div .well {
 	border-radius: 0px;
 	border-bottom-right-radius: 7px;
 	border-top-right-radius: 7px;
-	padding: 4.35vh 32px;
+	padding: 4.1vh 32px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
+	font-family: 'Raleway';
+	font-size: 14px;
 }

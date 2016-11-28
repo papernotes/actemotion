@@ -28,6 +28,21 @@ class Home2 extends Component {
   render() {
     return(
       <div>
+      <link 
+        href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Muli'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Montserrat'
+        rel='stylesheet'
+        type='text/css'
+       />
         <Toolbar
           setModalOpen={this.props.actions.setModalOpen}
           isAddOpen={this.props.event.isAddOpen}

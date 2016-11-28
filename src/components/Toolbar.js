@@ -51,15 +51,31 @@ class Toolbar extends Component {
 
     return(
       <div>
+      <link 
+        href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Muli'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Montserrat'
+        rel='stylesheet'
+        type='text/css'
+       />
         <Button onClick={this.setModalOpen.bind(this, true)} style={{
           position: 'absolute',
           width: '100px',
-          height: '75px',
+          height: '50px',
           backgroundColor: '#F8DA5B',
           textColor: 'white',
           top: '10vh',
           right: '7vw',
           color: 'white',
+          fontFamily: 'Raleway',
           fontWeight: 'bold'
         }}>
           Add Event!
@@ -136,7 +152,7 @@ class Toolbar extends Component {
           <Navbar.Header>
             <Navbar.Brand>
                 <Nav className="logo" onClick={this.goToPage.bind(this, '/home')}>
-                    Actemotion
+                    actemotion
                 </Nav>
             </Navbar.Brand>
             <Navbar.Toggle />

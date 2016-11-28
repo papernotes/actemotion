@@ -16,6 +16,21 @@ class Login extends Component {
   render() {
     return(
       <div className="login">
+        <link 
+        href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Muli'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Montserrat'
+        rel='stylesheet'
+        type='text/css'
+       />
         <h1>actemotion</h1>
         <form onSubmit={this.preventDefault.bind(this)}>
           <FormGroup

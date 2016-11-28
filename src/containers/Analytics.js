@@ -125,6 +125,21 @@ class Analytics extends Component {
 
     return(
       <div>
+      <link 
+        href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Muli'
+        rel='stylesheet'
+        type='text/css'
+       />
+       <link 
+        href='https://fonts.googleapis.com/css?family=Montserrat'
+        rel='stylesheet'
+        type='text/css'
+       />
         <Toolbar
           setModalOpen={this.props.actions.setModalOpen}
           isAddOpen={this.props.event.isAddOpen}
@@ -143,7 +158,7 @@ class Analytics extends Component {
           isNewTypeOpen={this.props.event.isNewTypeOpen}
           setNewTypeModal={this.props.actions.setNewTypeModal}
         />
-        <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
+        <h2 style={{textAlign: 'center', fontSize: '30px'}}>Emotion Data Analytics</h2>
         <br></br>
         <p></p><p></p>
 
