@@ -55,25 +55,31 @@ div .rbc-event{
 }
 
 div .listObject {
-	border: groove;
-	border-radius: 10px;
-	border-color: #F0FBFF;
-	height: 16vh;
-  width: 100%;
-  background-color: #F0FBFF;
-  margin-bottom: 5px;
+	border: solid;
+	border-radius: 7px;
+	border-color: #2E94B9;
+	border-width: 1px;
+	height: 12vh;
+  	width: 100%;
+  	background-color: #F0FBFF;
+  	margin-bottom: 5px;
+  	position: relative;
+  	margin-top: 5px;
 }
 
 .list {
 	height: 60vh;
 	overflow: scroll;
+	border: outset;
+	border-color: #F0FBFF;
+	background-color: ;
 }
 .list h3 {
 	margin-top: 5px;
-	margin-left: 5px;
+	margin-left: 7px;
 }
 .list h4 {
-	margin-left: 5px;
+	margin-left: 7px;
 }
 div .well {
 	margin-left: 15px;
@@ -85,4 +91,29 @@ div .well {
 
 .logo {
 	font-family: ;
+}
+
+.eventTitle {
+
+}
+
+.eventFeeling {
+	text-transform: uppercase;
+}
+
+.eventIn {
+	display: inline-block;
+	border: none;
+	color: white;
+	padding: ;
+	text-decoration: none;
+	background-color: #2E94B9;
+	float: right;
+	border-radius: 0px;
+	border-bottom-right-radius: 7px;
+	border-top-right-radius: 7px;
+	padding: 4.35vh 32px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }

@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ListEvent from './ListEvent';
+require('../styles/style.css');
 
 class List extends Component {
 

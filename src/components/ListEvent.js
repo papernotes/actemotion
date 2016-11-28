@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Button} from 'react-bootstrap';
+require('../styles/style.css');
 
 class ListEvent extends Component {
 
@@ -25,9 +26,9 @@ class ListEvent extends Component {
   render() {
     return(
       <div className="listObject">
-          <h3>{this.props.title}</h3>
-          <h4>Feeling: {this.props.emotion}</h4>
-          <Button onClick={this.showEventInfo.bind(this, this.props.event, true)}bsSize='xsmall'>Event Info</Button>
+          <h3 className="eventTitle">{this.props.title}</h3>
+          <h4 className="eventFeeling">{this.props.emotion}</h4>
+          <Button className="eventIn" onClick={this.showEventInfo.bind(this, this.props.event, true)}bsSize='xsmall'>Event Info</Button>
       </div>
     );
   }

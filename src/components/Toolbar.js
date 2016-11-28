@@ -66,11 +66,12 @@ class Toolbar extends Component {
           position: 'absolute',
           width: '100px',
           height: '75px',
-          backgroundColor: 'rgb(40, 126, 255)',
+          backgroundColor: '#F8DA5B',
           textColor: 'white',
           top: '10vh',
-          right: '5vw',
-          color: 'white'
+          right: '7vw',
+          color: 'white',
+          fontWeight: 'bold'
         }}>
           Add Event!
         </Button>
