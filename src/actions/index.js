@@ -77,3 +77,9 @@ export function addNewType(newType) {
     type: types.ADD_NEW_TYPE, newType
   }
 }
+
+export function setNewTypeModal(bool) {
+  return {
+    type: types.SET_NEW_TYPE_MODAL, bool
+  }
+}

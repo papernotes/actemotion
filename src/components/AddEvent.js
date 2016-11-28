@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {Button, ControlLabel, FormGroup, FormControl} from 'react-bootstrap';
+import {Form, Button, ControlLabel, FormGroup, FormControl} from 'react-bootstrap';
 import DivStyles from '../styles/DivStyles';
 import DateTime from 'react-datetime';
 import moment from 'moment';
@@ -21,6 +21,11 @@ class AddEvent extends Component {
 
   setModalOpen(bool) {
     this.props.setModalOpen(bool);
+  }
+
+  handleNewEvent() {
+    this.props.setModalOpen(false);
+    this.props.setNewTypeModal(true);
   }
 
   generateOptions() {
@@ -126,13 +131,17 @@ class AddEvent extends Component {
                 </FormGroup>
 
                 <ControlLabel>Event Type</ControlLabel>
-                <FormControl
-                  componentClass='select'
-                  placeholder='Event Type'
-                  ref='eventType'
-                >
-                  {options}
-                </FormControl>
+                <Form inline>
+                    <FormControl
+                      componentClass='select'
+                      placeholder='Event Type'
+                      ref='eventType'
+                    >
+                      {options}
+                    </FormControl>
+                  {' '}
+                  <Button onClick={this.handleNewEvent.bind(this)}>+ New Event Type</Button>
+                </Form>
 
                 <ControlLabel>Start Time</ControlLabel>
                 <DateTime
@@ -249,7 +258,9 @@ AddEvent.propTypes = {
   addEvent: PropTypes.func.isRequired,
   setConfirmAddition: PropTypes.func.isRequired,
   setActiveEvent: PropTypes.func.isRequired,
-  eventTypes: PropTypes.array.isRequired
+  eventTypes: PropTypes.array.isRequired,
+  addNewType: PropTypes.func.isRequired,
+  setNewTypeModal: PropTypes.func.isRequired
 }
 
 export default AddEvent;

@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import {Nav, NavItem, Navbar, Modal, Button} from 'react-bootstrap';
 import AddEvent from './AddEvent';
+import AddNewType from './AddNewType';
 import ConfirmAddition from './ConfirmAddition';
 import Notifications from './Notifications';
 import {browserHistory} from 'react-router';
 require('../styles/style.css');
-import ReactGA from 'react-ga';
 
 class Toolbar extends Component {
 
@@ -28,21 +28,6 @@ class Toolbar extends Component {
 
   // TODO disable NavItem or make active on click
   goToPage(route) {
-    if (route === '/analytics') {
-      ReactGA.ga('send', 'pageview', '/home');
-      ReactGA.event({
-        category: 'Navigation',
-        action: 'Went to Analytics 1'
-      });
-    }
-    else if (route === '/analytics2') {
-      ReactGA.ga('send', 'pageview', '/home2');
-      ReactGA.event({
-        category: 'Navigation',
-        action: 'Went to Analytics 2'
-      });
-    }
-
     browserHistory.push(route);
     if (route !== '/home')
       this.props.setNormalEvents(true); // quick fix for resetting calendar items
@@ -54,6 +39,10 @@ class Toolbar extends Component {
 
   setNotificationsModal(bool) {
     this.props.setNotifications(bool);
+  }
+
+  setNewTypeModal(bool) {
+    this.props.setNewTypeModal(bool);
   }
 
   render() {
@@ -90,6 +79,26 @@ class Toolbar extends Component {
               setConfirmAddition={this.props.setConfirmAddition}
               setActiveEvent={this.props.setActiveEvent}
               eventTypes={this.props.eventTypes}
+              setNewTypeModal={this.props.setNewTypeModal}
+              isNewTypeOpen={this.props.isNewTypeOpen}
+              addNewType={this.props.addNewType}
+            />
+          </Modal.Body>
+        </Modal>
+
+        <Modal
+          show={this.props.isNewTypeOpen}
+          onHide={this.setNewTypeModal.bind(this, false)}
+          backdrop='static'
+        >
+          <Modal.Header closeButton={true}>
+            <Modal.Title>Adding New Event Type</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <AddNewType
+              setNewTypeModal={this.props.setNewTypeModal}
+              setModalOpen={this.props.setModalOpen}
+              addNewType={this.props.addNewType}
             />
           </Modal.Body>
         </Modal>
@@ -162,7 +171,10 @@ Toolbar.propTypes = {
   activeEvent: PropTypes.object.isRequired,
   showMessage: PropTypes.bool,
   setNormalEvents: PropTypes.func.isRequired,
-  eventTypes: PropTypes.array.isRequired
+  eventTypes: PropTypes.array.isRequired,
+  setNewTypeModal: PropTypes.func.isRequired,
+  isNewTypeOpen: PropTypes.bool.isRequired,
+  addNewType: PropTypes.func.isRequired
 }
 
 export default Toolbar;

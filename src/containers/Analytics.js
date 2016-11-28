@@ -140,6 +140,8 @@ class Analytics extends Component {
           analyticsTitle={'Emotion Data Analytics'}
           eventTypes={this.props.event.eventTypes}
           addNewType={this.props.actions.addNewType}
+          isNewTypeOpen={this.props.event.isNewTypeOpen}
+          setNewTypeModal={this.props.actions.setNewTypeModal}
         />
         <h2 style={{textAlign: 'center', fontSize: '30px'}}>Your Emotions</h2>
         <br></br>
@@ -194,7 +196,8 @@ Analytics.propTypes = {
     setConfirmAddition: PropTypes.func.isRequired,
     setConfirmEdit: PropTypes.func.isRequired,
     setNormalEvents: PropTypes.func.isRequired,
-    addNewType: PropTypes.func.isRequired
+    addNewType: PropTypes.func.isRequired,
+    setNewTypeModal: PropTypes.func.isRequired
   }),
   home: PropTypes.shape({
     notificationsOn: PropTypes.bool
@@ -210,7 +213,8 @@ Analytics.propTypes = {
     showingNormalEvents: PropTypes.bool.isRequired,
     confirmedAddition: PropTypes.bool.isRequired,
     confirmedEdit: PropTypes.bool.isRequired,
-    eventTypes: PropTypes.array.isRequired
+    eventTypes: PropTypes.array.isRequired,
+    isNewTypeOpen: PropTypes.bool.isRequired
   })
 }
 

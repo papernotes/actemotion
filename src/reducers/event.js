@@ -1,6 +1,6 @@
 import {ADD_EVENT, SET_MODAL_OPEN, SET_EVENT_MODAL, SET_ACTIVE_EVENT, 
         DELETE_EVENT, SET_EDIT_MODAL, SET_CONFIRM_MODAL, SAVE_EDIT, SET_NORMAL_EVENTS,
-        SET_CONFIRM_ADDITION, SET_CONFIRM_EDIT, ADD_NEW_TYPE} from '../constants/ActionTypes';
+        SET_CONFIRM_ADDITION, SET_CONFIRM_EDIT, ADD_NEW_TYPE, SET_NEW_TYPE_MODAL} from '../constants/ActionTypes';
 import TempEvents from '../constants/TempEvents';
 import DataFormatter from '../utils/DataFormatter';
 
@@ -16,7 +16,8 @@ const initialState = {
   events: TempEvents,
   renderEvents: TempEvents,
   showingNormalEvents: true,
-  eventTypes: ['school', 'work', 'leisure', 'exercise'].sort()
+  eventTypes: ['school', 'work', 'leisure', 'exercise'].sort(),
+  isNewTypeOpen: false
 }
 
 export default function event(state=initialState, action) {
@@ -111,9 +112,18 @@ export default function event(state=initialState, action) {
 
     case ADD_NEW_TYPE:
     var newTypes = state.eventTypes;
-    newTypes.push(action.newType)
+    if (!state.eventTypes.includes(action.newTypes)) {
+      newTypes.push(action.newType)
       return Object.assign({}, state, {
         eventTypes: newTypes.sort()
+      })
+    }
+    return state;
+
+
+    case SET_NEW_TYPE_MODAL:
+      return Object.assign({}, state, {
+        isNewTypeOpen: action.bool
       })
 
     default:
