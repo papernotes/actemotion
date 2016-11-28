@@ -21,9 +21,17 @@ h2 {
 	color: #24728f;
 	font-family: 'Raleway';
 }
+h4 {
+	color: #24728f;
+	font-family: 'Raleway';
+}
 
-.navbar-default .navbar-nav .active li a {
-	color: #3174AD;
+.navbar-default .navbar-nav li a:hover{
+	color: #2E94B9;
+	background-color: #F0FBFF;
+}
+.navbar-default .navbar-nav li a:active{
+	color: #2E94B9;
 	background-color: #F0FBFF;
 }
 
@@ -89,10 +97,6 @@ div .listObject {
 	font-family: 'Raleway';
 }
 
-h4 {
-	font-family: 'Raleway';
-	font-weight: bold;
-}
 div .well {
 	margin-left: 15px;
 	margin-top: 20px;
