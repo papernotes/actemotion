@@ -14,6 +14,9 @@
 .navbar-default .navbar-brand:hover{
 	color: #333;
 }
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #F0FBFF;
+}
 
 h3 {
 	color: #24728f;
