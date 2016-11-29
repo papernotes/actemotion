@@ -40,15 +40,15 @@ const TempEvents = [
   },
   {
     'allDay': false,
-    'emotion': 'happy',
+    'emotion': 'sad',
     'end': new Date(2016, 10, 15),
     'energy': 2,
     'confidence' : 5,
     'satisfaction': 2,
     'productivity': 5,
     'start': new Date(2016, 10, 12),
-    'text': 'Vegas Work Trip',
-    'title': 'Business Trip',
+    'text': 'Worked all weekend',
+    'title': 'Work',
     'type': 'work'
   },
   {
@@ -192,6 +192,32 @@ const TempEvents = [
     'start': new Date(2016, 11, 7),
     'text': 'Somehow won',
     'title': 'Won competition',
+    'type': 'exercise'
+  },
+    {
+    'allDay': false,
+    'emotion': 'happy',
+    'end': new Date(2016, 11, 8),
+    'energy': 3,
+    'confidence' : 5,
+    'satisfaction': 5,
+    'productivity': 1,
+    'start': new Date(2016, 11, 8),
+    'text': 'This is a leisurely and pleasant date',
+    'title': 'Date Night',
+    'type': 'leisure'
+  },
+    {
+    'allDay': false,
+    'emotion': 'happy',
+    'end': new Date(),
+    'energy': 3,
+    'confidence' : 5,
+    'satisfaction': 5,
+    'productivity': 1,
+    'start': new Date(),
+    'text': 'Great class',
+    'title': '5x5 Program',
     'type': 'exercise'
   },
   {
