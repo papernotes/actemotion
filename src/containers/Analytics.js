@@ -204,7 +204,7 @@ class Analytics extends Component {
         this.setState({activeKey: 14});
         return (
           <div style={AnalyticsStyles.barChart}>
-          <h3>Average levels of Confidence, Satisfaciton, and Productivity</h3>
+          <h3>Average levels of Confidence, Satisfaction, and Productivity</h3>
             <CSPBarChart events={this.props.event.events}></CSPBarChart>
             <p>Your average confidence, satisfaction, and productivity.</p>
           </div>
@@ -386,40 +386,39 @@ class Analytics extends Component {
 
         <div style={DivStyles.twoColumnSettings}>
           <h3>Available Graphs</h3>
-
+          <br></br>
           <DropdownButton title="General Graphs" id="bg-vertical-dropdown-1" className="dropDown">
-              <MenuItem className="dropItem" eventKey="1" onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>All Emotions Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="2" onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="1" onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>All Emotions</MenuItem>
+              <MenuItem className="dropItem" eventKey="2" onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels</MenuItem>
               <MenuItem className="dropItem" eventKey="3" onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, & Productivity Levels</MenuItem>
-              <MenuItem className="dropItem" eventKey="4" onClick={this.handleClick.bind(this, 'EventNamesChart')}>Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="4" onClick={this.handleClick.bind(this, 'EventNamesChart')}>All Events</MenuItem>
           </DropdownButton>   
           <br></br>
           <DropdownButton title="Event Name Charts" id="bg-vertical-dropdown-2" className="dropDown">
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HappyEventNamesChart')}>Happy Events Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SadEventNamesChart')}>Sad Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AnxiousEventNamesChart')}>Anxious Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'EnvyEventNamesChart')}>Envy Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'ExcitedEventNamesChart')}>Excited Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'FearEventNamesChart')}>Fear Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HopetEventNamesChart')}>Hope Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'JoyEventNamesChart')}>Joy Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AngryEventNamesChart')}>Angry Event Names Pie Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SurpriseEventNamesChart')}>Surprised Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HappyEventNamesChart')}>Happy</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SadEventNamesChart')}>Sad</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AnxiousEventNamesChart')}>Anxious</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'EnvyEventNamesChart')}>Envy</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'ExcitedEventNamesChart')}>Excited</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'FearEventNamesChart')}>Fear</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HopeEventNamesChart')}>Hope</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'JoyEventNamesChart')}>Joy</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AngryEventNamesChart')}>Angry</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SurpriseEventNamesChart')}>Surprised</MenuItem>
           </DropdownButton> 
           <DropdownButton title="Event Type Graphs" id="bg-vertical-dropdown-3" className="dropDown">
-              <MenuItem className="dropItem" eventKey="5" onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="6" onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="7" onClick={this.handleClick.bind(this, 'AnxiousBarChart')}>Anxious Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="8" onClick={this.handleClick.bind(this, 'DisgustBarChart')}>Disgust Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="9" onClick={this.handleClick.bind(this, 'EnvyBarChart')}>EnvyEvent Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="10" onClick={this.handleClick.bind(this, 'ExcitedBarChart')}>Excited Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="11" onClick={this.handleClick.bind(this, 'FearBarChart')}>Fear Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="12" onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="13" onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="14" onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Event Types Bar Chart</MenuItem>
-              <MenuItem className="dropItem" eventKey="15" onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="5" onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy</MenuItem>
+              <MenuItem className="dropItem" eventKey="6" onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad</MenuItem>
+              <MenuItem className="dropItem" eventKey="7" onClick={this.handleClick.bind(this, 'AnxiousBarChart')}>Anxious</MenuItem>
+              <MenuItem className="dropItem" eventKey="8" onClick={this.handleClick.bind(this, 'DisgustBarChart')}>Disgust</MenuItem>
+              <MenuItem className="dropItem" eventKey="9" onClick={this.handleClick.bind(this, 'EnvyBarChart')}>Envy</MenuItem>
+              <MenuItem className="dropItem" eventKey="10" onClick={this.handleClick.bind(this, 'ExcitedBarChart')}>Excited</MenuItem>
+              <MenuItem className="dropItem" eventKey="11" onClick={this.handleClick.bind(this, 'FearBarChart')}>Fear</MenuItem>
+              <MenuItem className="dropItem" eventKey="12" onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope</MenuItem>
+              <MenuItem className="dropItem" eventKey="13" onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy</MenuItem>
+              <MenuItem className="dropItem" eventKey="14" onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry</MenuItem>
+              <MenuItem className="dropItem" eventKey="15" onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise</MenuItem>
           </DropdownButton> 
         </div>
 
