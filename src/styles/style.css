@@ -16,6 +16,7 @@
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
 	background-color: #F0FBFF;
+	color: #24728f;
 }
 
 h3 {
@@ -120,6 +121,11 @@ div .well {
 
 .eventFeeling {
 	text-transform: uppercase;
+}
+
+.btn-warning { 
+	background-color: #F8DA5B;
+	border-color: #F8DA5B;
 }
 
 .eventIn {
