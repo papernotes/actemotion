@@ -83,8 +83,8 @@ class CalendarPage extends Component {
           setNewTypeModal={this.props.actions.setNewTypeModal}
         />
         <div style={{textAlign: 'center'}}>
+          <h3 className="tdDate"><b>{new Date().toDateString()}</b></h3>
           <p style={messageStyles}>Note! If you want to edit or add events, go back to event view!</p>
-          <h4 className="tdDate"><b>{new Date().toDateString()}</b></h4>
         </div>
         <Calendar
           isInfoOpen={this.props.event.isInfoOpen}

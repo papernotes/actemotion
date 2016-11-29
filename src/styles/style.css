@@ -52,6 +52,10 @@ div .rbc-event{
 	background-color: #F0FBFF;
 }
 
+.tdDate {
+	display: inline;
+}
+
 .login {
 	position: absolute;
     top: 50%;
@@ -109,10 +113,6 @@ div .well {
 	font-family: ;
 }
 
-.eventTitle {
-
-}
-
 .eventFeeling {
 	text-transform: uppercase;
 }
@@ -136,10 +136,6 @@ div .well {
 	font-size: 14px;
 }
 
-
-div .dropdown .btn-group {
-
-}
 .dropDown {
 	margin-top: 15px;
 	margin-bottom: 10px;
@@ -148,9 +144,6 @@ div .dropdown .btn-group {
 	width: 45vh;
 }
 
-.dropItem:hover {
-	background-color: #F8DA5B;
-}
 .dropdown-menu li a:hover {
 	background-color: #F8DA5B;
 }
