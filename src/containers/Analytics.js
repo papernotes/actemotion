@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Nav, NavItem} from 'react-bootstrap';
+import {DropdownButton, MenuItem} from 'react-bootstrap';
 import * as Actions from '../actions';
 import Toolbar from '../components/Toolbar';
 import DivStyles from '../styles/DivStyles';
@@ -73,7 +73,7 @@ class Analytics extends Component {
         this.setState({activeKey: 1});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Emotions for All Events</h4>
+            <h3>Emotions for All Events</h3>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
             <p>The percentage of time that you have felt each emotion</p>
           </div>
@@ -83,7 +83,7 @@ class Analytics extends Component {
         this.setState({activeKey: 2});
         return (
           <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>Energy Levels for All Events</h4>
+            <h3>Energy Levels for All Events</h3>
             <EnergyPieChart events={this.props.event.events}></EnergyPieChart>
             <p>The percentage of time you have felt each energy level where 1 is least energetic and 5 is most energetic.</p>
           </div>
@@ -93,7 +93,7 @@ class Analytics extends Component {
         this.setState({activeKey: 3});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Happy" Type Events</h4>
+            <h3>All "Happy" Type Events</h3>
             <EmotionBarChart events={this.props.event.events}></EmotionBarChart>
             <p>These types of events made you happy !</p>
           </div>
@@ -103,7 +103,7 @@ class Analytics extends Component {
         this.setState({activeKey: 4});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Sad" Type Events</h4>
+            <h3>All "Sad" Type Events</h3>
             <SadBarChart events={this.props.event.events}></SadBarChart>
             <p>These types of events made you sad </p>
           </div>
@@ -113,7 +113,7 @@ class Analytics extends Component {
         this.setState({activeKey: 5});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Angry" Type Events</h4>
+            <h3>All "Angry" Type Events</h3>
             <AngryBarChart events={this.props.event.events}></AngryBarChart>
             <p>These types of events made you angry </p>
           </div>
@@ -123,7 +123,7 @@ class Analytics extends Component {
         this.setState({activeKey: 6});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Anxious" Type Events</h4>
+            <h3>All "Anxious" Type Events</h3>
             <AnxiousBarChart events={this.props.event.events}></AnxiousBarChart>
             <p>These types of events made you anxious </p>
           </div>
@@ -133,7 +133,7 @@ class Analytics extends Component {
         this.setState({activeKey: 7});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Disgust" Type Events</h4>
+            <h3>All "Disgust" Type Events</h3>
             <DisgustBarChart events={this.props.event.events}></DisgustBarChart>
             <p>These types of events made you disgusted </p>
           </div>
@@ -143,7 +143,7 @@ class Analytics extends Component {
         this.setState({activeKey: 8});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Envy" Type Events</h4>
+            <h3>All "Envy" Type Events</h3>
             <EnvyBarChart events={this.props.event.events}></EnvyBarChart>
             <p>These types of events made you envious </p>
           </div>
@@ -153,7 +153,7 @@ class Analytics extends Component {
         this.setState({activeKey: 9});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Excited" Type Events</h4>
+            <h3>All "Excited" Type Events</h3>
             <ExcitedBarChart events={this.props.event.events}></ExcitedBarChart>
             <p>These types of events made you excited </p>
           </div>
@@ -163,7 +163,7 @@ class Analytics extends Component {
         this.setState({activeKey: 10});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Fear" Type Events</h4>
+            <h3>All "Fear" Type Events</h3>
             <FearBarChart events={this.props.event.events}></FearBarChart>
             <p>These types of events made you fear </p>
           </div>
@@ -173,7 +173,7 @@ class Analytics extends Component {
         this.setState({activeKey: 11});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Hope" Type Events</h4>
+            <h3>All "Hope" Type Events</h3>
             <HopeBarChart events={this.props.event.events}></HopeBarChart>
             <p>These types of events made you hopeful </p>
           </div>
@@ -183,7 +183,7 @@ class Analytics extends Component {
         this.setState({activeKey: 12});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Joy" Type Events</h4>
+            <h3>All "Joy" Type Events</h3>
             <JoyBarChart events={this.props.event.events}></JoyBarChart>
             <p>These types of events made you joyful </p>
           </div>
@@ -193,7 +193,7 @@ class Analytics extends Component {
         this.setState({activeKey: 13});
         return (
           <div style={AnalyticsStyles.barChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All "Surprise" Type Events</h4>
+            <h3>All "Surprise" Type Events</h3>
             <SurpriseBarChart events={this.props.event.events}></SurpriseBarChart>
             <p>These types of events made you surprised </p>
           </div>
@@ -204,7 +204,7 @@ class Analytics extends Component {
         this.setState({activeKey: 14});
         return (
           <div style={AnalyticsStyles.barChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>Average levels of Confidence, Satisfaciton, and Productivity</h4>
+          <h3>Average levels of Confidence, Satisfaciton, and Productivity</h3>
             <CSPBarChart events={this.props.event.events}></CSPBarChart>
             <p>Your average confidence, satisfaction, and productivity.</p>
           </div>
@@ -214,7 +214,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Names</h4>
+          <h3>All Event Names</h3>
             <EventNamesChart events={this.props.event.events}></EventNamesChart>
             <p>The number of different events based on their titles</p>
           </div>
@@ -224,7 +224,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Happy Event Names</h4>
+          <h3>All Happy Event Names</h3>
             <HappyEventNamesChart events={this.props.event.events}></HappyEventNamesChart>
             <p>The number of different happy events based on their titles</p>
           </div>
@@ -234,7 +234,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Sad Event Names</h4>
+          <h3>All Sad Event Names</h3>
             <SadEventNamesChart events={this.props.event.events}></SadEventNamesChart>
             <p>The number of different sad events based on their titles</p>
           </div>
@@ -244,7 +244,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Anxious Event Names</h4>
+          <h3>All Anxious Event Names</h3>
             <AnxiousEventNamesChart events={this.props.event.events}></AnxiousEventNamesChart>
             <p>The number of different anxious events based on their titles</p>
           </div>
@@ -254,7 +254,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Disgust Event Names</h4>
+          <h3>All Disgust Event Names</h3>
             <DisgustEventNamesChart events={this.props.event.events}></DisgustEventNamesChart>
             <p>The number of different disgust events based on their titles</p>
           </div>
@@ -264,7 +264,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Envy Event Names</h4>
+          <h3>All Envy Event Names</h3>
             <EnvyEventNamesChart events={this.props.event.events}></EnvyEventNamesChart>
             <p>The number of different envy events based on their titles</p>
           </div>
@@ -274,7 +274,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Excited Event Names</h4>
+          <h3>All Excited Event Names</h3>
             <ExcitedEventNamesChart events={this.props.event.events}></ExcitedEventNamesChart>
             <p>The number of different excited events based on their titles</p>
           </div>
@@ -284,7 +284,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Fear Event Names</h4>
+          <h3>All Fear Event Names</h3>
             <FearEventNamesChart events={this.props.event.events}></FearEventNamesChart>
             <p>The number of different fear events based on their titles</p>
           </div>
@@ -294,7 +294,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Hope Event Names</h4>
+          <h3>All Hope Event Names</h3>
             <HopeEventNamesChart events={this.props.event.events}></HopeEventNamesChart>
             <p>The number of different hope events based on their titles</p>
           </div>
@@ -304,7 +304,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Joy Event Names</h4>
+          <h3>All Joy Event Names</h3>
             <JoyEventNamesChart events={this.props.event.events}></JoyEventNamesChart>
             <p>The number of different joy events based on their titles</p>
           </div>
@@ -314,7 +314,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Angry Event Names</h4>
+          <h3>All Angry Event Names</h3>
             <AngryEventNamesChart events={this.props.event.events}></AngryEventNamesChart>
             <p>The number of different angry events based on their titles</p>
           </div>
@@ -324,7 +324,7 @@ class Analytics extends Component {
         this.setState({activeKey: 15});
         return (
           <div style={AnalyticsStyles.pieChart}>
-          <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Surprise Event Names</h4>
+          <h3>All Surprise Event Names</h3>
             <SurpriseEventNamesChart events={this.props.event.events}></SurpriseEventNamesChart>
             <p>The number of different surprise events based on their titles</p>
           </div>
@@ -335,7 +335,7 @@ class Analytics extends Component {
         return (
           <div>
             <div style={AnalyticsStyles.pieChart}>
-            <h4 style={{textAlign: 'center', fontSize: '20px'}}>All Event Emotions</h4>
+            <h3>All Event Emotions</h3>
             <FeelingsPieChart events={this.props.event.events}></FeelingsPieChart>
             <p>The percentage of time that you have felt each emotion</p>
             </div>
@@ -381,42 +381,46 @@ class Analytics extends Component {
           isNewTypeOpen={this.props.event.isNewTypeOpen}
           setNewTypeModal={this.props.actions.setNewTypeModal}
         />
-        <h2 style={{textAlign: 'center', fontSize: '30px'}}>Emotion Data Analytics</h2>
-        <br></br>
-        <p></p><p></p>
+        <h2 style={{textAlign: 'center'}}>Your Emotions</h2>
+        <br></br><br></br>
 
         <div style={DivStyles.twoColumnSettings}>
-          <h2>Available Graphs</h2>
-          <Nav activeKey={this.state.activeKey}>
-            <NavItem eventKey={1} onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>All Emotions Pie Chart</NavItem>
-            <NavItem eventKey={2} onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels Pie Chart</NavItem>
-            <NavItem eventKey={3} onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, Productivity Levels</NavItem>
-            <NavItem eventKey={4} onClick={this.handleClick.bind(this, 'EventNamesChart')}>Event Names Pie Chart</NavItem>
-            <hr/>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'HappyEventNamesChart')}>Happy Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'SadEventNamesChart')}>Sad Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'AnxiousEventNamesChart')}>Anxious Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'EnvyEventNamesChart')}>Envy Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'ExcitedEventNamesChart')}>Excited Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'FearEventNamesChart')}>Fear Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'HopeEventNamesChart')}>Hope Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'JoyEventNamesChart')}>Joy Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'AngryEventNamesChart')}>Angry Event Names Pie Chart</NavItem>
-            <NavItem eventKey={16} onClick={this.handleClick.bind(this, 'SurpriseEventNamesChart')}>Surprised Event Names Pie Chart</NavItem>
-            <hr/>
-            <NavItem eventKey={5} onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Event Types Bar Chart</NavItem>
-            <NavItem eventKey={6} onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Event Types Bar Chart</NavItem>
-            <NavItem eventKey={7} onClick={this.handleClick.bind(this, 'AnxiousBarChart')}>Anxious Event Types Bar Chart</NavItem>
-            <NavItem eventKey={8} onClick={this.handleClick.bind(this, 'DisgustBarChart')}>Disgust Event Types Bar Chart</NavItem>
-            <NavItem eventKey={9} onClick={this.handleClick.bind(this, 'EnvyBarChart')}>Envy Event Types Bar Chart</NavItem>
-            <NavItem eventKey={10} onClick={this.handleClick.bind(this, 'ExcitedBarChart')}>Excited Event Types Bar Chart</NavItem>
-            <NavItem eventKey={11} onClick={this.handleClick.bind(this, 'FearBarChart')}>Fear Event Types Bar Chart</NavItem>
-            <NavItem eventKey={12} onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope Event Types Bar Chart</NavItem>
-            <NavItem eventKey={13} onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy Event Types Bar Chart</NavItem>
-            <NavItem eventKey={14} onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Event Types Bar Chart</NavItem>
-            <NavItem eventKey={15} onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Event Types Bar Chart</NavItem>
-          </Nav>
+          <h3>Available Graphs</h3>
+
+          <DropdownButton title="General Graphs" id="bg-vertical-dropdown-1" className="dropDown">
+              <MenuItem className="dropItem" eventKey="1" onClick={this.handleClick.bind(this, 'FeelingsPieChart')}>All Emotions Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="2" onClick={this.handleClick.bind(this, 'EnergyPieChart')}>Energy Levels Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="3" onClick={this.handleClick.bind(this, 'CSPBarChart')}>Average Confidence, Satisfaction, & Productivity Levels</MenuItem>
+              <MenuItem className="dropItem" eventKey="4" onClick={this.handleClick.bind(this, 'EventNamesChart')}>Event Names Pie Chart</MenuItem>
+          </DropdownButton>   
+          <br></br>
+          <DropdownButton title="Event Name Charts" id="bg-vertical-dropdown-2" className="dropDown">
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HappyEventNamesChart')}>Happy Events Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SadEventNamesChart')}>Sad Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AnxiousEventNamesChart')}>Anxious Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'DisgustEventNamesChart')}>Disgust Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'EnvyEventNamesChart')}>Envy Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'ExcitedEventNamesChart')}>Excited Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'FearEventNamesChart')}>Fear Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'HopetEventNamesChart')}>Hope Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'JoyEventNamesChart')}>Joy Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'AngryEventNamesChart')}>Angry Event Names Pie Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="16" onClick={this.handleClick.bind(this, 'SurpriseEventNamesChart')}>Surprised Event Names Pie Chart</MenuItem>
+          </DropdownButton> 
+          <DropdownButton title="Event Type Graphs" id="bg-vertical-dropdown-3" className="dropDown">
+              <MenuItem className="dropItem" eventKey="5" onClick={this.handleClick.bind(this, 'EmotionBarChart')}>Happy Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="6" onClick={this.handleClick.bind(this, 'SadBarChart')}>Sad Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="7" onClick={this.handleClick.bind(this, 'AnxiousBarChart')}>Anxious Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="8" onClick={this.handleClick.bind(this, 'DisgustBarChart')}>Disgust Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="9" onClick={this.handleClick.bind(this, 'EnvyBarChart')}>EnvyEvent Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="10" onClick={this.handleClick.bind(this, 'ExcitedBarChart')}>Excited Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="11" onClick={this.handleClick.bind(this, 'FearBarChart')}>Fear Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="12" onClick={this.handleClick.bind(this, 'HopeBarChart')}>Hope Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="13" onClick={this.handleClick.bind(this, 'JoyBarChart')}>Joy Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="14" onClick={this.handleClick.bind(this, 'AngryBarChart')}>Angry Event Types Bar Chart</MenuItem>
+              <MenuItem className="dropItem" eventKey="15" onClick={this.handleClick.bind(this, 'SurpriseBarChart')}>Surprise Event Types Bar Chart</MenuItem>
+          </DropdownButton> 
         </div>
 
         <div style={DivStyles.twoColumnSettings}>
