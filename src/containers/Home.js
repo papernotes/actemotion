@@ -141,7 +141,7 @@ class Home extends Component {
         </Modal>
 
         <Modal
-          show={this.props.actions.confirmedEdit}
+          show={this.props.event.confirmedEdit}
           onHide={this.hideConfirmEdit.bind(this)}
           backdrop='static'
         >
