@@ -23,7 +23,6 @@ class Toolbar extends Component {
       this.setState({activeKey: 2});
     else
       this.setState({activeKey: 3});
-    this.setState({activeKey: 0});  // TODO remove
   }
 
   // TODO disable NavItem or make active on click
